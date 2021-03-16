@@ -79,6 +79,7 @@
 </div>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+@include('sweetalert::alert')
 
 @yield('third_party_scripts')
 
