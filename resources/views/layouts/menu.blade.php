@@ -19,3 +19,27 @@
         <p>Sub-Category</p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{ url('controll_panel/blog') }}" class="nav-link">
+        <i class="nav-icon fas fa-align-center"></i>
+        <p>Blog</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ url('controll_panel/office-staff') }}" class="nav-link">
+        <i class="nav-icon fas fa-align-center"></i>
+        <p>OfficeStaffs</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ url('controll_panel/volunteer') }}" class="nav-link">
+        <i class="nav-icon fas fa-align-center"></i>
+        <p>Volunteers</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ url('controll_panel/life-member') }}" class="nav-link">
+        <i class="nav-icon fas fa-align-center"></i>
+        <p>Life Members</p>
+    </a>
+</li>
