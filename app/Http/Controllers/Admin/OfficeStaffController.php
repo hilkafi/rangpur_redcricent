@@ -56,9 +56,11 @@ class OfficeStaffController extends Controller
         if($validator->fails()){
             return back()->with('error', $validator->messages()->all());
         }
-
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images'), $imageName);
+        $imageName = "";
+        if(!empty($request->img)) {
+            $imageName = time().'.'.$request->img->extension();
+            $request->img->move(public_path('images'), $imageName);
+        }
 
 
         $data = new OfficeStaff();
@@ -112,7 +114,6 @@ class OfficeStaffController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:1024',
             'role' => 'required'
         ]);
 
@@ -120,18 +121,26 @@ class OfficeStaffController extends Controller
             return back()->with('error', $validator->messages()->all());
         }
 
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images'), $imageName);
+        $imageName = "";
+        if(!empty($request->img)) {
+            $imageName = time().'.'.$request->img->extension();
+            $request->img->move(public_path('images'), $imageName);
+        }
         
 
 
         $staff = OfficeStaff::find($id);
         $staff->name = $request->name;
-        $staff->img = $imageName;
         $staff->role = $request->role;
         $staff->phone = $request->contact;
         $staff->address = $request->address;
-        
+        if(!empty($request->img)) {
+            if(!empty($staff->img)){
+                $path = public_path()."/images/".$staff->img;
+                unlink($path);
+            }
+            $staff->img = $imageName;
+        }
         $staff->updated_at = time();
         
         if($staff->save()){
@@ -165,11 +174,17 @@ class OfficeStaffController extends Controller
 
     public function delete_staff(Request $request)
     {
-        $post = OfficeStaff::find($request->id);
-        if($post->delete()) {
-            return response()->json(['success' => 'Post Deleted Successfully.']);
+        $staff = OfficeStaff::find($request->id);
+
+        if(!empty($staff->img)){
+            $path = public_path()."/images/".$staff->img;
+            unlink($path);
+        }
+
+        if($staff->delete()) {
+            return response()->json(['success' => 'Staff Deleted Successfully.']);
         }else {
-            return response()->json(['error' => 'Post While Deleting Category.']);
+            return response()->json(['error' => 'Staff While Deleting Category.']);
         }       
     }
 }

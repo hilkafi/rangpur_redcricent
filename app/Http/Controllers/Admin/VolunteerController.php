@@ -58,9 +58,11 @@ class VolunteerController extends Controller
         if($validator->fails()){
             return back()->with('error', $validator->messages()->all());
         }
-
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images'), $imageName);
+        $imageName = "";
+        if(!empty($request->img)) {
+            $imageName = time().'.'.$request->img->extension();
+            $request->img->move(public_path('images'), $imageName);
+        }
 
 
         $data = new Volunteer();
@@ -116,7 +118,6 @@ class VolunteerController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:1024',
             'role' => 'required',
             'unit' => 'required'
         ]);
@@ -125,18 +126,28 @@ class VolunteerController extends Controller
             return back()->with('error', $validator->messages()->all());
         }
 
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images'), $imageName);
+        $imageName = "";
+        if(!empty($request->img)) {
+            $imageName = time().'.'.$request->img->extension();
+            $request->img->move(public_path('images'), $imageName);
+        }
+
 
 
         $data = Volunteer::find($id);
         $data->name = $request->name;
-        $data->img = $imageName;
         $data->unit_type = $request->unit;
         $data->role = $request->role;
         $data->occupation = $request->occupation;
         $data->phone = $request->contact;
         $data->address = $request->address;
+        if(!empty($request->img)) {
+            if(!empty($data->img)){
+                $path = public_path()."/images/".$data->img;
+                unlink($path);
+            }
+            $data->img = $imageName;
+        }
         $data->updated_at = time();
         
         if($data->save()){
@@ -169,8 +180,12 @@ class VolunteerController extends Controller
 
     public function delete_volunteer(Request $request)
     {
-        $post = Volunteer::find($request->id);
-        if($post->delete()) {
+        $data = Volunteer::find($request->id);
+        if(!empty($data->img)){
+            $path = public_path()."/images/".$data->img;
+            unlink($path);
+        }
+        if($data->delete()) {
             return response()->json(['success' => 'Post Deleted Successfully.']);
         }else {
             return response()->json(['error' => 'Post While Deleting Category.']);

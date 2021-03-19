@@ -56,8 +56,11 @@ class BlogController extends Controller
             return back()->with('error', $validator->messages()->all());
         }
 
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images'), $imageName);
+        $imageName = "";
+        if(!empty($request->img)) {
+            $imageName = time().'.'.$request->img->extension();
+            $request->img->move(public_path('images'), $imageName);
+        }
 
 
         $post = new Blog();
@@ -111,9 +114,10 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //return redirect('controll_panel/blog')->with('success', 'Successfull.');
+
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'title' => 'required',
             'description' => 'required',
         ]);
 
@@ -121,25 +125,33 @@ class BlogController extends Controller
             return back()->with('error', $validator->messages()->all());
         }
 
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images'), $imageName);
-        
+        $imageName = "";
 
+        if(!empty($request->img)){
+            $imageName = time().'.'.$request->img->extension();
+            $request->img->move(public_path('images'), $imageName);
+        }
 
         $post = Blog::find($id);
         $post->title = $request->title;
-        $post->img = $imageName;
         $post->category_id = $request->category;
         $post->sub_category_id = $request->subcategory;
         $post->date = $request->date;
         $post->description = $request->description;
+        if(!empty($request->img)){
+            if(!empty($post->img)){
+                $path = public_path()."/images/".$post->img;
+                unlink($path);
+            }
+            $post->img = $imageName;
+        }
         $post->updated_at = time();
         
         if($post->save()){
             
-            return redirect('/controll_panel/blog')->with('success', 'Post Edited Successfully.');
+            return redirect('/controll_panel/blog')->with('success', 'Post Updated Successfully.');
         }else {
-            return redirect('/controll_panel/blog')->with('error', 'Error Editing Post.');
+            return redirect('/controll_panel/blog')->with('error', 'Error While Updating Post Info.');
         }
     }
 
@@ -170,13 +182,17 @@ class BlogController extends Controller
             $query->where('title', 'like', '%' . $request->title . '%');
         }
 
-        $post = $query->orderBy('id', 'DESC')->get();
-        return view('admin.blog._list', compact('post'));
+        $dataset = $query->orderBy('id', 'DESC')->get();
+        return view('admin.blog._list', compact('dataset'));
     }
 
     public function delete_post(Request $request)
     {
         $post = Blog::find($request->id);
+        if(!empty($post->img)){
+            $path = public_path()."/images/".$post->img;
+            unlink($path);
+        }
         if($post->delete()) {
             return response()->json(['success' => 'Post Deleted Successfully.']);
         }else {

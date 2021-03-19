@@ -59,8 +59,11 @@ class LifeMemberController extends Controller
             return back()->with('error', $validator->messages()->all());
         }
 
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images'), $imageName);
+        $imageName = "";
+        if(!empty($request->img)) {
+            $imageName = time().'.'.$request->img->extension();
+            $request->img->move(public_path('images'), $imageName);
+        }
 
 
         $data = new LifeMember();
@@ -74,9 +77,9 @@ class LifeMemberController extends Controller
         $data->created_at = time();
         
         if($data->save()){
-            return redirect('/controll_panel/life-member')->with('success', 'Post Created Successfully.');
+            return redirect('/controll_panel/life-member')->with('success', 'Life-Member Created Successfully.');
         }else {
-            return redirect('/controll_panel/life-member')->with('error', 'Error Creating Post.');
+            return redirect('/controll_panel/life-member')->with('error', 'Error Creating Life-Member.');
         }
     }
 
@@ -114,9 +117,9 @@ class LifeMemberController extends Controller
      */
     public function update(Request $request, $id)
     {
+        //return redirect('/office-staff')->with('success', 'Successfull');
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+            'name' => 'required'
            
         ]);
 
@@ -124,24 +127,33 @@ class LifeMemberController extends Controller
             return back()->with('error', $validator->messages()->all());
         }
 
-        $imageName = time().'.'.$request->img->extension();
-        $request->img->move(public_path('images'), $imageName);
+        $imageName="";
+        if(!empty($request->img)){
+            $imageName = time().'.'.$request->img->extension();
+            $request->img->move(public_path('images'), $imageName);
+        }
 
 
         $data =  LifeMember::find($id);
         $data->name = $request->name;
-        $data->img = $imageName;
         $data->is_executive = $request->ex_cmt;
         $data->role = $request->role;
         $data->occupation = $request->occupation;
         $data->phone = $request->contact;
         $data->address = $request->address;
+        if(!empty($request->img)){
+            if(!empty($data->img)){
+                $path = public_path()."/images/".$data->img;
+                unlink($path);
+            }
+            $data->img = $imageName;
+        }
         $data->created_at = time();
         
         if($data->save()){
-            return redirect('/controll_panel/life-member')->with('success', 'Post Created Successfully.');
+            return redirect('/controll_panel/life-member')->with('success', 'Life-Member Updated Successfully.');
         }else {
-            return redirect('/controll_panel/life-member')->with('error', 'Error Creating Post.');
+            return redirect('/controll_panel/life-member')->with('error', 'Error Creating Life-Member.');
         }
 
     }
@@ -169,11 +181,15 @@ class LifeMemberController extends Controller
 
     public function delete_member(Request $request)
     {
-        $post = LifeMember::find($request->id);
-        if($post->delete()) {
-            return response()->json(['success' => 'Post Deleted Successfully.']);
+        $data = LifeMember::find($request->id);
+        if(!empty($data->img)){
+            $path = public_path()."/images/".$data->img;
+            unlink($path);
+        }
+        if($data->delete()) {
+            return response()->json(['success' => 'Life-Member Deleted Successfully.']);
         }else {
-            return response()->json(['error' => 'Post While Deleting Category.']);
+            return response()->json(['error' => 'Error While Deleting Life-Member.']);
         }       
     }
 }

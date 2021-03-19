@@ -9,6 +9,10 @@ class SubCategory extends Model
 {
     use HasFactory;
 
+    public function projects() {
+        return $this->hasMany(Project::class, 'sub_category_id');
+    }
+
     public function category() {
         return $this->belongsTo(Category::class, 'category_id');
     }

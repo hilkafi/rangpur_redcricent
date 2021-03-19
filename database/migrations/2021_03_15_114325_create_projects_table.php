@@ -15,15 +15,16 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id');
+            $table->integer('category_id')->nullable();
             $table->integer('sub_category_id')->nullable();
             $table->text('name');
-            $table->date('strat_date')->nullable();
+            $table->date('start_date')->nullable();
             $table->date('end_date')->nullable();
             $table->char('duration', 100);
             $table->double('budget')->nullable();
             $table->double('expense')->nullable();
             $table->char('img', 255)->nullable();
+            $table->enum('status', ['proposed', 'running', 'completed'])->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

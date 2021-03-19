@@ -56,6 +56,33 @@ Route::post('/controll_panel/life-member/delete', [App\Http\Controllers\Admin\Li
 Route::post('/controll_panel/life-member/search', [App\Http\Controllers\Admin\LifeMemberController::class, 'search_member']);
 
 
+//Speech routes
+
+Route::resource('/controll_panel/speech', App\Http\Controllers\Admin\SpeechController::class);
+Route::post('/controll_panel/speech/delete', [App\Http\Controllers\Admin\SpeechController::class, 'delete']);
+Route::post('/controll_panel/speech/search', [App\Http\Controllers\Admin\SpeechController::class, 'search']);
+
+//Project routes
+
+Route::resource('/controll_panel/project', App\Http\Controllers\Admin\ProjectController::class);
+Route::post('/controll_panel/project/delete', [App\Http\Controllers\Admin\ProjectController::class, 'delete']);
+Route::post('/controll_panel/project/search', [App\Http\Controllers\Admin\ProjectController::class, 'search']);
+
+Route::resource('/controll_panel/donate_us', App\Http\Controllers\Admin\DonateUsController::class);
+
+//Donate Get Blood routes
+
+Route::resource('/controll_panel/donate_get_blood', App\Http\Controllers\Admin\DonateGetBloodController::class);
+Route::post('/controll_panel/donate_get_blood/delete', [App\Http\Controllers\Admin\DonateGetBloodController::class, 'delete']);
+Route::post('/controll_panel/donate_get_blood/search', [App\Http\Controllers\Admin\DonateGetBloodController::class, 'search']);
+
+//Social Media routes
+
+Route::resource('/controll_panel/social_media', App\Http\Controllers\Admin\SocialMediaController::class);
+Route::post('/controll_panel/social_media/delete', [App\Http\Controllers\Admin\SocialMediaController::class, 'delete']);
+Route::post('/controll_panel/social_media/search', [App\Http\Controllers\Admin\SocialMediaController::class, 'search']);
+
+
 //Front Routes
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 

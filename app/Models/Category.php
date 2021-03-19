@@ -12,4 +12,10 @@ class Category extends Model
     public function sub_categories() {
         return $this->hasMany(SubCategory::class, 'category_id');
     }
+
+    public function projects() {
+        return $this->hasMany(Project::class, 'category_id');
+    }
+
+
 }
