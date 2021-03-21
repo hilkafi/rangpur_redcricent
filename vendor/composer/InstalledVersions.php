@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '2139c7b7cecc458fca56ef6b08b7069cf9c29221',
+    'reference' => '5c1d3ecb52d75f553dbb744937739d7bcde1d67d',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -66,6 +66,15 @@ private static $installed = array (
       array (
         0 => '*',
       ),
+    ),
+    'dereuromark/media-embed' => 
+    array (
+      'pretty_version' => '0.3.4',
+      'version' => '0.3.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'a2be85ad4fc1e17328f8a53fe13a3808301adf80',
     ),
     'dnoegel/php-xdg-base-dir' => 
     array (
@@ -496,7 +505,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '2139c7b7cecc458fca56ef6b08b7069cf9c29221',
+      'reference' => '5c1d3ecb52d75f553dbb744937739d7bcde1d67d',
     ),
     'laravel/sail' => 
     array (
@@ -560,6 +569,16 @@ private static $installed = array (
       array (
       ),
       'reference' => '3b9dff8aaf7323590c1d2e443db701eb1f9aa0d3',
+    ),
+    'merujan99/laravel-video-embed' => 
+    array (
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+        0 => '9999999-dev',
+      ),
+      'reference' => '8cf08c585c8b9560960e80d8d3ce3c0d6640f554',
     ),
     'mockery/mockery' => 
     array (

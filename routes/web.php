@@ -85,4 +85,5 @@ Route::post('/controll_panel/social_media/search', [App\Http\Controllers\Admin\S
 
 //Front Routes
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
+Route::get('/single-blog/{id}', [App\Http\Controllers\Front\HomeController::class, 'single_blog']);
 

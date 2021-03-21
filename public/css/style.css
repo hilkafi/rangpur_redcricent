@@ -64,7 +64,7 @@
 }
 
 .main-logo {
-    margin: 29px 0;
+    margin: 10px 0;
 }
 
 .main-logo>img {
@@ -1136,4 +1136,41 @@
 }
 .footer_carosal_icon .owl-nav{
     display: none;
+}
+
+.single_title_area {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.single_title_area>h2 {
+    color: #3c354e;
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    position: relative;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: left;
+}
+
+.single_title_area>p {
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-right: 0;
+}
+
+.single_image_area {
+    margin-bottom: 50px;
+}
+
+.single_content_area>p {
+    color: #3c354e;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: justify;
 }

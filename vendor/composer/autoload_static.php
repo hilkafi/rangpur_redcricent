@@ -122,6 +122,7 @@ class ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Merujan99\\LaravelVideoEmbed\\' => 28,
         ),
         'L' => 
         array (
@@ -387,6 +388,10 @@ class ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Merujan99\\LaravelVideoEmbed\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/merujan99/laravel-video-embed/src',
+        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -544,13 +549,25 @@ class ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6
         ),
     );
 
+    public static $fallbackDirsPsr0 = array (
+        0 => __DIR__ . '/..' . '/dereuromark/media-embed/src',
+    );
+
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Admin\\BlogController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BlogController.php',
         'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
         'App\\Http\\Controllers\\Admin\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DashboardController.php',
+        'App\\Http\\Controllers\\Admin\\DonateGetBloodController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DonateGetBloodController.php',
+        'App\\Http\\Controllers\\Admin\\DonateUsController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/DonateUsController.php',
+        'App\\Http\\Controllers\\Admin\\LifeMemberController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/LifeMemberController.php',
+        'App\\Http\\Controllers\\Admin\\OfficeStaffController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/OfficeStaffController.php',
+        'App\\Http\\Controllers\\Admin\\ProjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ProjectController.php',
+        'App\\Http\\Controllers\\Admin\\SocialMediaController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SocialMediaController.php',
+        'App\\Http\\Controllers\\Admin\\SpeechController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SpeechController.php',
         'App\\Http\\Controllers\\Admin\\SubCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/SubCategoryController.php',
+        'App\\Http\\Controllers\\Admin\\VolunteerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/VolunteerController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmPasswordController.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
@@ -3015,6 +3032,12 @@ class ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6
         'League\\MimeTypeDetection\\FinfoMimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/FinfoMimeTypeDetector.php',
         'League\\MimeTypeDetection\\GeneratedExtensionToMimeTypeMap' => __DIR__ . '/..' . '/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php',
         'League\\MimeTypeDetection\\MimeTypeDetector' => __DIR__ . '/..' . '/league/mime-type-detection/src/MimeTypeDetector.php',
+        'MediaEmbed\\MediaEmbed' => __DIR__ . '/..' . '/dereuromark/media-embed/src/MediaEmbed/MediaEmbed.php',
+        'MediaEmbed\\Object\\MediaObject' => __DIR__ . '/..' . '/dereuromark/media-embed/src/MediaEmbed/Object/MediaObject.php',
+        'MediaEmbed\\Object\\ObjectInterface' => __DIR__ . '/..' . '/dereuromark/media-embed/src/MediaEmbed/Object/ObjectInterface.php',
+        'Merujan99\\LaravelVideoEmbed\\Facades\\LaravelVideoEmbed' => __DIR__ . '/..' . '/merujan99/laravel-video-embed/src/Facades/LaravelVideoEmbed.php',
+        'Merujan99\\LaravelVideoEmbed\\Providers\\LaravelVideoEmbedServiceProvider' => __DIR__ . '/..' . '/merujan99/laravel-video-embed/src/Providers/LaravelVideoEmbedServiceProvider.php',
+        'Merujan99\\LaravelVideoEmbed\\Services\\LaravelVideoEmbed' => __DIR__ . '/..' . '/merujan99/laravel-video-embed/src/Services/LaravelVideoEmbed.php',
         'Mockery' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegration' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegration.php',
         'Mockery\\Adapter\\Phpunit\\MockeryPHPUnitIntegrationAssertPostConditions' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Adapter/Phpunit/MockeryPHPUnitIntegrationAssertPostConditions.php',
@@ -5390,6 +5413,7 @@ class ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6
             $loader->prefixLengthsPsr4 = ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6::$prefixesPsr0;
+            $loader->fallbackDirsPsr0 = ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6::$fallbackDirsPsr0;
             $loader->classMap = ComposerStaticInit00534540cc4913fc2f7bf3d7c779b5b6::$classMap;
 
         }, null, ClassLoader::class);

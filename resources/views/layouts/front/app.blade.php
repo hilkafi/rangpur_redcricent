@@ -41,10 +41,10 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-xs-12">
-                            <a href="#">
+                            <a href="{{ url('/') }}">
                                 <div class="main-logo">
-                                    <img src="{{ url('img/main-logo.png') }}" alt="">
-                                    <h2>HELP CHARITY</h2>
+                                    <img src="{{ url('img/bdrcs-logo.png') }}" alt="" width="100" height="100">
+                                    <h2>BDRCS RANGPUR</h2>
                                 </div>
                             </a>
                         </div>

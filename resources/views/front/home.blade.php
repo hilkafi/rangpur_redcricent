@@ -5,21 +5,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="client owl-carousel owl-theme">
+                    @foreach($images as $image)
                     <div class="item">
-                        <img src="{{ url('img/carosal-bg.jpg') }}" />
+                        <img src="{{ url('images/'.$image->img) }}" />
                     </div>
-                    <div class="item">
-                        <img src="{{ url('img/help-charity.jpg') }}" />
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_one.jpg') }}" />
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/help-charity.jpg') }}" />
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_one.jpg') }}" />
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -67,39 +57,18 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="our_cuauses_single owl-carousel owl-theme">
+                    @foreach($news_stories as $ns)
+                    <?php $img_url = !empty($ns->img) ? url('images/'.$ns->img) : url('img/no_image.jpg') ?>
                     <div class="item">
-                        <img src="{{ url('img/our_cuauses_one.jpg') }}" alt="">
+                        <img src="{{ $img_url }}" alt="">
                         <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
+                            <h2>{{$ns->title}}</h2>
+                            <p>{{ Str::limit($ns->description, 50) }}</p>
 
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
+                            <h2 class="borderes"><a href="{{ url('single-blog/'.$ns->id) }}">READ MORE</a></h2>
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_two.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_three.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_three.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -112,39 +81,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="our_cuauses_single owl-carousel owl-theme">
+                    @foreach($reports as $report)
+                    <?php $img_url = !empty($report->img) ? url('images/'.$report->img) : url('img/no_image.jpg') ?>
                     <div class="item">
-                        <img src="{{ url('img/our_cuauses_one.jpg') }}" alt="">
+                        <img src="{{ $img_url }}" alt="">
                         <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
+                            <h2>{{$report->title}}</h2>
+                            <p>{{ Str::limit($report->description, 100) }}</p>
+                            <h2 class="borderes"><a href="{{ url('single-blog/'.$report->id) }}">READ MORE</a></h2>
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_two.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_three.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_three.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -158,42 +105,22 @@
                 <div class="donors_image">
                     <h2>Messages</h2>
                     <div class="donors_featured owl-carousel owl-theme">
+                        @foreach($speech as $sp)
+                        <?php $image_url = !empty($sp->img) ? url('images/'.$sp->img) : url('img/no_image.jpg');  ?>
                         <div class="item">
                             <div class="col-md-6">
-                                <img src="{{ url('img/donors_featured_one.jpg') }}" alt="">
+                                @if(!empty($sp->video))
+                                <iframe width="560" height="315" src="{{$sp->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                @else
+                                <img src="{{ $image_url }}"  width="500" height="400" />
+                                @endif
                             </div>
                             <div class="col-md-6">
-                                <h3>Messages From Kenneth J. Garnica</h3>
-                                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
+                                <h3>Messages From {{$sp->speaker_name}}</h3>
+                                <p>{{ $sp->speech }}</p>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="col-md-6">
-                                <img src="{{ url('img/donors_featured_one.jpg') }}" alt="">
-                            </div>
-                            <div class="col-md-6">
-                                <h3>Messages From Kenneth J. Garnica</h3>
-                                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-md-6">
-                                <img src="{{ url('img/donors_featured_one.jpg') }}" alt="">
-                            </div>
-                            <div class="col-md-6">
-                                <h3>Messages From Kenneth J. Garnica</h3>
-                                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-md-6">
-                                <img src="{{ url('img/donors_featured_one.jpg') }}" alt="">
-                            </div>
-                            <div class="col-md-6">
-                                <h3>Messages From Kenneth J. Garnica</h3>
-                                <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is availableIn publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available</p>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -208,39 +135,17 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="our_cuauses_single owl-carousel owl-theme">
+                    @foreach($focuses as $focus)
+                    <?php $img_url = !empty($focus->img) ? url('images/'.$focus->img) : url('img/no_image.jpg') ?>
                     <div class="item">
-                        <img src="{{ url('img/our_cuauses_one.jpg') }}" alt="">
+                        <img src="{{ $img_url }}" alt="">
                         <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
+                            <h2>{{ $focus->title }}</h2>
+                            <p>{{ Str::limit($focus->description, 100) }}</p>
+                            <h2 class="borderes"><a href="{{ url('single-blog/'.$focus->id) }}">READ MORE</a></h2>
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_two.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_three.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="{{ url('img/our_cuauses_three.jpg') }}" alt="">
-                        <div class="for_padding">
-                            <h2>FUTURES FOR CHILDREN</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minima</p>
-                            <h2 class="borderes"><a href="#">READ MORE</a></h2>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
