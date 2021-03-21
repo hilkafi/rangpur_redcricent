@@ -22,7 +22,7 @@ class VolunteerController extends Controller
     public function index()
     {
         //
-        $dataset = Volunteer::all();
+        $dataset = Volunteer::where('is_approved','1')->orderBy('id','DESC')->get();
         
         return view('admin.volunteer.index',compact('dataset'));
     }
@@ -73,6 +73,7 @@ class VolunteerController extends Controller
         $data->occupation = $request->occupation;
         $data->phone = $request->contact;
         $data->address = $request->address;
+        $data->is_approved = '1';
         $data->created_at = time();
         
         if($data->save()){
@@ -190,5 +191,21 @@ class VolunteerController extends Controller
         }else {
             return response()->json(['error' => 'Post While Deleting Category.']);
         }       
+    }
+    public function approve_volunteer(Request $request)
+    {
+        $data = Volunteer::find($request->id);
+
+        $data->is_approved = '1';
+        if($data->save()) {
+            return response()->json(['success' => 'Life-Member approved Successfully.']);
+        }else {
+            return response()->json(['error' => 'Error While approving Life-Member.']);
+        }       
+    }
+
+    public function pending_show(){
+        $dataset = Volunteer::where('is_approved','0')->orderBy('id', 'DESC')->get();
+        return view('admin.volunteer.pending', compact('dataset'));
     }
 }

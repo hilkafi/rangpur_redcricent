@@ -7,6 +7,7 @@
             <div class="row">
                 <h3 class="col-md-10 card-title">Volunteers</h3>
                 <a href="{{ url('controll_panel/volunteer/create') }}" class="col-md-2 btn btn-success">Add Volunteer</a>
+                <a href="{{ url('volunteer/pending-request') }}" class="col-md-2 btn btn-success">See Pending Request</a>
             </div>
         </div>
             <!-- /.card-header -->

@@ -23,7 +23,7 @@ class LifeMemberController extends Controller
     public function index()
     {
         //
-        $dataset = LifeMember::all();
+        $dataset = LifeMember::where('is_approved','1')->get();
         
         return view('admin.life_member.index',compact('dataset'));
     }
@@ -74,6 +74,7 @@ class LifeMemberController extends Controller
         $data->occupation = $request->occupation;
         $data->phone = $request->contact;
         $data->address = $request->address;
+        $data->is_approved = '1';
         $data->created_at = time();
         
         if($data->save()){
@@ -190,6 +191,22 @@ class LifeMemberController extends Controller
             return response()->json(['success' => 'Life-Member Deleted Successfully.']);
         }else {
             return response()->json(['error' => 'Error While Deleting Life-Member.']);
+        }       
+    }
+
+    public function show_pending(){
+        $dataset = LifeMember::where('is_approved','0')->orderBy('id', 'DESC')->get();
+        return view('admin.life_member.pending',compact('dataset'));
+    }
+    public function approve_member(Request $request)
+    {
+        $data = LifeMember::find($request->id);
+
+        $data->is_approved = '1';
+        if($data->save()) {
+            return response()->json(['success' => 'Life-Member approved Successfully.']);
+        }else {
+            return response()->json(['error' => 'Error While approving Life-Member.']);
         }       
     }
 }

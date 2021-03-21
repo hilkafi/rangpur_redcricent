@@ -16,7 +16,7 @@ class DonateGetBloodController extends Controller
      */
     public function index()
     {
-        $dataset = DonateGetBlood::all();
+        $dataset = DonateGetBlood::where('is_approved','1')->orderBy('id','DESC')->get();
         return view('admin.donate_get_blood.index', compact('dataset'));
     }
 
@@ -50,6 +50,7 @@ class DonateGetBloodController extends Controller
         $data->unit_name = $request->unit_name;
         $data->address = $request->address;
         $data->hot_line = $request->hot_line;
+        $data->is_approved = '1';
         $data->created_at = time();
         
         if($data->save()){
@@ -138,5 +139,21 @@ class DonateGetBloodController extends Controller
         }else {
             return response()->json(['error' => 'Error While Deleting Info.']);
         }     
+    }
+
+    public function show_pending(){
+        $dataset = DonateGetBlood::where('is_approved','0')->orderBy('id', 'DESC')->get();
+        return view('admin.donate_get_blood.pending',compact('dataset'));
+    }
+    public function approve_info(Request $request)
+    {
+        $data = DonateGetBlood::find($request->id);
+
+        $data->is_approved = '1';
+        if($data->save()) {
+            return response()->json(['success' => 'Info approved Successfully.']);
+        }else {
+            return response()->json(['error' => 'Error While approving info.']);
+        }       
     }
 }

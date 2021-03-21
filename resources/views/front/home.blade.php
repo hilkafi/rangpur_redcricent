@@ -160,7 +160,7 @@
                     <div class="promo-icon">
                         <i class="material-icons">local_hospital</i>
                     </div>
-                    <h2><a href="#">DONATE US</a></h2>
+                    <h2><a href="donate-us/create">DONATE US</a></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
                 </div>
             </div>
@@ -169,7 +169,7 @@
                     <div class="promo-icon">
                         <i class="material-icons">bloodtype</i>
                     </div>
-                    <h2><a href="#">DONATE/GET BLOOD</a></h2>
+                    <h2><a href="donate-us-blood/create">DONATE/GET BLOOD</a></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
                 </div>
             </div>
@@ -178,7 +178,7 @@
                     <div class="promo-icon">
                         <i class="material-icons">people</i>
                     </div>
-                    <h2><a href="#">BE A MEMBER</a></h2>
+                    <h2><a href="{{url('/be-a-member/create')}}">BE A MEMBER</a></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
                 </div>
             </div>
@@ -187,7 +187,7 @@
                     <div class="promo-icon">
                         <i class="material-icons">volunteer_activism</i>
                     </div>
-                    <h2><a href="#">BE A VOLUNTEER</a></h2>
+                    <h2><a href="be-a-volunteer/create">BE A VOLUNTEER</a></h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
                 </div>
             </div>

@@ -5,9 +5,8 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h3 class="col-md-10 card-title">Life Member</h3>
-                <a href="{{ url('controll_panel/life-member/create') }}" class="col-md-2 btn btn-success">Add LifeMember</a>
-                <a href="{{ url('controll_panel/life-member/approve/list') }}" class="col-md-2 btn btn-success">see requests</a>
+                <h3 class="col-md-10 card-title">Pending Request(Volunteer)</h3>
+               
             </div>
         </div>
             <!-- /.card-header -->
@@ -29,7 +28,7 @@
                         <tr role="row">
                             <th>SL.</th>
                             <th>Name</th>
-                            <th>Excutive</th>
+                            <th>Unit</th>
                             <th>Role</th>
                             <th>Occupation</th>
                             <th>Contact</th>
@@ -39,25 +38,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php $counter = 0 ?>
-                    @foreach($dataset as $data)
+                    <?php $counter = 0; ?>
+                        @foreach($dataset as $data)
                         <?php $counter++ ?>
                         <tr role="row" class="odd">
                             <td class="dtr-control">{{ $counter }}</td>
                             <td>{{ $data->name }}</td>
-                            <td>{{ ($data->is_executive) ? 'Yes' : 'No' }}</td>
+                            <td>{{ $data->unit_type }}</td>
                             <td>{{ $data->role }}</td>
                             <td>{{ $data->occupation }}</td>
                             <td>{{ $data->phone}}</td>
                             <td>{{ $data->address}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">
-                                <a href="{{ url('/controll_panel/life-member/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
-                                <button class="deleteButton btn btn-danger" id="deletemember_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
+                               
+                                <button class="deleteButton btn btn-danger" id="approvevolunteer_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-approve">Approve</i></button>
                             </td>
                         </tr>
                         @endforeach
-
                     
 
  
@@ -78,7 +76,7 @@ window.onload = function(){
     
     $("#search-btn").on('click', function() {
         var _form = $('#search-frm');
-        var _url = "{{ url('/controll_panel/life-member/search') }}"
+        var _url = "{{ url('') }}"
         //console.log(_form.serialize());
 
         $.ajax({
@@ -96,7 +94,7 @@ window.onload = function(){
     $(".deleteButton").on('click', function(){
         //console.log('Hmm...');
         var id = $(this).attr("data-rel");
-        var _url = '{{url("controll_panel/life-member/delete") }}';
+        var _url = '{{url("controll_panel/volunteer/approve-request") }}';
 
         Swal.fire({
             title: 'Are you sure?',
@@ -105,7 +103,7 @@ window.onload = function(){
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes, Approve it!'
             }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
@@ -116,17 +114,17 @@ window.onload = function(){
                         "_token": "{{ csrf_token() }}",
                     },
                     success: function (data){
-                        $('#search-btn').trigger('click');
                         if(data.success){
+                            $('#search-btn').trigger('click');
                             Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
+                                'Approved!',
+                                'Your volunteer has been approved.',
                                 'success'
                             );
                         }else{
                             Swal.fire(
                                 'Error!',
-                                'Category Not Deleted.',
+                                'Volunteer Can not be added.',
                                 'warning'
                             );
                         }

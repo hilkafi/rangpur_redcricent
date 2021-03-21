@@ -7,6 +7,7 @@
             <div class="row">
                 <h3 class="col-md-10 card-title">Donate Get Blood Info</h3>
                 <a href="{{ url('controll_panel/donate_get_blood/create') }}" class="col-md-2 btn btn-success">New Info</a>
+                <a href="{{ url('donate-blood-list') }}" class="col-md-2 btn btn-success">Pendings</a>
             </div>
         </div>
             <!-- /.card-header -->

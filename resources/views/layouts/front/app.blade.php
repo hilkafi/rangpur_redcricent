@@ -147,7 +147,7 @@
                 </div>
             </div>
             <div class="footer_bottom">
-                <p>Copyright @ 2017 <a href="#">DartThemes</a> | All Rights Reserved </p>
+                <p>Copyright @ 2021 <a href="#">BITS</a> | All Rights Reserved </p>
             </div>
         </footer>
     </div>
@@ -173,6 +173,11 @@
         })();
     </script>
     @yield('extra_script')
-</body>
+    <script src="{{ mix('js/app.js') }}" defer></script>
+@include('sweetalert::alert')
 
+@yield('third_party_scripts')
+
+@stack('page_scripts')
+</body>
 </html>

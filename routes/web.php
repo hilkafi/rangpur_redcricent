@@ -47,6 +47,8 @@ Route::post('/controll_panel/office-staff/search', [App\Http\Controllers\Admin\O
 Route::resource('/controll_panel/volunteer', App\Http\Controllers\Admin\VolunteerController::class);
 Route::post('/controll_panel/volunteer/delete', [App\Http\Controllers\Admin\VolunteerController::class, 'delete_volunteer']);
 Route::post('/controll_panel/volunteer/search', [App\Http\Controllers\Admin\VolunteerController::class, 'search_volunteer']);
+Route::post('/controll_panel/volunteer/approve-request', [App\Http\Controllers\Admin\VolunteerController::class, 'approve_volunteer']);
+Route::get('/volunteer/pending-request', [App\Http\Controllers\Admin\VolunteerController::class, 'pending_show']);
 
 
 //life member routes
@@ -54,7 +56,8 @@ Route::post('/controll_panel/volunteer/search', [App\Http\Controllers\Admin\Volu
 Route::resource('/controll_panel/life-member', App\Http\Controllers\Admin\LifeMemberController::class);
 Route::post('/controll_panel/life-member/delete', [App\Http\Controllers\Admin\LifeMemberController::class, 'delete_member']);
 Route::post('/controll_panel/life-member/search', [App\Http\Controllers\Admin\LifeMemberController::class, 'search_member']);
-
+Route::post('/controll_panel/life-member/approve', [App\Http\Controllers\Admin\LifeMemberController::class, 'approve_member']);
+Route::get('/controll_panel/life-member/approve/list', [App\Http\Controllers\Admin\LifeMemberController::class, 'show_pending']);
 
 //Speech routes
 
@@ -67,15 +70,18 @@ Route::post('/controll_panel/speech/search', [App\Http\Controllers\Admin\SpeechC
 Route::resource('/controll_panel/project', App\Http\Controllers\Admin\ProjectController::class);
 Route::post('/controll_panel/project/delete', [App\Http\Controllers\Admin\ProjectController::class, 'delete']);
 Route::post('/controll_panel/project/search', [App\Http\Controllers\Admin\ProjectController::class, 'search']);
-
+//donate us routes
 Route::resource('/controll_panel/donate_us', App\Http\Controllers\Admin\DonateUsController::class);
+Route::get('/controll_panel/donate-us-list', [App\Http\Controllers\Admin\DonateUsController::class,'show_pending']);
+Route::post('/controll_panel/donate-us-approve', [App\Http\Controllers\Admin\DonateUsController::class,'approve_info']);
 
 //Donate Get Blood routes
 
 Route::resource('/controll_panel/donate_get_blood', App\Http\Controllers\Admin\DonateGetBloodController::class);
 Route::post('/controll_panel/donate_get_blood/delete', [App\Http\Controllers\Admin\DonateGetBloodController::class, 'delete']);
 Route::post('/controll_panel/donate_get_blood/search', [App\Http\Controllers\Admin\DonateGetBloodController::class, 'search']);
-
+Route::post('/controll_panel/donate_get_blood/approve', [App\Http\Controllers\Admin\DonateGetBloodController::class, 'approve_info']);
+Route::get('/donate-blood-list', [App\Http\Controllers\Admin\DonateGetBloodController::class, 'show_pending']);
 //Social Media routes
 
 Route::resource('/controll_panel/social_media', App\Http\Controllers\Admin\SocialMediaController::class);
@@ -86,4 +92,15 @@ Route::post('/controll_panel/social_media/search', [App\Http\Controllers\Admin\S
 //Front Routes
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 Route::get('/single-blog/{id}', [App\Http\Controllers\Front\HomeController::class, 'single_blog']);
+
+//be a member routes
+Route::resource('/be-a-member', App\Http\Controllers\BeAMemberController::class);
+//be a volunteer route
+Route::resource('/be-a-volunteer', App\Http\Controllers\BeAVolunteerController::class);
+
+//Front donate blood route
+Route::resource('/donate-us-blood', App\Http\Controllers\FDonateBloodController::class);
+//Front donate blood route
+Route::resource('/donate-us', App\Http\Controllers\FDonateUsController::class);
+
 

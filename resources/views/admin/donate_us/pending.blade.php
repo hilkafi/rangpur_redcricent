@@ -5,59 +5,43 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h3 class="col-md-10 card-title">Life Member</h3>
-                <a href="{{ url('controll_panel/life-member/create') }}" class="col-md-2 btn btn-success">Add LifeMember</a>
-                <a href="{{ url('controll_panel/life-member/approve/list') }}" class="col-md-2 btn btn-success">see requests</a>
+                <h3 class="col-md-10 card-title">Donation Info(Pendings)</h3>
+                <a href="{{ url('controll_panel/donate_us/create') }}" class="col-md-2 btn btn-success">Add Donation Info</a>
             </div>
         </div>
             <!-- /.card-header -->
         <div class="card-body">
-            <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                {{ Form::open(['onsubmit'=> "event.preventDefault()", 'class' => 'row', 'id' => 'search-frm']) }}
-                    <div class="col-md-4 mb-3">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Search by Name">
-                    </div>
-                    <div class="col-md-4 mb-3">
-                    <button class="btn btn-default" id="search-btn" >Search</button>
-                    </div>
-                {{ Form::close() }}
-            </div>
             <div class="row" id="ajax_content">
                     
                 <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
                     <thead>
                         <tr role="row">
                             <th>SL.</th>
-                            <th>Name</th>
-                            <th>Excutive</th>
-                            <th>Role</th>
-                            <th>Occupation</th>
-                            <th>Contact</th>
-                            <th>Address</th>
+                            <th>Mobile Banking Info</th>
+                            <th>Bank Details</th>
+                            <th>Description</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php $counter = 0 ?>
-                    @foreach($dataset as $data)
-                        <?php $counter++ ?>
+                    <?php $counter = 0; ?>
+                        @foreach($dataset as $data)
+                        <?php $counter++;
+                            $url = !empty($data->img) ? url('/images/'.$data->img) : url('/img/no_image.jpg');
+                        ?>
                         <tr role="row" class="odd">
-                            <td class="dtr-control">{{ $counter }}</td>
-                            <td>{{ $data->name }}</td>
-                            <td>{{ ($data->is_executive) ? 'Yes' : 'No' }}</td>
-                            <td>{{ $data->role }}</td>
-                            <td>{{ $data->occupation }}</td>
-                            <td>{{ $data->phone}}</td>
-                            <td>{{ $data->address}}</td>
-                            <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
+                            <td>{{ $counter }}</td>
+                            <td>{{ $data->mobile_banking_info }}</td>
+                            <td>{{ $data->bank_details }}</td>
+                            <td>{{ Str::limit($data->description, 50) }}</td>
+                            <td><img src="{{ $url }}" width="80" height="80"></td>
                             <td class="">
-                                <a href="{{ url('/controll_panel/life-member/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
-                                <button class="deleteButton btn btn-danger" id="deletemember_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
+                            <button class="deleteButton btn btn-danger" id="approveInfo_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-approved">Approve</i></button>
+
                             </td>
                         </tr>
                         @endforeach
-
                     
 
  
@@ -78,7 +62,7 @@ window.onload = function(){
     
     $("#search-btn").on('click', function() {
         var _form = $('#search-frm');
-        var _url = "{{ url('/controll_panel/life-member/search') }}"
+        var _url = "{{ url('') }}"
         //console.log(_form.serialize());
 
         $.ajax({
@@ -96,7 +80,7 @@ window.onload = function(){
     $(".deleteButton").on('click', function(){
         //console.log('Hmm...');
         var id = $(this).attr("data-rel");
-        var _url = '{{url("controll_panel/life-member/delete") }}';
+        var _url = '{{url("controll_panel/donate-us-approve") }}';
 
         Swal.fire({
             title: 'Are you sure?',
@@ -105,7 +89,7 @@ window.onload = function(){
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes, approve it!'
             }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
@@ -116,17 +100,17 @@ window.onload = function(){
                         "_token": "{{ csrf_token() }}",
                     },
                     success: function (data){
-                        $('#search-btn').trigger('click');
                         if(data.success){
+                            $('#search-btn').trigger('click');
                             Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
+                                'Approved!',
+                                'Your info has been added.',
                                 'success'
                             );
                         }else{
                             Swal.fire(
                                 'Error!',
-                                'Category Not Deleted.',
+                                'Info addition error.',
                                 'warning'
                             );
                         }
