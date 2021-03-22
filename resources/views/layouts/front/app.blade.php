@@ -311,11 +311,13 @@
             </div>
         </footer>
     </div>
-    <script src="{{ url('js/jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ url('js/animationCounter.js') }}"></script>
-    <script src="{{ url('js/bootstrap.min.js') }}"></script>
-    <script src="{{ url('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ url('js/active.js') }}"></script>
+    
+    <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ url('js/jquery-3.1.1.min.js') }}" defer="defer"></script>
+    <script src="{{ url('js/animationCounter.js') }}" defer="defer"></script>
+    <script src="{{ url('js/bootstrap.min.js') }}" defer="defer"></script>
+    <script src="{{ url('js/owl.carousel.min.js') }}" defer="defer"></script>
+    <script src="{{ url('js/active.js') }}" defer="defer"></script>
 
     <script type="text/javascript">
         var _gaq = _gaq || [];
@@ -333,7 +335,6 @@
         })();
     </script>
     @yield('extra_script')
-    <script src="{{ mix('js/app.js') }}" defer></script>
 @include('sweetalert::alert')
 
 @yield('third_party_scripts')
