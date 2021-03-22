@@ -1,30 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ config('app.name') }}</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-          crossorigin="anonymous"/>
-
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
-    @yield('third_party_stylesheets')
-
-    @stack('page_css')
-</head>
-
-
-<div class="container-fluid">
-    <div class="card card-default">
-        <div class="card-header">
-            <h3 class="card-title">Add a Volunteer</h3>
-        </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-        {{ Form::open(['class' => 'form-horizontal', 'method' => 'post', 'enctype'=>'multipart/form-data' ,'url' => 'be-a-volunteer']) }}
+@extends('layouts.front.app')
+@section('content')
+<section class="our_activity">
+    <div class="container">
+        <div class="row">
+            <h2 style="margin-bottom: 20px">Become A Volunteer</h2>
+            <div class="col-md-12">
+            {{ Form::open(['class' => 'form-horizontal', 'method' => 'post', 'enctype'=>'multipart/form-data' ,'url' => '/volunteer-form']) }}
             
             <div class="card-body">
                 <div class="form-group row">
@@ -50,6 +31,12 @@
                         </select>
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="role" class="col-sm-2 col-form-label">Unit Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="unit_name" id="unit_name" placeholder="Unit Name">
+                    </div>
+                </div>
 
                 <div class="form-group row">
                     <label for="role" class="col-sm-2 col-form-label">Role</label>
@@ -65,11 +52,25 @@
                     </div>
                 </div>
 
+                <div class="form-group row">
+                    <label for="Occupation" class="col-sm-2 col-form-label">Institution</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="institution" id="instituiton" placeholder="Volunteer's Profession">
+                    </div>
+                </div>
+
 
                 <div class="form-group row">
                     <label for="phone" class="col-sm-2 col-form-label">Contact</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="contact" id="contact" placeholder="Employee Contact">
+                        <input type="text" class="form-control" name="contact" id="contact" placeholder=" Contact">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-2 col-form-label">Blood Group</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="blood_group" id="blood_group" placeholder="Blood Group">
                     </div>
                 </div>
 
@@ -79,20 +80,19 @@
                         <input type="text" class="form-control" name="address" id="address" placeholder="Employee Address">
                     </div>
                 </div>
-
-
-
-
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Add</button>
+                        <button class="btn btn-danger">Save</button>
                     </div>
                 </div>
             </div>
             <!-- /.card-body -->
-        {{ Form::close() }}
+        {{ Form::close() }}                
+            </div>
+        </div>
     </div>
-</div>
+</section>
+@endsection
 <script>
 window.onload = function(){
 

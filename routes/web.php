@@ -49,7 +49,7 @@ Route::post('/controll_panel/volunteer/delete', [App\Http\Controllers\Admin\Volu
 Route::post('/controll_panel/volunteer/search', [App\Http\Controllers\Admin\VolunteerController::class, 'search_volunteer']);
 Route::post('/controll_panel/volunteer/approve-request', [App\Http\Controllers\Admin\VolunteerController::class, 'approve_volunteer']);
 Route::get('/volunteer/pending-request', [App\Http\Controllers\Admin\VolunteerController::class, 'pending_show']);
-
+Route::get('/volunteer/executive', [App\Http\Controllers\Admin\VolunteerController::class, 'executive_show']);
 
 //life member routes
 
@@ -58,6 +58,7 @@ Route::post('/controll_panel/life-member/delete', [App\Http\Controllers\Admin\Li
 Route::post('/controll_panel/life-member/search', [App\Http\Controllers\Admin\LifeMemberController::class, 'search_member']);
 Route::post('/controll_panel/life-member/approve', [App\Http\Controllers\Admin\LifeMemberController::class, 'approve_member']);
 Route::get('/controll_panel/life-member/approve/list', [App\Http\Controllers\Admin\LifeMemberController::class, 'show_pending']);
+Route::get('/executive-list', [App\Http\Controllers\Admin\LifeMemberController::class, 'show_executive']);
 
 //Speech routes
 
@@ -98,4 +99,7 @@ Route::get('/become-member', [App\Http\Controllers\Front\HomeController::class, 
 Route::get('/become-volunteer', [App\Http\Controllers\Front\HomeController::class, 'become_voluteer']);
 Route::get('/contact-us', [App\Http\Controllers\Front\HomeController::class, 'contact_us']);
 
+// become volunteer route
 
+Route::resource('/volunteer-form', App\Http\Controllers\BeAVolunteerController::class);
+Route::resource('/member', App\Http\Controllers\BeAMemberController::class);

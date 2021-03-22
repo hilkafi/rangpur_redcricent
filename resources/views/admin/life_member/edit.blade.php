@@ -60,6 +60,12 @@
                         <input type="text" class="form-control" value = "{{$data->phone}}" name="contact" id="contact" placeholder="Contact">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-2 col-form-label">Blood Group</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" value='{{$data->blood_group}}' name="blood_group" id="blood_group" placeholder="Blood Group">
+                    </div>
+                </div>
 
                 <div class="form-group row">
                     <label for="address" class="col-sm-2 col-form-label">Address</label>

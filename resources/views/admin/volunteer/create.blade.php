@@ -34,6 +34,24 @@
                         </select>
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="role" class="col-sm-2 col-form-label">Unit Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="unit_name" id="unit_name" placeholder="Unit Name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Unit" class="col-sm-2 col-form-label">Is Executive?</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="is_executive" id="is_executive">
+                            <option value="">Select </option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                          
+                        </select>
+                    </div>
+                </div>
 
                 <div class="form-group row">
                     <label for="role" class="col-sm-2 col-form-label">Role</label>
@@ -46,6 +64,20 @@
                     <label for="Occupation" class="col-sm-2 col-form-label">Occupation</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="occupation" id="occupation" placeholder="Volunteer's Profession">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Occupation" class="col-sm-2 col-form-label">Instituton</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="institution" id="institution" placeholder="Institution Name">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-2 col-form-label">Blood Group</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="blood_group" id="blood_group" placeholder="Blood Group">
                     </div>
                 </div>
 

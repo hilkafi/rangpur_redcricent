@@ -7,7 +7,8 @@
             <div class="row">
                 <h3 class="col-md-10 card-title">Volunteers</h3>
                 <a href="{{ url('controll_panel/volunteer/create') }}" class="col-md-2 btn btn-success">Add Volunteer</a>
-                <a href="{{ url('volunteer/pending-request') }}" class="col-md-2 btn btn-success">See Pending Request</a>
+                <a href="{{ url('volunteer/pending-request') }}" class="col-md-2 btn btn-success">See Pending Request</a>&nbsp;&nbsp;
+                <a href="{{ url('volunteer/executive') }}" class="col-md-2 btn btn-success">Executive Committee</a>
             </div>
         </div>
             <!-- /.card-header -->
@@ -15,7 +16,7 @@
             <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
                 {{ Form::open(['onsubmit'=> "event.preventDefault()", 'class' => 'row', 'id' => 'search-frm']) }}
                     <div class="col-md-4 mb-3">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Search by Name">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Search by Unit Name">
                     </div>
                     <div class="col-md-4 mb-3">
                     <button class="btn btn-default" id="search-btn" >Search</button>
@@ -30,10 +31,13 @@
                             <th>SL.</th>
                             <th>Name</th>
                             <th>Unit</th>
-                            <th>Role</th>
-                            <th>Occupation</th>
+                            <th>Unit Name</th>
+                            <th>Position</th>
+                           
                             <th>Contact</th>
+                            <th>Institution</th>
                             <th>Address</th>
+                            <th>Blood Group</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -46,10 +50,13 @@
                             <td class="dtr-control">{{ $counter }}</td>
                             <td>{{ $data->name }}</td>
                             <td>{{ $data->unit_type }}</td>
+                            <td>{{ $data->unit_name }}</td>
                             <td>{{ $data->role }}</td>
-                            <td>{{ $data->occupation }}</td>
+                         
                             <td>{{ $data->phone}}</td>
+                            <td>{{ $data->institute}}</td>
                             <td>{{ $data->address}}</td>
+                            <td>{{ $data->blood_group}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">
                                 <a href="{{ url('/controll_panel/volunteer/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>

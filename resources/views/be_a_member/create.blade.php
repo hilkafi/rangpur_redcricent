@@ -1,30 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ config('app.name') }}</title>
-    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-          crossorigin="anonymous"/>
-
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
-    @yield('third_party_stylesheets')
-
-    @stack('page_css')
-</head>
 
 
-<div class="container-fluid">
-    <div class="card card-default">
-        <div class="card-header">
-            <h3 class="card-title">Be a Life Member</h3>
-        </div>
-            <!-- /.card-header -->
-            <!-- form start -->
-        {{ Form::open(['class' => 'form-horizontal', 'method' => 'post', 'enctype'=>'multipart/form-data' ,'url' => 'be-a-member']) }}
+@extends('layouts.front.app')
+@section('content')
+<section class="our_activity">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 style="margin-bottom: 20px">Become A Member</h2>
+                {{ Form::open(['class' => 'form-horizontal', 'method' => 'post', 'enctype'=>'multipart/form-data' ,'url' => '/member']) }}
             
             <div class="card-body">
                 <div class="form-group row">
@@ -39,18 +22,6 @@
                         <input type="file" class="form-control" name="img" id="img" >
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="Execuitve Committee" class="col-sm-2 col-form-label">Is in Executive Committee?</label>
-                    <div class="col-sm-10">
-                        <select class="form-control" name="ex_cmt" id="ex_cmt">
-                            <option value="">Select Option</option>
-                            <option value="0">No</option>
-                            <option value="1">Yes</option>
-                            
-                        </select>
-                    </div>
-                </div>
-
                 <div class="form-group row">
                     <label for="role" class="col-sm-2 col-form-label">Role</label>
                     <div class="col-sm-10">
@@ -72,6 +43,12 @@
                         <input type="text" class="form-control" name="contact" id="contact" placeholder="Contact">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="phone" class="col-sm-2 col-form-label">Bloog Group</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="blood_group" id="blood_group" placeholder="Blood Group">
+                    </div>
+                </div>
 
                 <div class="form-group row">
                     <label for="address" class="col-sm-2 col-form-label">Address</label>
@@ -79,20 +56,20 @@
                         <input type="text" class="form-control" name="address" id="address" placeholder="Member's Address">
                     </div>
                 </div>
-
-
-
-
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                        <button type="submit" class="btn btn-default">Add</button>
+                        <button class="btn btn-danger">Save</button>
                     </div>
                 </div>
             </div>
             <!-- /.card-body -->
         {{ Form::close() }}
+
+            </div>
+        </div>
     </div>
-</div>
+</section>
+@endsection
 <script>
 window.onload = function(){
 

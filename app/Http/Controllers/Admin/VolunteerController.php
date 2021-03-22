@@ -74,6 +74,10 @@ class VolunteerController extends Controller
         $data->phone = $request->contact;
         $data->address = $request->address;
         $data->is_approved = '1';
+        $data->institute = $request->institution;
+        $data->blood_group = $request->blood_group;
+        $data->unit_name = $request->unit_name;
+        $data->is_executive = $request->is_executive;
         $data->created_at = time();
         
         if($data->save()){
@@ -142,6 +146,11 @@ class VolunteerController extends Controller
         $data->occupation = $request->occupation;
         $data->phone = $request->contact;
         $data->address = $request->address;
+        $data->is_approved = '1';
+        $data->institute = $request->institution;
+        $data->blood_group = $request->blood_group;
+        $data->unit_name = $request->unit_name;
+        $data->is_executive = $request->is_executive;
         if(!empty($request->img)) {
             if(!empty($data->img)){
                 $path = public_path()."/images/".$data->img;
@@ -172,7 +181,7 @@ class VolunteerController extends Controller
     public function search_volunteer(Request $request) {
         $query =Volunteer::query();
         if(!empty($request->name)){
-            $query->where('name', 'like', '%' . $request->name . '%');
+            $query->where('unit_name', 'like', '%' . $request->name . '%');
         }
 
         $dataset = $query->orderBy('id', 'DESC')->get();
@@ -207,5 +216,9 @@ class VolunteerController extends Controller
     public function pending_show(){
         $dataset = Volunteer::where('is_approved','0')->orderBy('id', 'DESC')->get();
         return view('admin.volunteer.pending', compact('dataset'));
+    }
+    public function executive_show(){
+        $dataset = Volunteer::where('is_executive','yes')->orderBy('id', 'ASC')->get();
+        return view('admin.volunteer.executive_committee', compact('dataset'));
     }
 }
