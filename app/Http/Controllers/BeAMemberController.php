@@ -69,6 +69,7 @@ class BeAMemberController extends Controller
         $data->occupation = $request->occupation;
         $data->phone = $request->contact;
         $data->address = $request->address;
+        $data->blood_group = $request->blood_group;
         $data->is_approved = '0';
         $data->created_at = time();
         

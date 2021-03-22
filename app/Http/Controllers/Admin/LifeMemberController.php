@@ -74,6 +74,7 @@ class LifeMemberController extends Controller
         $data->occupation = $request->occupation;
         $data->phone = $request->contact;
         $data->address = $request->address;
+        $data->blood_group = $request->blood_group;
         $data->is_approved = '1';
         $data->created_at = time();
         
@@ -142,6 +143,7 @@ class LifeMemberController extends Controller
         $data->occupation = $request->occupation;
         $data->phone = $request->contact;
         $data->address = $request->address;
+        $data->blood_group= $request->blood_group;
         if(!empty($request->img)){
             if(!empty($data->img)){
                 $path = public_path()."/images/".$data->img;
@@ -198,6 +200,17 @@ class LifeMemberController extends Controller
         $dataset = LifeMember::where('is_approved','0')->orderBy('id', 'DESC')->get();
         return view('admin.life_member.pending',compact('dataset'));
     }
+
+    public function show_executive(){
+        $dataset = LifeMember::where('is_executive','1')->orderBy('id', 'ASC')->get();
+        return view('admin.life_member.executive',compact('dataset'));
+    }
+
+
+
+
+
+
     public function approve_member(Request $request)
     {
         $data = LifeMember::find($request->id);

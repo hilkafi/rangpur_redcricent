@@ -180,7 +180,7 @@
                     <div class="promo-icon">
                         <i class="material-icons">people</i>
                     </div>
-                    <h2><a href="{{ url('/become-member') }}">BE A MEMBER</a></h2>
+                    <h2><a href="{{ url('/member/create') }}">BE A MEMBER</a></h2>
                     <p>Membership of Bangladesh Red Crescent Society is an easy and a fluent way to support valuable work done by the society and to speak out for humane values.</p>
 
                 </div>
@@ -190,7 +190,7 @@
                     <div class="promo-icon">
                         <i class="material-icons">volunteer_activism</i>
                     </div>
-                    <h2><a href="{{ url('/become-volunteer') }}">BE A VOLUNTEER</a></h2>
+                    <h2><a href="{{ url('/volunteer-form/create') }}">BE A VOLUNTEER</a></h2>
                     <p>Volunteers are  the backbone of our Movement. You can make a difference by volunteering with Bangladesh Red Crescent Society in tackling humanitarian challenges.</p>
 
                 </div>

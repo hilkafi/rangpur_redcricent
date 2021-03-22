@@ -5,10 +5,10 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h3 class="col-md-10 card-title">Life Member</h3>
-                <a href="{{ url('controll_panel/life-member/create') }}" class="col-md-2 btn btn-success">Add LifeMember</a>
-                <a href="{{ url('controll_panel/life-member/approve/list') }}" class="col-md-2 btn btn-success">see requests</a> &nbsp;&nbsp;
-                <a href="{{ url('executive-list') }}" class="col-md-2 btn btn-success">Executive Committe</a>
+                <h3 class="col-md-10 card-title">Volunteers</h3>
+                <a href="{{ url('controll_panel/volunteer/create') }}" class="col-md-2 btn btn-success">Add Volunteer</a>
+                <a href="{{ url('volunteer/pending-request') }}" class="col-md-2 btn btn-success">See Pending Request</a>&nbsp;&nbsp;
+                <a href="{{ url('controll_panel/volunteer') }}" class="col-md-2 btn btn-success">Volunteers</a>
             </div>
         </div>
             <!-- /.card-header -->
@@ -30,37 +30,40 @@
                         <tr role="row">
                             <th>SL.</th>
                             <th>Name</th>
+                            <th>Unit</th>
+                            <th>Unit Name</th>
+                            <th>Position</th>
                            
-                            <th>Role</th>
-                            <th>Occupation</th>
                             <th>Contact</th>
-                            <th>Blood Group</th>
+                            <th>Institution</th>
                             <th>Address</th>
+                            <th>Blood Group</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php $counter = 0 ?>
-                    @foreach($dataset as $data)
+                    <?php $counter = 0; ?>
+                        @foreach($dataset as $data)
                         <?php $counter++ ?>
                         <tr role="row" class="odd">
                             <td class="dtr-control">{{ $counter }}</td>
                             <td>{{ $data->name }}</td>
-                            
+                            <td>{{ $data->unit_type }}</td>
+                            <td>{{ $data->unit_name }}</td>
                             <td>{{ $data->role }}</td>
-                            <td>{{ $data->occupation }}</td>
+                         
                             <td>{{ $data->phone}}</td>
-                            <td>{{ $data->blood_group}}</td>
+                            <td>{{ $data->institute}}</td>
                             <td>{{ $data->address}}</td>
+                            <td>{{ $data->blood_group}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">
-                                <a href="{{ url('/controll_panel/life-member/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
-                                <button class="deleteButton btn btn-danger" id="deletemember_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
+                                <a href="{{ url('/controll_panel/volunteer/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
+                                <button class="deleteButton btn btn-danger" id="deletevolunteer_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                         @endforeach
-
                     
 
  
@@ -81,7 +84,7 @@ window.onload = function(){
     
     $("#search-btn").on('click', function() {
         var _form = $('#search-frm');
-        var _url = "{{ url('/controll_panel/life-member/search') }}"
+        var _url = "{{ url('/controll_panel/volunteer/search') }}"
         //console.log(_form.serialize());
 
         $.ajax({
@@ -99,7 +102,7 @@ window.onload = function(){
     $(".deleteButton").on('click', function(){
         //console.log('Hmm...');
         var id = $(this).attr("data-rel");
-        var _url = '{{url("controll_panel/life-member/delete") }}';
+        var _url = '{{url("controll_panel/volunteer/delete") }}';
 
         Swal.fire({
             title: 'Are you sure?',
@@ -119,8 +122,8 @@ window.onload = function(){
                         "_token": "{{ csrf_token() }}",
                     },
                     success: function (data){
-                        $('#search-btn').trigger('click');
                         if(data.success){
+                            $('#search-btn').trigger('click');
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',

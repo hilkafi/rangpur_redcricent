@@ -36,6 +36,25 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="role" class="col-sm-2 col-form-label">Unit Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" value="{{$data->unit_name}}" name="unit_name" id="unit_name" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Unit" class="col-sm-2 col-form-label">Is Executive?</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="is_executive" id="is_executive">
+                            <option value="{{$data->is_executive}}">{{$data->is_executive}} </option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                          
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <label for="role" class="col-sm-2 col-form-label">Role</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" value="{{$data->role}}" name="role" id="role" placeholder="Volunteer Role">
@@ -49,11 +68,24 @@
                     </div>
                 </div>
 
+                <div class="form-group row">
+                    <label for="role" class="col-sm-2 col-form-label">Institution</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" value="{{$data->instituiton}}" name="institution" id="institution" placeholder="">
+                    </div>
+                </div>
+
 
                 <div class="form-group row">
                     <label for="phone" class="col-sm-2 col-form-label">Contact</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" value="{{$data->phone}}" name="contact" id="contact" placeholder="Employee Contact">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="role" class="col-sm-2 col-form-label">Blood Group</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" value="{{$data->blood_group}}" name="blood_group" id="blood_group" placeholder="">
                     </div>
                 </div>
 

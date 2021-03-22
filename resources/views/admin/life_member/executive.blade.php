@@ -8,7 +8,7 @@
                 <h3 class="col-md-10 card-title">Life Member</h3>
                 <a href="{{ url('controll_panel/life-member/create') }}" class="col-md-2 btn btn-success">Add LifeMember</a>
                 <a href="{{ url('controll_panel/life-member/approve/list') }}" class="col-md-2 btn btn-success">see requests</a> &nbsp;&nbsp;
-                <a href="{{ url('executive-list') }}" class="col-md-2 btn btn-success">Executive Committe</a>
+                <a href="{{ url('controll_panel/life-member/') }}" class="col-md-2 btn btn-success">Life Members</a>
             </div>
         </div>
             <!-- /.card-header -->
