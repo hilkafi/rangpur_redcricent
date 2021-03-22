@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Speech;
+use App\Models\DonateUs;
+use App\Models\DonateGetBlood;
 
 class HomeController extends Controller
 {
@@ -22,5 +24,23 @@ class HomeController extends Controller
     public function single_blog($id) {
         $data = Blog::find($id);
         return view('front.single_blog', compact('data'));
+    }
+
+    public function donate_us() {
+        $data = DonateUs::find(1);
+        return view('front.donate_us', compact('data'));
+    }
+
+    public function donate_blood() {
+        $dataset = DonateGetBlood::all();
+        return view('front.donate_blood', compact('dataset'));
+    }
+
+    public function become_member() {
+        return view('front.become_member');
+    }
+
+    public function become_voluteer() {
+        return view('front.become_volunteer');
     }
 }

@@ -45,6 +45,7 @@ class DonateUsController extends Controller
         }
 
         $data = new DonateUs();
+        $data->intro = $request->intro;
         $data->mobile_banking_info = $request->mobile_banking_info;
         $data->bank_details = $request->bank_details;
         $data->img = $imageName;
@@ -97,6 +98,7 @@ class DonateUsController extends Controller
         }
 
         $data = DonateUs::find($id);
+        $data->intro = $request->intro;
         $data->mobile_banking_info = $request->mobile_banking_info;
         $data->bank_details = $request->bank_details;
         $data->description = $request->description;

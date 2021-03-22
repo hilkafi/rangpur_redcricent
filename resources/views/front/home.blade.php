@@ -160,8 +160,8 @@
                     <div class="promo-icon">
                         <i class="material-icons">local_hospital</i>
                     </div>
-                    <h2><a href="#">DONATE US</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                    <h2><a href="{{ url('/donate-us') }}">DONATE US</a></h2>
+                    <p>Your thoughtful donation of any amount would prevent and reduce human sufferings and save lives of the most vulnerable and marginalized groups.</p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-12">
@@ -169,8 +169,8 @@
                     <div class="promo-icon">
                         <i class="material-icons">bloodtype</i>
                     </div>
-                    <h2><a href="#">DONATE/GET BLOOD</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                    <h2><a href="{{ url('/donate-blood') }}">DONATE/GET BLOOD</a></h2>
+                    <p>Giving blood is a simple thing to do, but it can make a big difference in the lives of others. Make a life-saving blood donation appointment or request for Blood. </p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-12">
@@ -178,8 +178,8 @@
                     <div class="promo-icon">
                         <i class="material-icons">people</i>
                     </div>
-                    <h2><a href="#">BE A MEMBER</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                    <h2><a href="{{ url('/become-member') }}">BE A MEMBER</a></h2>
+                    <p>Membership of Bangladesh Red Crescent Society is an easy and a fluent way to support valuable work done by the society and to speak out for humane values.</p>
                 </div>
             </div>
             <div class="col-md-3 col-xs-12">
@@ -187,8 +187,8 @@
                     <div class="promo-icon">
                         <i class="material-icons">volunteer_activism</i>
                     </div>
-                    <h2><a href="#">BE A VOLUNTEER</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </p>
+                    <h2><a href="{{ url('/become-volunteer') }}">BE A VOLUNTEER</a></h2>
+                    <p>Volunteers are  the backbone of our Movement. You can make a difference by volunteering with Bangladesh Red Crescent Society in tackling humanitarian challenges.</p>
                 </div>
             </div>
         </div>

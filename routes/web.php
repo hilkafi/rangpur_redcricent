@@ -86,4 +86,8 @@ Route::post('/controll_panel/social_media/search', [App\Http\Controllers\Admin\S
 //Front Routes
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 Route::get('/single-blog/{id}', [App\Http\Controllers\Front\HomeController::class, 'single_blog']);
+Route::get('/donate-us', [App\Http\Controllers\Front\HomeController::class, 'donate_us']);
+Route::get('/donate-blood', [App\Http\Controllers\Front\HomeController::class, 'donate_blood']);
+Route::get('/become-member', [App\Http\Controllers\Front\HomeController::class, 'become_member']);
+Route::get('/become-volunteer', [App\Http\Controllers\Front\HomeController::class, 'become_voluteer']);
 

@@ -12,21 +12,21 @@
             
             <div class="card-body">
                 <div class="form-group row">
+                    <label for="intro" class="col-sm-2 col-form-label">Intro</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="intro" id="intro" placeholder="Intro"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="mobile_banking_info" class="col-sm-2 col-form-label">Mobile Banking Info</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" name="mobile_banking_info" id="mobile_banking_info" placeholder="mobile_banking_info"></textarea>
+                        <textarea class="form-control" name="mobile_banking_info" id="mobile_banking_info" placeholder="Mobile Banking Info"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="bank_details" class="col-sm-2 col-form-label">Bank Details</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" name="bank_details" id="bank_details" placeholder="bank_details"></textarea>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Descripiton</label>
-                    <div class="col-sm-10">
-                        <textarea class="form-control" name="description" id="description" placeholder="description"></textarea>
+                        <textarea class="form-control" name="bank_details" id="bank_details" placeholder="Bank Details"></textarea>
                     </div>
                 </div>
 

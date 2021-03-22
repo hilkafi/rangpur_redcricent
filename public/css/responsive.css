@@ -9,6 +9,7 @@
     .our_activity .single-Promo p {
         text-align: justify;
     }
+
     .donors .donors_input h4 select {
         max-width: 483px;
     }
@@ -49,6 +50,18 @@
     }
     .footer_carosal .footer_carosal_icon .item img {
         width: 100px;
+    }
+
+    .donors {
+        height: 1100px;
+    }
+
+    .donors .item iframe {
+        width: 100%;
+    }
+
+    .donors .donors_input {
+        background: none;
     }
 }
 
@@ -141,5 +154,17 @@
     }
     .carosal_bottom {
         height: auto;
+    }
+
+    .donors {
+        height: 1100px;
+    }
+
+    .donors .item iframe {
+        width: 100%;
+    }
+
+    .donors .donors_input {
+        background: none;
     }
 }

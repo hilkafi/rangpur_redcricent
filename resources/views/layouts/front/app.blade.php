@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ url('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ url('css/megamenu.css') }}">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
     <link rel="stylesheet" href="{{ url('css/responsive.css') }}">
     @yield('extra_style')
@@ -38,31 +39,190 @@
                 </div>
             </section>
             <section class="header-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-5 col-sm-12 col-xs-12">
-                            <a href="{{ url('/') }}">
-                                <div class="main-logo">
-                                    <img src="{{ url('img/bdrcs-logo.png') }}" alt="" width="100" height="100">
-                                    <h2>BDRCS RANGPUR</h2>
+                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                    <div class="container">
+                    <a class="navbar-brand" href="{{ url('/') }}">BDRCS RANGPUR</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Who We Are</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">What We Do</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Get Involved
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container">
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                        <span class="text-uppercase text-white">Category 1</span>
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <a href="">
+                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                        </a>
+                                        <p class="text-white">Short image call to action</p>
+
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    </div>
                                 </div>
-                            </a>
-                        </div>
-                        <div class="col-md-7 col-sm-12 col-xs-12">
-                            <div class="menu">
-                                <ul class="nav navbar-nav">
-                                    <li class="active"><a href="#">HOME</a></li>
-                                    <li><a href="#">ABOUT US</a></li>
-                                    <li><a href="#">CAUSES</a></li>
-                                    <li><a href="#">EVENT</a></li>
-                                    <li><a href="#">PORTFOLIO </a></li>
-                                    <li><a href="#">BLOG</a></li>
-                                    <li><a href="#">CONTACT</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                                <!--  /.container  -->
+
+
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Media & Publication
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                                <div class="container">
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                        <span class="text-uppercase text-white">Category 2</span>
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <a href="">
+                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                        </a>
+                                        <p class="text-white">Short image call to action</p>
+
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    </div>
+                                </div>
+                                <!--  /.container  -->
+
+
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Contact Us
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container">
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                    <span class="text-uppercase text-white">Category 3</span>
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+
+                                        <a href="">
+                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                        </a>
+                                        <p class="text-white">Short image call to action</p>
+                                        
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    </div>
+                                </div>
+                                <!--  /.container  -->
+
+
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="donate btn btn-danger" href="#" style="padding-top: 0px; padding-bottom: 0px;">Donate Us</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0" style="float: right">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        </form>
                     </div>
-                </div>
+                    </div>
+                </nav>
             </section>
         </header>
 

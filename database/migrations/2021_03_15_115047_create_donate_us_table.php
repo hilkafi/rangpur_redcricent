@@ -15,6 +15,7 @@ class CreateDonateUsTable extends Migration
     {
         Schema::create('donate_us', function (Blueprint $table) {
             $table->id();
+            $table->text('intro')->nullable();
             $table->text('mobile_banking_info')->nullable();
             $table->text('bank_details')->nullable();
             $table->char('img', 255)->nullable();
