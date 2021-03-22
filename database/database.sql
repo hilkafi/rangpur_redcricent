@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2021 at 10:17 AM
+-- Generation Time: Mar 22, 2021 at 09:16 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -130,6 +130,7 @@ INSERT INTO `donate_get_bloods` (`id`, `unit_name`, `address`, `hot_line`, `crea
 
 CREATE TABLE `donate_us` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `intro` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `mobile_banking_info` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `bank_details` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `img` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -142,8 +143,8 @@ CREATE TABLE `donate_us` (
 -- Dumping data for table `donate_us`
 --
 
-INSERT INTO `donate_us` (`id`, `mobile_banking_info`, `bank_details`, `img`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'bkash', 'Brack bank', '1616127840.jpg', 'This is descrition hdfgh', '2021-03-18 22:21:37', '2021-03-18 22:24:00');
+INSERT INTO `donate_us` (`id`, `intro`, `mobile_banking_info`, `bank_details`, `img`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'Your thoughtful donation, of any amount or value can go a long way towards helping communities, families and individuals shape their lives in new and improved ways. From new cattle to new books, from improved sanitation to greater awareness, your donation is crucial to lives across Bangladesh.\r\n\r\nSee below for different ways you can donate online, in person, as well as to our dedicated fundraising bank account.', 'bkash', 'Write a check, deposit cash, or transfer funds to BDRCS’ central fundraising account. The details of our account are as follows:\r\n\r\nAccount Number: 0000240000191\r\n\r\nBank Name: Sonali Bank\r\n\r\nBank Address: Sonali Bank, Moghbazar Branch, Dhaka, Bangladesh\r\n\r\nSwift code: BSONBDDHLOD', '1616379920.jpg', 'This is descrition hdfgh', '2021-03-18 22:21:37', '2021-03-21 20:25:21');
 
 -- --------------------------------------------------------
 
