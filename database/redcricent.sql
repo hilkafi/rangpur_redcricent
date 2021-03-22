@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2021 at 10:59 AM
+-- Generation Time: Mar 22, 2021 at 12:40 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -190,7 +190,8 @@ CREATE TABLE `life_members` (
 
 INSERT INTO `life_members` (`id`, `name`, `occupation`, `is_executive`, `role`, `img`, `phone`, `address`, `blood_group`, `is_approved`, `created_at`, `updated_at`) VALUES
 (2, 'Abdullahil Kafi', 'Egineer', 1, 'Manager', '1616116324.jpg', '01115', 'Panchagarh', NULL, '1', '2021-03-18 19:12:04', '2021-03-18 19:12:04'),
-(3, 'Adam C', 'Student', NULL, 'Member', '1616406319.jpg', '01751465611', 'manchester, london', 'o positive', '0', '2021-03-22 03:45:19', '2021-03-22 03:45:19');
+(3, 'Adam C', 'Student', NULL, 'Member', '1616406319.jpg', '01751465611', 'manchester, london', 'o positive', '1', '2021-03-22 03:45:19', '2021-03-22 04:26:53'),
+(4, 'Adam CO', 'Student', NULL, 'Member', '1616408801.jpg', '01751465611', 'manchester, london', 'o positive', '0', '2021-03-22 04:26:41', '2021-03-22 04:26:41');
 
 -- --------------------------------------------------------
 
@@ -399,6 +400,7 @@ CREATE TABLE `volunteers` (
   `institute` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_approved` enum('1','0') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `is_executive` enum('yes','no') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'no',
+  `blood_donation` date DEFAULT NULL,
   `blood_group` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -408,9 +410,9 @@ CREATE TABLE `volunteers` (
 -- Dumping data for table `volunteers`
 --
 
-INSERT INTO `volunteers` (`id`, `name`, `occupation`, `unit_type`, `unit_name`, `volunteer_type`, `role`, `img`, `phone`, `address`, `institute`, `is_approved`, `is_executive`, `blood_group`, `created_at`, `updated_at`) VALUES
-(1, 'Kafi', 'Egineer', 'zila', '', NULL, 'Manager', '1616114867.jpg', '01115', 'Panchagarh', '', '1', 'no', '', '2021-03-18 18:47:47', '2021-03-18 18:47:47'),
-(3, 'Rashikul Islam', 'Student', 'city_corporation', 'Rangpur', NULL, 'Member', '1616403372.jpg', '01751465611', 'manchester, london', NULL, '1', 'yes', 'o positive', '2021-03-22 02:56:12', '2021-03-22 03:21:58');
+INSERT INTO `volunteers` (`id`, `name`, `occupation`, `unit_type`, `unit_name`, `volunteer_type`, `role`, `img`, `phone`, `address`, `institute`, `is_approved`, `is_executive`, `blood_donation`, `blood_group`, `created_at`, `updated_at`) VALUES
+(1, 'Kafi', 'Egineer', 'zila', '', NULL, 'Manager', '1616114867.jpg', '01115', 'Panchagarh', '', '1', 'no', NULL, '', '2021-03-18 18:47:47', '2021-03-18 18:47:47'),
+(3, 'Rashikul Islam', 'Student', 'city_corporation', 'Rangpur', NULL, 'Member', '1616403372.jpg', '01751465611', 'manchester, london', NULL, '1', 'yes', NULL, 'o positive', '2021-03-22 02:56:12', '2021-03-22 03:21:58');
 
 --
 -- Indexes for dumped tables
@@ -558,7 +560,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `life_members`
 --
 ALTER TABLE `life_members`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `migrations`

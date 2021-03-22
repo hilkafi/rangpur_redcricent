@@ -76,6 +76,7 @@ class VolunteerController extends Controller
         $data->is_approved = '1';
         $data->institute = $request->institution;
         $data->blood_group = $request->blood_group;
+        $data->blood_donation = $request->blood_date;
         $data->unit_name = $request->unit_name;
         $data->is_executive = $request->is_executive;
         $data->created_at = time();
@@ -149,6 +150,7 @@ class VolunteerController extends Controller
         $data->is_approved = '1';
         $data->institute = $request->institution;
         $data->blood_group = $request->blood_group;
+        $data->blood_donation = $request->blood_date;
         $data->unit_name = $request->unit_name;
         $data->is_executive = $request->is_executive;
         if(!empty($request->img)) {

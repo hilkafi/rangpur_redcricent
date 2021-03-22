@@ -90,6 +90,13 @@
                 </div>
 
                 <div class="form-group row">
+                    <label for="phone" class="col-sm-2 col-form-label">Last Date of Blood Donation </label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" value="{{$data->blood_donation}}" name="blood_date" id="blood_date" placeholder="">
+                    </div>
+                </div>
+
+                <div class="form-group row">
                     <label for="address" class="col-sm-2 col-form-label">Address</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" value="{{$data->address}}" name="address" id="address" placeholder="Employee Address">
