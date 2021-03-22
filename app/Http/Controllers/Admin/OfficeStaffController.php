@@ -68,6 +68,7 @@ class OfficeStaffController extends Controller
         $data->img = $imageName;
         $data->role = $request->role;
         $data->phone = $request->contact;
+        $data->blood_group = $request->blood_group;
         $data->address = $request->address;
         $data->created_at = time();
         
@@ -133,6 +134,7 @@ class OfficeStaffController extends Controller
         $staff->name = $request->name;
         $staff->role = $request->role;
         $staff->phone = $request->contact;
+        $data->blood_group = $request->blood_group;
         $staff->address = $request->address;
         if(!empty($request->img)) {
             if(!empty($staff->img)){
