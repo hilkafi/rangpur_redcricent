@@ -49,17 +49,11 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Who We Are</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">What We Do</a>
+                                <a class="nav-link" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Get Involved
+                                Who We Are <i class="fa fa-caret-down"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <div class="container">
@@ -67,16 +61,16 @@
                                     <div class="col-md-4">
                                         <span class="text-uppercase text-white">Category 1</span>
                                         <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
+                                            <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-4">
@@ -110,7 +104,109 @@
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Media & Publication
+                                What We Do <i class="fa fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container">
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                        <span class="text-uppercase text-white">Category 1</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <a href="">
+                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                        </a>
+                                        <p class="text-white">Short image call to action</p>
+
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    </div>
+                                </div>
+                                <!--  /.container  -->
+
+
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Get Involved <i class="fa fa-caret-down"></i>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container">
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                        <span class="text-uppercase text-white">Category 1</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link active" href="#">Active</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Link item</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                        <a class="nav-link active" href="#">Active</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="#">Link item</a>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-4">
+                                        <a href="">
+                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                        </a>
+                                        <p class="text-white">Short image call to action</p>
+
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    </div>
+                                </div>
+                                <!--  /.container  -->
+
+
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Media & Publication <i class="fa fa-caret-down"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
@@ -161,57 +257,8 @@
 
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Contact Us
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <div class="container">
-                                    <div class="row">
-                                    <div class="col-md-4">
-                                    <span class="text-uppercase text-white">Category 3</span>
-                                        <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                    <!-- /.col-md-4  -->
-                                    <div class="col-md-4">
-                                        <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                    <!-- /.col-md-4  -->
-                                    <div class="col-md-4">
-
-                                        <a href="">
-                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                                        </a>
-                                        <p class="text-white">Short image call to action</p>
-                                        
-                                    </div>
-                                    <!-- /.col-md-4  -->
-                                    </div>
-                                </div>
-                                <!--  /.container  -->
-
-
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="donate btn btn-danger" href="#" style="padding-top: 0px; padding-bottom: 0px;">Donate Us</a>

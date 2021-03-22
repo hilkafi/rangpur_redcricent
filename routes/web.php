@@ -96,5 +96,6 @@ Route::get('/donate-us', [App\Http\Controllers\Front\HomeController::class, 'don
 Route::get('/donate-blood', [App\Http\Controllers\Front\HomeController::class, 'donate_blood']);
 Route::get('/become-member', [App\Http\Controllers\Front\HomeController::class, 'become_member']);
 Route::get('/become-volunteer', [App\Http\Controllers\Front\HomeController::class, 'become_voluteer']);
+Route::get('/contact-us', [App\Http\Controllers\Front\HomeController::class, 'contact_us']);
 
 

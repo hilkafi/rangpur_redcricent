@@ -1174,3 +1174,11 @@
     line-height: 28px;
     text-align: justify;
 }
+
+.contact_info_section {
+    width: 300px;
+    margin-bottom: 100px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 26px;
+}

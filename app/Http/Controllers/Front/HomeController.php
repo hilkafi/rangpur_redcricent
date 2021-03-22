@@ -44,4 +44,8 @@ class HomeController extends Controller
     public function become_voluteer() {
         return view('front.become_volunteer');
     }
+
+    public function contact_us() {
+        return view('front.contact_us');
+    }
 }
