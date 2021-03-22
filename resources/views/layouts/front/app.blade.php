@@ -410,22 +410,24 @@ $media_publication = Category::where('type', 'blog')->get();
                     <div class="col-md-4 col-sm-12">
                         <div class="footer-charity-text">
                             <h2>HELP CHARITY</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p>
+                            <p>Bangladesh Red Crescent Society was established by the President Order 26 of 1973 as an auxiliary to the Public Authority. It is a member of the International Federation of Red Cross and Red Crescent Societies (IFRC), committed to the Fundamental Principles of the Red Cross and Red Crescent Movement i.e. Humanity, Neutrality, Impartiality, Independence, Unity, Voluntary Service and Universality.
+
+</p>
                             <hr>
-                            <p><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></p>
+                            <p><a href="https://www.facebook.com/Bangladesh-Red-Crescent-Society-Rangpur-Unit-424680781070200"><i class="fa fa-facebook" aria-hidden="true"></i></a><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></p>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="row">
                             <div class="col-md-4 col-sm-5">
                                 <div class="footer-text one">
-                                    <h3>RECENT POST</h3>
+                                    <h3>RESOURCES</h3>
                                     <ul>
-                                        <li><a href="#"><i class="material-icons">keyboard_arrow_right</i> Consectetur Adipisicing Elit</a></li>
-                                        <li><a href="#"><i class="material-icons">keyboard_arrow_right</i> Consectetur Adipisicing </a></li>
-                                        <li><a href="#"><i class="material-icons">keyboard_arrow_right</i> Consectetur Adipisicing Elit</a></li>
-                                        <li><a href="#"><i class="material-icons">keyboard_arrow_right</i> Consectetur Adipisicing</a></li>
-                                        <li><a href="#"><i class="material-icons">keyboard_arrow_right</i> Consectetur Adipisicing Elit</a></li>
+                                        <li><a href="#reports"><i class="material-icons">keyboard_arrow_right</i> Report </a></li>
+                                        <li><a href="#news"><i class="material-icons">keyboard_arrow_right</i>News & Stories </a></li>
+                                        <li><a href="#gandp"><i class="material-icons">keyboard_arrow_right</i> Gallery & Publications</a></li>
+                                        <li><a href="#focus"><i class="material-icons">keyboard_arrow_right</i> Focus</a></li>
+                                        <li><a href="#vol"><i class="material-icons">keyboard_arrow_right</i> Be a Volunteers</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -433,10 +435,12 @@ $media_publication = Category::where('type', 'blog')->get();
                                 <div class="footer-text two">
                                     <h3>USEFUL LINKS</h3>
                                     <ul>
-                                        <li><a href="#">Home</a></li>
-                                        <li><a href="#">Causes</a></li>
-                                        <li><a href="#">Event</a></li>
-                                        <li><a href="#">Blog</a></li>
+
+                                        <li><a href="https://www.youthop.com/bd/volunteer-service">yo BANGLADESH</a></li>
+                                        <li><a href="https://www.unicef.org/bangladesh/">UNICEF</a></li>
+                                        <li><a href="https://www.vsointernational.org/">VSO</a></li>
+                                        <li><a href="https://vbd.com.bd/">VBD</a></li>
+                                        <li><a href="https://bdrcs.org/">BDRCS</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -444,9 +448,9 @@ $media_publication = Category::where('type', 'blog')->get();
                                 <div class="footer-text one">
                                     <h3>CONTACT US</h3>
                                     <ul>
-                                        <li><a href="#"><i class="material-icons">location_on</i>1 Street, derby, FL 2147, USA</a></li>
-                                        <li><a href="#"><i class="material-icons">email</i>dartthemes@gmail.com</a></li>
-                                        <li><a href="#"><i class="material-icons">call</i>+123456789</a></li>
+                                        <li><a href="#"><i class="material-icons">location_on</i>Rangpur Red Crescent Unit, Kachari Bazar, Rangpur</a></li>
+                                        <li><a href="#"><i class="material-icons">email</i>rangpur@bdrcs.org</a></li>
+                                        <li><a href="#"><i class="material-icons">call</i> 0521-55693</a></li>
                                     </ul>
                                 </div>
                             </div>

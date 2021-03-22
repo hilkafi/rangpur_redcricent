@@ -125,7 +125,9 @@
                                 <div class="footer-text two">
                                     <h3>USEFUL LINKS</h3>
                                     <ul>
-                                        <li><a href="#">Home</a></li>
+                                    @foreach($val as $data)
+                                        <li><a href="#">{{$data->name}}</a></li>
+                                    @endforeach    
                                         <li><a href="#">Causes</a></li>
                                         <li><a href="#">Event</a></li>
                                         <li><a href="#">Blog</a></li>

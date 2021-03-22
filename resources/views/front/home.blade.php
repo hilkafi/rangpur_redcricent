@@ -51,7 +51,7 @@
     </div>
 </div>
 
-<section class="our_cuauses">
+<section class="our_cuauses" id='news'>
     <h2>News And Stories</h2>
     <div class="container">
         <div class="row">
@@ -75,7 +75,7 @@
     </div>
 </section>
 
-<section class="our_cuauses">
+<section class="our_cuauses" id ='reports'>
     <h2>Reports</h2>
     <div class="container">
         <div class="row">
@@ -129,7 +129,7 @@
 </section>
 
 
-<section class="our_cuauses">
+<section class="our_cuauses" id ='focus'>
     <h2>Our Focus</h2>
     <div class="container">
         <div class="row">
@@ -185,7 +185,7 @@
 
                 </div>
             </div>
-            <div class="col-md-3 col-xs-12">
+            <div class="col-md-3 col-xs-12" id = 'vol'>
                 <div class="single-Promo">
                     <div class="promo-icon">
                         <i class="material-icons">volunteer_activism</i>
@@ -240,7 +240,7 @@
     </div>
 </section>
 
-<section class="events_section_area">
+<section class="events_section_area" id='gandp'>
     <h2>GALLERY & PUBLICATIONS</h2>
     <div class="container" style="margin-bottom: 100px;">
         <div class="row">
