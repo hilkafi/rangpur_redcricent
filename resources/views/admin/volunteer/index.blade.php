@@ -38,6 +38,7 @@
                             <th>Institution</th>
                             <th>Address</th>
                             <th>Blood Group</th>
+                            <th>LDBD</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -57,6 +58,7 @@
                             <td>{{ $data->institute}}</td>
                             <td>{{ $data->address}}</td>
                             <td>{{ $data->blood_group}}</td>
+                            <td>{{ $data->blood_donation}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">
                                 <a href="{{ url('/controll_panel/volunteer/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>

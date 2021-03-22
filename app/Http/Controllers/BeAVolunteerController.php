@@ -71,6 +71,7 @@ class BeAVolunteerController extends Controller
         $data->unit_name = $request->unit_name;
         $data->institute = $request->institution;
         $data->blood_group = $request->blood_group;
+        $data->blood_donation = $request->blood_date;
         $data->is_approved = '0';
        
         $data->created_at = time();
