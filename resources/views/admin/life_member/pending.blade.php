@@ -5,9 +5,8 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h3 class="col-md-10 card-title">Life Member</h3>
-                <a href="{{ url('controll_panel/life-member/create') }}" class="col-md-2 btn btn-success">Add LifeMember</a>
-                <a href="{{ url('controll_panel/life-member/approve/list') }}" class="col-md-2 btn btn-success">see requests</a>
+                <h3 class="col-md-10 card-title">Pending Request</h3>
+                
             </div>
         </div>
             <!-- /.card-header -->
@@ -52,8 +51,8 @@
                             <td>{{ $data->address}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">
-                                <a href="{{ url('/controll_panel/life-member/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
-                                <button class="deleteButton btn btn-danger" id="deletemember_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
+                                
+                                <button class="deleteButton btn btn-danger" id="approveemember_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-approve">Approve</i></button>
                             </td>
                         </tr>
                         @endforeach
@@ -96,7 +95,7 @@ window.onload = function(){
     $(".deleteButton").on('click', function(){
         //console.log('Hmm...');
         var id = $(this).attr("data-rel");
-        var _url = '{{url("controll_panel/life-member/delete") }}';
+        var _url = '{{url("controll_panel/life-member/approve") }}';
 
         Swal.fire({
             title: 'Are you sure?',
@@ -105,7 +104,7 @@ window.onload = function(){
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes, approve it!'
             }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
@@ -119,14 +118,14 @@ window.onload = function(){
                         $('#search-btn').trigger('click');
                         if(data.success){
                             Swal.fire(
-                                'Deleted!',
-                                'Your file has been deleted.',
+                                'Accepted!',
+                                'Your member has been approved.',
                                 'success'
                             );
                         }else{
                             Swal.fire(
                                 'Error!',
-                                'Category Not Deleted.',
+                                'Member is not approved.',
                                 'warning'
                             );
                         }

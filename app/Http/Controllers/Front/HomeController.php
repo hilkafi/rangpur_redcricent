@@ -18,6 +18,7 @@ class HomeController extends Controller
         $focuses = Blog::where('category_id', 7)->get();
         $images = Blog::where('img', '!=', NULL)->take(4)->get();
         $speech = Speech::all();
+        //return $news_stories;
         return view('front.home', compact('news_stories', 'reports', 'focuses', 'images', 'speech'));
     }
 

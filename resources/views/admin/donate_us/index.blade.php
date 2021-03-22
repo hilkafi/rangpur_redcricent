@@ -7,6 +7,7 @@
             <div class="row">
                 <h3 class="col-md-10 card-title">Donation Info</h3>
                 <a href="{{ url('controll_panel/donate_us/create') }}" class="col-md-2 btn btn-success">Add Donation Info</a>
+                <a href="{{ url('controll_panel/donate-us-list') }}" class="col-md-2 btn btn-success">Pendings</a>
             </div>
         </div>
             <!-- /.card-header -->
