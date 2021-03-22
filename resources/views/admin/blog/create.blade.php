@@ -24,6 +24,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="video_link" class="col-sm-2 col-form-label">Video Link</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="video_link" id="video_link" placeholder="Video Link">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="Category" class="col-sm-2 col-form-label">Category</label>
                     <div class="col-sm-10">
                         <select class="form-control" name="category" id="category_id">

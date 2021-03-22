@@ -376,32 +376,6 @@ $media_publication = Category::where('type', 'blog')->get();
 
         @yield('content')
 
-        <section class="footer_carosal">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="footer_carosal_icon owl-carousel owl-theme">
-                            <div class="item">
-                                <img src="{{ url('img/microsoft.png') }}" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="{{ url('img/envato.png') }}" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="{{ url('img/yahoo.png') }}" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="{{ url('img/jquery.png') }}" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="{{ url('img/amazon.png') }}" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
 
 
         <footer class="footer">
@@ -459,7 +433,7 @@ $media_publication = Category::where('type', 'blog')->get();
                 </div>
             </div>
             <div class="footer_bottom">
-                <p>Copyright @ 2021 <a href="#">BITS</a> | All Rights Reserved </p>
+                <p>Copyright @ 2021 <a href="{{ url('/') }}">BDRCS RANGPUR</a> | All Rights Reserved </p>
             </div>
         </footer>
     </div>

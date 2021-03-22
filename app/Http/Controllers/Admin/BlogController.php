@@ -70,6 +70,7 @@ class BlogController extends Controller
         $post->sub_category_id = $request->subcategory;
         $post->date = $request->date;
         $post->description = $request->description;
+        $post->video_link = $request->video_link;
         $post->created_at = time();
         
         if($post->save()){
@@ -138,6 +139,7 @@ class BlogController extends Controller
         $post->sub_category_id = $request->subcategory;
         $post->date = $request->date;
         $post->description = $request->description;
+        $post->video_link = $request->video_link;
         if(!empty($request->img)){
             if(!empty($post->img)){
                 $path = public_path()."/images/".$post->img;

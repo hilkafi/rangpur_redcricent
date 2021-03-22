@@ -979,7 +979,7 @@
 
 .footer {
     background: red;
-    padding-top: 80px
+    padding-top: 80px;
 }
 
 .footer .footer-charity-text {
@@ -995,7 +995,7 @@
 }
 
 .footer .footer-charity-text p {
-    color: rgb(91, 91, 91);
+    color:#fff;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     font-weight: 400;
@@ -1003,11 +1003,11 @@
 }
 
 .footer .footer-charity-text hr {
-    border-color: rgb(91, 91, 91);
+    border-color:#fff;
 }
 
 .footer .footer-charity-text p i {
-    color: #5b5b5b;
+    color: #fff;
     font-size: 18px;
     margin-right: 20px;
 }
@@ -1037,7 +1037,7 @@
 }
 
 .footer .footer-text.one ul li i {
-    color: rgb(91, 91, 91);
+    color: #fff;
     font-size: 15px;
     left: -7px;
     position: absolute;
@@ -1045,15 +1045,19 @@
 }
 
 .footer .footer-text.one ul li a {
-    color: rgb(91, 91, 91);
+    color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     font-weight: 400;
     text-decoration: none;
 }
 
+.footer .footer-text.two ul {
+    color: #fff;
+}
+
 .footer .footer-text.two ul li a {
-    color: rgb(91, 91, 91);
+    color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     font-weight: 400;
@@ -1072,7 +1076,7 @@
 }
 
 .footer .footer_bottom p {
-    background: #232323 none repeat scroll 0 0;
+    background: #0e0101 none repeat scroll 0 0;
     color: #cacaca;
     font-family: "Roboto", sans-serif;
     font-size: 15px;
@@ -1181,4 +1185,8 @@
     padding: 10px;
     font-size: 16px;
     line-height: 26px;
+}
+
+.photo_section {
+    margin-bottom: 20px;
 }

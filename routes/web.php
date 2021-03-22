@@ -101,9 +101,16 @@ Route::get('/become-member', [App\Http\Controllers\Front\HomeController::class, 
 Route::get('/become-volunteer', [App\Http\Controllers\Front\HomeController::class, 'become_voluteer']);
 Route::get('/contact-us', [App\Http\Controllers\Front\HomeController::class, 'contact_us']);
 Route::post('/contact-us/save', [App\Http\Controllers\Front\HomeController::class, 'contact_us_save']);
+Route::get('/photo-gallery', [App\Http\Controllers\Front\HomeController::class, 'photo_gallery']);
+Route::get('/video-gallery', [App\Http\Controllers\Front\HomeController::class, 'video_gallery']);
+Route::get('/publication', [App\Http\Controllers\Front\HomeController::class, 'publication']);
+
 
 
 // become volunteer route
 
 Route::resource('/volunteer-form', App\Http\Controllers\BeAVolunteerController::class);
 Route::resource('/member', App\Http\Controllers\BeAMemberController::class);
+
+//Not Found Route
+Route::get('{path}', [App\Http\Controllers\Front\HomeController::class, 'not_found'])->where('path', '([A-z\d\-\/_.]+)');

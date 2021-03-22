@@ -245,23 +245,29 @@
     <div class="container" style="margin-bottom: 100px;">
         <div class="row">
             <div class="col-md-4 col-xs-12">
-                <div class="events_single">
-                    <h3>PHOTO GALLERY</h3>
-                    <div class="clear"></div>
-                    <img src="{{ url('img/events_single_one.jpg') }}" alt="">
-                </div>
+                <a href="{{ url('/photo-gallery') }}"> 
+                    <div class="events_single">
+                        <h3>PHOTO GALLERY</h3>
+                        <div class="clear"></div>
+                        <img src="{{ url('img/events_single_one.jpg') }}" alt="">
+                    </div>
+                </a>
             </div>
             <div class="col-md-4 col-xs-12">
-                <div class="events_single">
-                    <h3>VIDEO GALLERY</h3>
-                    <img src="{{ url('img/events_single_two.jpg') }}" alt="">
-                </div>
+                <a href="{{ url('/video-gallery') }}"> 
+                    <div class="events_single">
+                        <h3>VIDEO GALLERY</h3>
+                        <img src="{{ url('img/events_single_two.jpg') }}" alt="">
+                    </div>
+                </a>
             </div>
             <div class="col-md-4 col-xs-12">
-                <div class="events_single">
-                    <h3>PUBLICATIONS</h3>
-                    <img src="{{ url('img/events_single_three.jpg') }}" alt="">
-                </div>
+                <a href="{{ url('/publication') }}"> 
+                    <div class="events_single">
+                        <h3>PUBLICATIONS</h3>
+                        <img src="{{ url('img/events_single_three.jpg') }}" alt="">
+                    </div>
+                </a>
             </div>
         </div>
     </div>

@@ -73,4 +73,24 @@ class HomeController extends Controller
         }
     }
 
+    public function not_found() {
+        return view('front.not_found');
+    } 
+
+    public function photo_gallery() {
+        $photos = Blog::where('img', '!=', NULL)->get();
+        return view('front.photo_gallery', compact('photos'));
+    }
+
+    public function video_gallery() {
+        $videos = Blog::where('video_link', '!=', NULL)->get();
+        $message_videos = Speech::all();
+        return view('front.video_gallery', compact('videos', 'message_videos'));
+    }
+
+    public function publication() {
+        $publications = Blog::where('category_id', 8)->get();
+        return view('front.publication', compact('publications'));
+    }
+
 }
