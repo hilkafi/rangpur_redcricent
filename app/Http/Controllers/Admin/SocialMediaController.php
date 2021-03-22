@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\SocialMedia;
+use App\Models\ContactUs;
 
 class SocialMediaController extends Controller
 {
@@ -126,5 +127,10 @@ class SocialMediaController extends Controller
         }else {
             return response()->json(['error' => 'Error While Deleting Social Media Info.']);
         }     
+    }
+
+    public function messages() {
+        $dataset = ContactUs::latest()->get();
+        return view('admin.social_media.messages', compact('dataset'));
     }
 }

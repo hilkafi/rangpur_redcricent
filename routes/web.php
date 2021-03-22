@@ -89,6 +89,8 @@ Route::resource('/controll_panel/social_media', App\Http\Controllers\Admin\Socia
 Route::post('/controll_panel/social_media/delete', [App\Http\Controllers\Admin\SocialMediaController::class, 'delete']);
 Route::post('/controll_panel/social_media/search', [App\Http\Controllers\Admin\SocialMediaController::class, 'search']);
 
+//Messages
+Route::get('controll_panel/messages', [App\Http\Controllers\Admin\SocialMediaController::class, 'messages']);
 
 //Front Routes
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
@@ -98,6 +100,8 @@ Route::get('/donate-blood', [App\Http\Controllers\Front\HomeController::class, '
 Route::get('/become-member', [App\Http\Controllers\Front\HomeController::class, 'become_member']);
 Route::get('/become-volunteer', [App\Http\Controllers\Front\HomeController::class, 'become_voluteer']);
 Route::get('/contact-us', [App\Http\Controllers\Front\HomeController::class, 'contact_us']);
+Route::post('/contact-us/save', [App\Http\Controllers\Front\HomeController::class, 'contact_us_save']);
+
 
 // become volunteer route
 

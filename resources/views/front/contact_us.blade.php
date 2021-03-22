@@ -40,7 +40,7 @@
             </div>
             <div class="col-md-6">
                 <h2>Give Us Your Feedback</h2>
-                <form>
+                {{ Form::open(['class' => 'form-horizontal', 'method' => 'post', 'url' => '/contact-us/save']) }}
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
@@ -56,7 +56,7 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-danger">Send</button>
                     </div>
-                </form>
+                {{ Form::close() }}
 
                 
                 <div class="contact_info_section">

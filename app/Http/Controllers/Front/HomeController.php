@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use App\Models\Blog;
 use App\Models\Speech;
 use App\Models\DonateUs;
 use App\Models\DonateGetBlood;
+use App\Models\ContactUs;
 
 class HomeController extends Controller
 {
@@ -48,4 +50,27 @@ class HomeController extends Controller
     public function contact_us() {
         return view('front.contact_us');
     }
+
+    public function contact_us_save(Request $request) {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required'
+        ]);
+
+        if($validator->fails()){
+            return back()->with('error', $validator->messages()->all());
+        }
+
+        $data = new ContactUs();
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->message = $request->message;
+        if($data->save()){
+            return redirect('/contact-us')->with('success', 'Message Sent Successfully.');
+        }else {
+            return redirect('/contact-us')->with('error', 'Error Sending Message.');
+        }
+    }
+
 }

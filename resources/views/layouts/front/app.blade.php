@@ -1,3 +1,9 @@
+<?php 
+use App\Models\Category;
+
+$media_publication = Category::where('type', 'blog')->get();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,36 +64,49 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <div class="container">
                                     <div class="row">
-                                    <div class="col-md-4">
-                                        <span class="text-uppercase text-white">Category 1</span>
+                                    <div class="col-md-3">
+                                        <span class="text-uppercase text-white">About BDRCS</span>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
+                                            <a class="nav-link" href="#">History of BDRCS</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="#">Organizational Structure</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="#">Mission & Vission</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Partners</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Unit/Branches</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
+                                        <span class="text-uppercase text-white">Our Management</span>
                                         <ul class="nav flex-column">
                                         <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
+                                        <a class="nav-link" href="#">Managing Board</a>
                                         </li>
                                         <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
+                                        <a class="nav-link" href="#">Senior Management</a>
                                         </li>
                                     </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
+                                        <span class="text-uppercase text-white">Movement</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Movement Principle</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-3">
                                         <a href="">
                                         <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
                                         </a>
@@ -109,43 +128,120 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <div class="container">
                                     <div class="row">
-                                    <div class="col-md-4">
-                                        <span class="text-uppercase text-white">Category 1</span>
+                                    <div class="col-md-3">
+                                        <span class="text-uppercase text-white">Disaster Risk Management</span>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
+                                            <a class="nav-link" href="#">Item 1</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="#">Item 2</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="#">Item 3</a>
+                                            </li>
+                                        </ul>
+                                        
+                                        <span class="text-uppercase text-white">Planing And Development</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 3</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
+                                        <span class="text-uppercase text-white">Disaster Response</span>
                                         <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                    <!-- /.col-md-4  -->
-                                    <div class="col-md-4">
-                                        <a href="">
-                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                                        </a>
-                                        <p class="text-white">Short image call to action</p>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 3</a>
+                                            </li>
+                                        </ul>
 
+                                        
+                                        <span class="text-uppercase text-white">Health</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 3</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
+                                    <div class="col-md-3">
+                                        <span class="text-uppercase text-white">Training</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 3</a>
+                                            </li>
+                                        </ul>
+
+                                        
+                                        <span class="text-uppercase text-white">Youth And Volunteers</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 3</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.col-md-4  -->
+                                    <div class="col-md-3">
+                                        <span class="text-uppercase text-white">Community Development</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 3</a>
+                                            </li>
+                                        </ul>
+
+                                        
+                                        <span class="text-uppercase text-white">Cross Cutting Issues</span>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 1</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 2</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="#">Item 3</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                     </div>
                                 </div>
                                 <!--  /.container  -->
@@ -161,16 +257,19 @@
                                 <div class="container">
                                     <div class="row">
                                     <div class="col-md-4">
-                                        <span class="text-uppercase text-white">Category 1</span>
+                                        <span class="text-uppercase text-white">Get Involved</span>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
+                                            <a class="nav-link" href="{{ url('/donate-us') }}">Donate Us</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="{{ url('/member') }}">Become A Member</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="{{ url('/souvenir-item') }}">Buy Souvenir Item</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/request-for-training') }}">Request For Training</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -178,13 +277,16 @@
                                     <div class="col-md-4">
                                         <ul class="nav flex-column">
                                         <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
+                                        <a class="nav-link" href="{{ url('/donate-blood') }}">Donate/Get Blood</a>
                                         </li>
                                         <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
+                                        <a class="nav-link" href="{{url('/volunteer-form')}}">Volunteer Form</a>
                                         </li>
                                         <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
+                                        <a class="nav-link" href="{{url('/career')}}">Career</a>
+                                        </li>
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="{{url('/lets-partner')}}">Let's Partner</a>
                                         </li>
                                     </ul>
                                     </div>
@@ -214,30 +316,29 @@
                                 <div class="container">
                                     <div class="row">
                                     <div class="col-md-4">
-                                        <span class="text-uppercase text-white">Category 2</span>
+                                        <span class="text-uppercase text-white">Media & Publication</span>
                                         <ul class="nav flex-column">
+                                        @foreach($media_publication as $mp)
                                         <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
+                                        <a class="nav-link active" href="{{ url('category/'.$mp->id) }}">{{ $mp->name }}</a>
                                         </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
-                                        </li>
+                                        @endforeach
                                     </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-4">
                                         <ul class="nav flex-column">
                                         <li class="nav-item">
-                                        <a class="nav-link active" href="#">Active</a>
+                                            <a class="nav-link" href="{{ url('photo-gallery') }}">Photo Gallery</a>
                                         </li>
                                         <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="{{ url('video-gallery') }}">Video Gallery</a>
                                         </li>
                                         <li class="nav-item">
-                                        <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="{{ url('notice') }}">Notice</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('news-letter') }}">News Letter</a>
                                         </li>
                                     </ul>
                                     </div>
@@ -261,7 +362,7 @@
                                 <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="donate btn btn-danger" href="#" style="padding-top: 0px; padding-bottom: 0px;">Donate Us</a>
+                                <a class="donate btn btn-danger" href="{{ url('donate-us') }}" style="padding-top: 0px; padding-bottom: 0px;">Donate Us</a>
                             </li>
                         </ul>
                         <form class="form-inline my-2 my-lg-0" style="float: right">
