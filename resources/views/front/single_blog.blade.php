@@ -12,7 +12,7 @@
                     <img src="{{ url('images/'.$data->img) }}" width="100%" />
                 </div>
                 <div class="single_content_area">
-                    <p>{{ $data->description }}</p>
+                    <p>{!! $data->description !!}</p>
                 </div>
             </div>
         </div>

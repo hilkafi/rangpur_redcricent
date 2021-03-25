@@ -45,7 +45,7 @@
                             <td>{{ $data->title }}</td>
                             <td>{{ $data->category_name($data->category_id) }}</td>
                             <td>{{ $data->subcategory_name($data->sub_category_id) }}</td>
-                            <td class="sorting_1">{{ Str::limit($data->description, 50) }}</td>
+                            <td class="sorting_1">{!! Str::limit($data->description, 50) !!}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">
                                 <a href="{{ url('/controll_panel/blog/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>

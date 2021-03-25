@@ -78,6 +78,8 @@
 </div>
 
 <script src="{{ mix('js/app.js') }}" defer></script>
+<!---------<script src="https://cdn.tiny.cloud/1/30w0vzksdd2z32lomjhu5rickb2ybi1r2t56x0e3tlwuckoc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
+<script src="{{ url('vendor/tinymce/js/tinymce/tinymce.min.js') }}" defer></script>
 @include('sweetalert::alert')
 
 @yield('third_party_scripts')

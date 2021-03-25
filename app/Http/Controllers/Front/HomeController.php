@@ -10,18 +10,19 @@ use App\Models\Speech;
 use App\Models\DonateUs;
 use App\Models\DonateGetBlood;
 use App\Models\ContactUs;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $news_stories = Blog::whereIn('category_id', [5, 6])->get();
-        $reports = Blog::where('category_id', 4)->get();
-        $focuses = Blog::where('category_id', 7)->get();
+        $news_stories = Blog::whereIn('category_id', [CAT_NEWS, CAT_STORIES])->get();
+        $reports = Blog::where('category_id', CAT_REPORT)->get();
+        $focuses = Blog::where('category_id', CAT_FOCUS)->get();
         $images = Blog::where('img', '!=', NULL)->take(4)->get();
         $speech = Speech::all();
-        //return $news_stories;
-        return view('front.home', compact('news_stories', 'reports', 'focuses', 'images', 'speech'));
+        $upcoming_events = Blog::where('category_id', CAT_UPCOMING)->get();
+        return view('front.home', compact('news_stories', 'reports', 'focuses', 'images', 'speech', 'upcoming_events'));
     }
 
     public function single_blog($id) {
@@ -88,9 +89,14 @@ class HomeController extends Controller
         return view('front.video_gallery', compact('videos', 'message_videos'));
     }
 
-    public function publication() {
-        $publications = Blog::where('category_id', 8)->get();
-        return view('front.publication', compact('publications'));
+    public function show_category($id) {
+        $dataset = Blog::where('category_id', $id)->get();
+        $category = Category::find($id)->name;
+        return view('front.single_category', compact('dataset', 'category'));
+    }
+
+    public function career() {
+        return view('front.career');
     }
 
 }

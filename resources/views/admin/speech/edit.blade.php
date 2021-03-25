@@ -54,7 +54,10 @@
 </div>
 <script>
 window.onload = function(){
-
+    tinymce.init({
+        selector: 'textarea#speech'
+    });
+    
  $('#category_id').on('change',function(){
     var category_id = $(this).val();
     var _url = "{{URL::to('/controll_panel/blog/list_subcategory')}}";

@@ -31,14 +31,12 @@ $media_publication = Category::where('type', 'blog')->get();
             <section class="header-top">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-8 col-sm-8 col-xs-12">
+                        <div class="col-md-2">
+                            <img src="/img/bdrcs-logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+                        </div>   
+                        <div class="col-md-10 col-sm-10">
                             <div class="contact">
-                                <p><span class="phone"><a href="#">Phone: +1023546789</a></span><span class="email"><a href="#">Email: testdomain@gmail.com</a></span></p>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="join-us">
-                                <p><a href="#">JOIN US NOW</a></p>
+                                <p style="text-align: right"><span class="phone"><a href="#">Phone: +1023546789</a></span><span class="email"><a href="#">Email: testdomain@gmail.com</a></span><span class="email"><a href="#" class="join-us">JOIN US NOW</a></span></p>
                             </div>
                         </div>
                     </div>
@@ -47,7 +45,9 @@ $media_publication = Category::where('type', 'blog')->get();
             <section class="header-bottom">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                     <div class="container">
-                    <a class="navbar-brand" href="{{ url('/') }}">BDRCS RANGPUR</a>
+                    <a class="navbar-brand" href="#">
+                        BDRCS RANGPUR
+                    </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -263,7 +263,7 @@ $media_publication = Category::where('type', 'blog')->get();
                                             <a class="nav-link" href="{{ url('/donate-us') }}">Donate Us</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('/member') }}">Become A Member</a>
+                                            <a class="nav-link" href="{{ url('/member/create') }}">Become A Member</a>
                                             </li>
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/souvenir-item') }}">Buy Souvenir Item</a>
@@ -280,7 +280,7 @@ $media_publication = Category::where('type', 'blog')->get();
                                         <a class="nav-link" href="{{ url('/donate-blood') }}">Donate/Get Blood</a>
                                         </li>
                                         <li class="nav-item">
-                                        <a class="nav-link" href="{{url('/volunteer-form')}}">Volunteer Form</a>
+                                        <a class="nav-link" href="{{url('/volunteer-form/create')}}">Volunteer Form</a>
                                         </li>
                                         <li class="nav-item">
                                         <a class="nav-link" href="{{url('/career')}}">Career</a>
@@ -335,7 +335,7 @@ $media_publication = Category::where('type', 'blog')->get();
                                             <a class="nav-link" href="{{ url('video-gallery') }}">Video Gallery</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('notice') }}">Notice</a>
+                                            <a class="nav-link" href="{{ url('/category/'.CAT_NOTICE) }}">Notice</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="{{ url('news-letter') }}">News Letter</a>

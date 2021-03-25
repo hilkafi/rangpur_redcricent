@@ -7008,6 +7008,13 @@ button.close {
   box-shadow: 0 0 0 0.2rem rgba(248, 249, 250, 0.5);
 }
 
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.align-top {
+  vertical-align: top !important;
+}
 
 @media (min-width: 992px) {
   .navbar-expand-lg {

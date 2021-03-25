@@ -63,7 +63,7 @@
                         <img src="{{ $img_url }}" alt="">
                         <div class="for_padding">
                             <h2>{{$ns->title}}</h2>
-                            <p>{{ Str::limit($ns->description, 50) }}</p>
+                            <p>{!! Str::limit($ns->description, 50) !!}</p>
 
                             <h2 class="borderes"><a href="{{ url('single-blog/'.$ns->id) }}">READ MORE</a></h2>
                         </div>
@@ -87,7 +87,7 @@
                         <img src="{{ $img_url }}" alt="">
                         <div class="for_padding">
                             <h2>{{$report->title}}</h2>
-                            <p>{{ Str::limit($report->description, 100) }}</p>
+                            <p>{!! Str::limit($report->description, 100) !!}</p>
                             <h2 class="borderes"><a href="{{ url('single-blog/'.$report->id) }}">READ MORE</a></h2>
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="col-md-6">
                                 <h3>Messages From {{$sp->speaker_name}}</h3>
-                                <p>{{ $sp->speech }}</p>
+                                <p>{!! $sp->speech !!}</p>
                             </div>
                         </div>
                         @endforeach
@@ -141,7 +141,7 @@
                         <img src="{{ $img_url }}" alt="">
                         <div class="for_padding">
                             <h2>{{ $focus->title }}</h2>
-                            <p>{{ Str::limit($focus->description, 100) }}</p>
+                            <p>{!! Str::limit($focus->description, 100) !!}</p>
                             <h2 class="borderes"><a href="{{ url('single-blog/'.$focus->id) }}">READ MORE</a></h2>
                         </div>
                     </div>
@@ -249,7 +249,7 @@
                     <div class="events_single">
                         <h3>PHOTO GALLERY</h3>
                         <div class="clear"></div>
-                        <img src="{{ url('img/events_single_one.jpg') }}" alt="">
+                        <img src="{{ url('img/photo_gallery.png') }}" alt="">
                     </div>
                 </a>
             </div>
@@ -257,17 +257,40 @@
                 <a href="{{ url('/video-gallery') }}"> 
                     <div class="events_single">
                         <h3>VIDEO GALLERY</h3>
-                        <img src="{{ url('img/events_single_two.jpg') }}" alt="">
+                        <img src="{{ url('img/video_gallery.png') }}" alt="">
                     </div>
                 </a>
             </div>
             <div class="col-md-4 col-xs-12">
-                <a href="{{ url('/publication') }}"> 
+                <a href="{{ url('/category/'.CAT_PUBLICATION) }}"> 
                     <div class="events_single">
                         <h3>PUBLICATIONS</h3>
-                        <img src="{{ url('img/events_single_three.jpg') }}" alt="">
+                        <img src="{{ url('img/publication.png') }}" alt="">
                     </div>
                 </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="our_cuauses" id ='focus'>
+    <h2>Upcomint Events</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="our_cuauses_single owl-carousel owl-theme">
+                    @foreach($upcoming_events as $up)
+                    <?php $img_url = !empty($up->img) ? url('images/'.$up->img) : url('img/no_image.jpg') ?>
+                    <div class="item">
+                        <img src="{{ $img_url }}" alt="">
+                        <div class="for_padding">
+                            <h2>{{ $up->title }}</h2>
+                            <p>{!! Str::limit($up->description, 100) !!}</p>
+                            <h2 class="borderes"><a href="{{ url('single-blog/'.$focus->id) }}">READ MORE</a></h2>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

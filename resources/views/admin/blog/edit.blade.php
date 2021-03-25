@@ -72,8 +72,14 @@
         {{ Form::close() }}
     </div>
 </div>
+@endsection
+
+@push('page_scripts')
 <script>
 window.onload = function(){
+    tinymce.init({
+     selector: 'textarea#description'
+   });
 
  $('#category_id').on('change',function(){
     var category_id = $(this).val();
@@ -91,4 +97,4 @@ window.onload = function(){
     });
 }
 </script>
-@endsection
+@endpush

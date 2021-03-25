@@ -2,7 +2,9 @@
 @section('content')
 <section class="our_activity">
     <div class="container">
-        <h2 style="text-align: center; margin-bottom: 20px;">Video Gallery</h2>
+        <div class="category_title">  
+            <h2>Video Gallery</h2>
+        </div>
         <div class="row">
             @foreach($videos as $video)
             <div class="col-md-4 photo_section">
