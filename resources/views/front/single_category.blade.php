@@ -12,7 +12,7 @@
                     <img src="{{ url('images/'.$data->img) }}" alt="">
                     <div class="for_padding">
                         <h2>{{ $data->title }}</h2>
-                        <p>{{ Str::limit($data->description, 100) }}</p>
+                        <p>{!! Str::limit($data->description, 100) !!}</p>
                         <h2 class="borderes"><a href="{{ url('single-blog/'.$data->id) }}" class="read_more">READ MORE</a></h2>
                     </div>
                 </div>
