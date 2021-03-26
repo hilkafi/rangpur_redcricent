@@ -11,6 +11,7 @@ use App\Models\DonateUs;
 use App\Models\DonateGetBlood;
 use App\Models\ContactUs;
 use App\Models\Category;
+use App\Models\Page;
 
 class HomeController extends Controller
 {
@@ -97,6 +98,11 @@ class HomeController extends Controller
 
     public function career() {
         return view('front.career');
+    }
+
+    public function page($id) {
+        $data = Page::find($id);
+        return view('front.page', compact('data'));
     }
 
 }

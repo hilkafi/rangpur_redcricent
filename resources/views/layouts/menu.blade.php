@@ -1,12 +1,5 @@
 <!-- need to remove -->
 <li class="nav-item">
-    <a href="{{ url('controll_panel') }}" class="nav-link active">
-        <i class="nav-icon fas fa-home"></i>
-        <p>Home</p>
-    </a>
-</li>
-
-<li class="nav-item">
     <a href="{{ url('controll_panel/category') }}" class="nav-link">
         <i class="nav-icon fas fa-align-left"></i>
         <p>Category</p>
@@ -79,5 +72,11 @@
     <a href="{{ url('controll_panel/messages') }}" class="nav-link">
         <i class="nav-icon fas fa-envelope-open-text"></i>
         <p>Messages</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ url('controll_panel/page') }}" class="nav-link">
+        <i class="nav-icon fas fa-file-alt"></i>
+        <p>Page</p>
     </a>
 </li>

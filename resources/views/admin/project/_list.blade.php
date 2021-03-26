@@ -19,7 +19,7 @@
             <td>{{ $counter }}</td>
             <td>{{ $data->name }}</td>
             <td>{{ !empty($data->category_id) ? $data->category->name : '' }}</td>
-            <td>{{ Str::limit($data->description, 50) }}</td>
+            <td>{{ myTruncate($data->description, 50) }}</td>
             <td><img src="{{ $url }}" width="80" height="80"></td>
             <td class="">
                 <a href="{{ url('/controll_panel/project/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>

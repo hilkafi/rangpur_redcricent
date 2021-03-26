@@ -71,6 +71,13 @@ Route::post('/controll_panel/speech/search', [App\Http\Controllers\Admin\SpeechC
 Route::resource('/controll_panel/project', App\Http\Controllers\Admin\ProjectController::class);
 Route::post('/controll_panel/project/delete', [App\Http\Controllers\Admin\ProjectController::class, 'delete']);
 Route::post('/controll_panel/project/search', [App\Http\Controllers\Admin\ProjectController::class, 'search']);
+
+//Page Routes
+Route::resource('/controll_panel/page', App\Http\Controllers\Admin\PageController::class);
+Route::post('/controll_panel/page/delete', [App\Http\Controllers\Admin\PageController::class, 'delete']);
+Route::post('/controll_panel/page/search', [App\Http\Controllers\Admin\PageController::class, 'search']);
+
+
 //donate us routes
 Route::resource('/controll_panel/donate_us', App\Http\Controllers\Admin\DonateUsController::class);
 Route::get('/controll_panel/donate-us-list', [App\Http\Controllers\Admin\DonateUsController::class,'show_pending']);
@@ -105,6 +112,7 @@ Route::get('/photo-gallery', [App\Http\Controllers\Front\HomeController::class, 
 Route::get('/video-gallery', [App\Http\Controllers\Front\HomeController::class, 'video_gallery']);
 Route::get('/category/{id}', [App\Http\Controllers\Front\HomeController::class, 'show_category']);
 Route::get('/career', [App\Http\Controllers\Front\HomeController::class, 'career']);
+Route::get('/page/{id}', [App\Http\Controllers\Front\HomeController::class, 'page']);
 
 // become volunteer route
 

@@ -68,7 +68,7 @@ $media_publication = Category::where('type', 'blog')->get();
                                         <span class="text-uppercase text-white">About BDRCS</span>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">History of BDRCS</a>
+                                            <a class="nav-link" href="{{ url('page/3') }}">History of BDRCS</a>
                                             </li>
                                             <li class="nav-item">
                                             <a class="nav-link" href="#">Organizational Structure</a>

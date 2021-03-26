@@ -19,7 +19,7 @@
             <td>{{ $counter }}</td>
             <td>{{ $data->speaker_name }}</td>
             <td>{{ $data->speaker_role }}</td>
-            <td>{{ Str::limit($data->speech, 50) }}</td>
+            <td>{{ myTruncate($data->speech, 50) }}</td>
             <td><img src="{{ $url }}" width="80" height="80"></td>
             <td class="">
                 <a href="{{ url('/controll_panel/speech/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
