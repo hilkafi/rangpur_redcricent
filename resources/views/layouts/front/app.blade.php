@@ -1,16 +1,16 @@
 <?php 
 use App\Models\Category;
-use App\Models\Blog;
+use App\Models\Project;
 
 $media_publication = Category::whereIn('id', [CAT_REPORT, CAT_NEWS, CAT_STORIES, CAT_FOCUS, CAT_PUBLICATION])->get();
-$disaster_risks = Blog::where('category_id', CAT_DISASTER_RISK_MANAGEMENT)->limit('6')->get();
-$disaster_responses = Blog::where('category_id', CAT_DISASTER_RESPONSE)->limit('6')->get();
-$trainings = Blog::where('category_id', CAT_TRAINING)->limit('6')->get();
-$c_developments = Blog::where('category_id', CAT_COMMUNITY_DEVELOPMENT)->limit('6')->get();
-$pl_developments = Blog::where('category_id', CAT_PLANNING_DEVELOPMENT)->limit('6')->get();
-$healths = Blog::where('category_id', CAT_HEALTH)->limit('6')->get();
-$youth_volunteers = Blog::where('category_id', CAT_YOUTH_VOLUNTEERS)->limit('6')->get();
-$cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->get();
+$disaster_risks = Project::where('category_id', CAT_DISASTER_RISK_MANAGEMENT)->limit('6')->get();
+$disaster_responses = Project::where('category_id', CAT_DISASTER_RESPONSE)->limit('6')->get();
+$trainings = Project::where('category_id', CAT_TRAINING)->limit('6')->get();
+$c_developments = Project::where('category_id', CAT_COMMUNITY_DEVELOPMENT)->limit('6')->get();
+$pl_developments = Project::where('category_id', CAT_PLANNING_DEVELOPMENT)->limit('6')->get();
+$healths = Project::where('category_id', CAT_HEALTH)->limit('6')->get();
+$youth_volunteers = Project::where('category_id', CAT_YOUTH_VOLUNTEERS)->limit('6')->get();
+$cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->get();
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
             <section class="header-bottom">
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                     <div class="container">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{ url('/') }}">
                         BDRCS RANGPUR
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -142,7 +142,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
                                         <ul class="nav flex-column">
                                             @foreach($disaster_risks as $dr)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$dr->id) }}">{{ $dr->title }}</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$dr->id) }}">{{ $dr->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -151,7 +151,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
                                         <ul class="nav flex-column">
                                             @foreach($pl_developments as $pl)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$pl->id) }}">{{ $pl->title }}</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$pl->id) }}">{{ $pl->name }}</a>
                                             </li>
                                             @endforeach
                                             
@@ -163,7 +163,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
                                         <ul class="nav flex-column">
                                             @foreach($disaster_responses as $dres)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$dres->id) }}">{{ $dres->title }}</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$dres->id) }}">{{ $dres->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -173,7 +173,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
                                         <ul class="nav flex-column">
                                             @foreach($healths as $health)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$health->id) }}">{{ $health->title }}</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$health->id) }}">{{ $health->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -184,7 +184,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
                                         <ul class="nav flex-column">
                                             @foreach($trainings as $training)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$training->id) }}">{{ $training->title }}</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$training->id) }}">{{ $training->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -194,7 +194,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
                                         <ul class="nav flex-column">
                                             @foreach($youth_volunteers as $yv)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$yv->id) }}">{{ $yv->title }}</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$yv->id) }}">{{ $yv->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -205,7 +205,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
                                         <ul class="nav flex-column">
                                             @foreach($c_developments as $cd)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$cd->id) }}">{{ $cd->title }}</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$cd->id) }}">{{ $cd->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -215,7 +215,7 @@ $cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->g
                                         <ul class="nav flex-column">
                                             @foreach($cc_issues as $cc)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$cc->id) }}">{{ $cc->title }}</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$cc->id) }}">{{ $cc->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>

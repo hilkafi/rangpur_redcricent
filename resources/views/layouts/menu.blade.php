@@ -13,21 +13,27 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{ url('controll_panel/page') }}" class="nav-link">
+        <i class="nav-icon fas fa-file-alt"></i>
+        <p>Page</p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{ url('controll_panel/blog') }}" class="nav-link">
         <i class="nav-icon fas fa-blog"></i>
         <p>Blog</p>
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ url('controll_panel/office-staff') }}" class="nav-link">
-        <i class="nav-icon fas fa-address-book"></i>
-        <p>OfficeStaffs</p>
+    <a href="{{ url('controll_panel/project') }}" class="nav-link">
+        <i class="nav-icon fas fa-project-diagram"></i>
+        <p>Project</p>
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ url('controll_panel/volunteer') }}" class="nav-link">
-        <i class="nav-icon fas fa-hands-helping"></i>
-        <p>Volunteers</p>
+    <a href="{{ url('controll_panel/slider') }}" class="nav-link">
+        <i class="nav-icon fas fa-images"></i>
+        <p>Slider</p>
     </a>
 </li>
 <li class="nav-item">
@@ -37,15 +43,21 @@
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ url('controll_panel/speech') }}" class="nav-link">
-        <i class="nav-icon fas fa-comment-dots"></i>
-        <p>Speech</p>
+    <a href="{{ url('controll_panel/volunteer') }}" class="nav-link">
+        <i class="nav-icon fas fa-hands-helping"></i>
+        <p>Volunteers</p>
     </a>
 </li>
 <li class="nav-item">
-    <a href="{{ url('controll_panel/project') }}" class="nav-link">
-        <i class="nav-icon fas fa-project-diagram"></i>
-        <p>Project</p>
+    <a href="{{ url('controll_panel/office-staff') }}" class="nav-link">
+        <i class="nav-icon fas fa-address-book"></i>
+        <p>OfficeStaffs</p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{ url('controll_panel/speech') }}" class="nav-link">
+        <i class="nav-icon fas fa-comment-dots"></i>
+        <p>Speech</p>
     </a>
 </li>
 <li class="nav-item">
@@ -63,20 +75,8 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ url('controll_panel/social_media') }}" class="nav-link">
-        <i class="nav-icon fas fa-book"></i>
-        <p>Social Media</p>
-    </a>
-</li>
-<li class="nav-item">
     <a href="{{ url('controll_panel/messages') }}" class="nav-link">
         <i class="nav-icon fas fa-envelope-open-text"></i>
         <p>Messages</p>
-    </a>
-</li>
-<li class="nav-item">
-    <a href="{{ url('controll_panel/page') }}" class="nav-link">
-        <i class="nav-icon fas fa-file-alt"></i>
-        <p>Page</p>
     </a>
 </li>

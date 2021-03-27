@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Project;
-use App\Models\Category;
 use Illuminate\Support\Facades\Validator;
 
-class ProjectController extends Controller
+use App\Models\Slider;
+
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +17,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $dataset = Project::all();
-        
-        return view('admin.project.index',compact('dataset'));
+        $dataset = Slider::all();
+        return view('admin.slider.index', compact('dataset'));
     }
 
     /**
@@ -29,8 +28,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $categories = Category::where('type', 'project')->get();
-        return view('admin.project.create', compact('categories'));
+        return view('admin.slider.create');
     }
 
     /**
@@ -42,14 +40,12 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'description' => 'required',
+            'img' => 'required'
         ]);
 
         if($validator->fails()){
             return back()->with('error', $validator->messages()->all());
         }
-
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
@@ -57,22 +53,15 @@ class ProjectController extends Controller
         }
 
 
-        $data = new Project();
-        $data->category_id = $request->category_id;
-        $data->sub_category_id = $request->sub_category_id;
-        $data->name = $request->name;
-        $data->start_date = date('Y-m-d',strtotime($request->start_date));
-        $data->end_date = date('Y-m-d',strtotime($request->end_date));
-        $data->duration = $request->duration;
-        $data->description = $request->description;
+        $data = new Slider();
         $data->img = $imageName;
-        $data->status = $request->status;
+        $data->caption = $request->caption;
         $data->created_at = time();
         
         if($data->save()){
-            return redirect('/controll_panel/project')->with('success', 'Project Created Successfully.');
+            return redirect('/controll_panel/slider')->with('success', 'Slider Created Successfully.');
         }else {
-            return redirect('/controll_panel/project')->with('error', 'Error Creating Project.');
+            return redirect('/controll_panel/slider')->with('error', 'Error Creating Slider.');
         }
     }
 
@@ -95,10 +84,9 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $categories = Category::where('type', 'project')->get();
-        $data = Project::find($id);
-        
-        return view('admin.project.edit', compact('data', 'categories'));
+        $data = Slider::find($id);
+ 
+        return view('admin.slider.edit', compact('data'));
     }
 
     /**
@@ -111,8 +99,7 @@ class ProjectController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'description' => 'required'
+            'img' => 'required'
         ]);
 
         if($validator->fails()){
@@ -127,15 +114,8 @@ class ProjectController extends Controller
 
 
 
-        $data = Project::find($id);
-        $data->category_id = $request->category_id;
-        $data->sub_category_id = $request->sub_category_id;
-        $data->name = $request->name;
-        $data->start_date = date('Y-m-d',strtotime($request->start_date));
-        $data->end_date = date('Y-m-d',strtotime($request->end_date));
-        $data->duration = $request->duration;
-        $data->description = $request->description;
-        $data->status = $request->status;
+        $data = Slider::find($id);
+        $data->caption = $request->caption;
         if(!empty($request->img)) {
             if(!empty($data->img)){
                 $path = public_path()."/images/".$data->img;
@@ -146,10 +126,20 @@ class ProjectController extends Controller
         $data->updated_at = time();
         
         if($data->save()){
-            return redirect('/controll_panel/project')->with('success', 'Project Updated Successfully.');
+            return redirect('/controll_panel/slider')->with('success', 'Slider Created Successfully.');
         }else {
-            return redirect('/controll_panel/project')->with('error', 'Error Updating Project.');
+            return redirect('/controll_panel/slider')->with('error', 'Error Creating Slider.');
         }
+    }
+
+    public function search(Request $request) {
+        $query =Slider::query();
+        if(!empty($request->name)){
+            $query->where('caption', 'like', '%' . $request->name . '%');
+        }
+
+        $dataset = $query->orderBy('id', 'DESC')->get();
+        return view('admin.slider._list', compact('dataset'));
     }
 
     /**
@@ -158,27 +148,17 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function search(Request $request) {
-        $query =Project::query();
-        if(!empty($request->name)){
-            $query->where('name', 'like', '%' . $request->name . '%');
-        }
-
-        $dataset = $query->orderBy('id', 'DESC')->get();
-        return view('admin.project._list', compact('dataset'));
-    }
-
     public function delete(Request $request)
     {
-        $data = Project::find($request->id);
+        $data = Slider::find($request->id);
         if(!empty($data->img)){
             $path = public_path()."/images/".$data->img;
             unlink($path);
         }
         if($data->delete()) {
-            return response()->json(['success' => 'Speech Deleted Successfully.']);
+            return response()->json(['success' => 'Slider Deleted Successfully.']);
         }else {
-            return response()->json(['error' => 'Error While Deleting Speech.']);
-        }     
+            return response()->json(['error' => 'Error While Deleting Slider.']);
+        }       
     }
 }

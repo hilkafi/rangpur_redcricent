@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="client owl-carousel owl-theme">
-                    @foreach($images as $image)
+                    @foreach($sliders as $slider)
                     <div class="item">
-                        <img src="{{ url('images/'.$image->img) }}" />
+                        <img src="{{ url('images/'.$slider->img) }}" />
                     </div>
                     @endforeach
                 </div>
@@ -205,34 +205,25 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="single_news">
-                    <img src="{{ url('img/news_images_1.jpg') }}" alt="">
+                <a href="{{ url('https://www.facebook.com/') }}" target="_blank"><img src="{{ url('img/facebook.jpg') }}" alt=""></a>
                     <div class="texts">
-                        <p class="date"><a href="#">30 May, 2017</a></p>
-                        <h3>Wood Work Adds Value To <br> Your Property Five</h3>
-                        <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h3><a href="#">READ MORE</a></h3>
+                        <h3>Follow Us on Facebook</h3>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single_news">
-                    <img src="{{ url('img/news_images_2.jpg') }}" alt="">
+                    <a href="{{ url('http://twitter.com/') }}" target="_blank"><img src="{{ url('img/twitter.png') }}" alt=""></a>
                     <div class="texts">
-                        <p class="date"><a href="#">30 May, 2017</a></p>
-                        <h3>Wood Work Adds Value To <br> Your Property Five</h3>
-                        <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h3><a href="#">READ MORE</a></h3>
+                        <h3>Follow Us on Twitter</h3>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="single_news">
-                    <img src="{{ url('img/news_images_3.jpg') }}" alt="">
+                <a href="{{ url('https://www.youtube.com/') }}" target="_blank"><img src="{{ url('img/youtube.jpg') }}" alt=""></a>
                     <div class="texts">
-                        <p class="date"><a href="#">30 May, 2017</a></p>
-                        <h3>Wood Work Adds Value To <br> Your Property Five</h3>
-                        <p class="test">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <h3><a href="#">READ MORE</a></h3>
+                        <h3>Follow Us on Youtube</h3>
                     </div>
                 </div>
             </div>

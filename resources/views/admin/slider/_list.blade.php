@@ -2,10 +2,8 @@
     <thead>
         <tr role="row">
             <th>SL.</th>
-            <th>Speaker Name</th>
-            <th>Role</th>
-            <th>Speech</th>
             <th>Image</th>
+            <th>Caption</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -17,12 +15,10 @@
         ?>
         <tr role="row" class="odd">
             <td>{{ $counter }}</td>
-            <td>{{ $data->speaker_name }}</td>
-            <td>{{ $data->speaker_role }}</td>
-            <td>{!! myTruncate($data->speech, 50) !!}</td>
             <td><img src="{{ $url }}" width="80" height="80"></td>
+            <td>{{ $data->caption }}</td>
             <td class="">
-                <a href="{{ url('/controll_panel/speech/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
+                <a href="{{ url('/controll_panel/slider/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
                 <button class="deleteButton btn btn-danger" id="deletevolunteer_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
             </td>
         </tr>

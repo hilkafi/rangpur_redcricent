@@ -38,13 +38,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="start_date" class="col-sm-2 col-form-label">Date</label>
+                    <label for="start_date" class="col-sm-2 col-form-label">Start Date</label>
                     <div class="col-sm-10">
                         <input type="date" class="form-control" name="start_date" id="start_date" placeholder="">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="end_date" class="col-sm-2 col-form-label">Date</label>
+                    <label for="end_date" class="col-sm-2 col-form-label">End Date</label>
                     <div class="col-sm-10">
                         <input type="date" class="form-control" name="end_date" id="end_date" placeholder="">
                     </div>
@@ -79,7 +79,10 @@
 </div>
 <script>
 window.onload = function(){
-
+    tinymce.init({
+     selector: 'textarea#description'
+   });
+   
  $('#category_id').on('change',function(){
     var category_id = $(this).val();
     var _url = "{{URL::to('/controll_panel/blog/list_subcategory')}}";

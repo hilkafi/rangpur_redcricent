@@ -5,8 +5,8 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h3 class="col-md-10 card-title">Speech List</h3>
-                <a href="{{ url('controll_panel/speech/create') }}" class="col-md-2 btn btn-success">Add Volunteer</a>
+                <h3 class="col-md-10 card-title">Slider List</h3>
+                <a href="{{ url('controll_panel/slider/create') }}" class="col-md-2 btn btn-success">Add Slider</a>
             </div>
         </div>
             <!-- /.card-header -->
@@ -27,10 +27,8 @@
                     <thead>
                         <tr role="row">
                             <th>SL.</th>
-                            <th>Speaker Name</th>
-                            <th>Role</th>
-                            <th>Speech</th>
                             <th>Image</th>
+                            <th>Caption</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -42,12 +40,10 @@
                         ?>
                         <tr role="row" class="odd">
                             <td>{{ $counter }}</td>
-                            <td>{{ $data->speaker_name }}</td>
-                            <td>{{ $data->speaker_role }}</td>
-                            <td>{!! myTruncate($data->speech, 50) !!}</td>
                             <td><img src="{{ $url }}" width="80" height="80"></td>
+                            <td>{{ $data->caption }}</td>
                             <td class="">
-                                <a href="{{ url('/controll_panel/speech/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
+                                <a href="{{ url('/controll_panel/slider/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
                                 <button class="deleteButton btn btn-danger" id="deletevolunteer_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
@@ -72,7 +68,7 @@ window.onload = function(){
     
     $("#search-btn").on('click', function() {
         var _form = $('#search-frm');
-        var _url = "{{ url('/controll_panel/speech/search') }}"
+        var _url = "{{ url('/controll_panel/slider/search') }}"
         //console.log(_form.serialize());
 
         $.ajax({
@@ -90,7 +86,7 @@ window.onload = function(){
     $(".deleteButton").on('click', function(){
         //console.log('Hmm...');
         var id = $(this).attr("data-rel");
-        var _url = '{{url("controll_panel/speech/delete") }}';
+        var _url = '{{url("controll_panel/slider/delete") }}';
 
         Swal.fire({
             title: 'Are you sure?',
@@ -114,13 +110,13 @@ window.onload = function(){
                             $('#search-btn').trigger('click');
                             Swal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'Your Image has been deleted.',
                                 'success'
                             );
                         }else{
                             Swal.fire(
                                 'Error!',
-                                'Category Not Deleted.',
+                                'Image Not Deleted.',
                                 'warning'
                             );
                         }

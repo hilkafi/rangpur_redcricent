@@ -12,6 +12,7 @@ use App\Models\DonateGetBlood;
 use App\Models\ContactUs;
 use App\Models\Category;
 use App\Models\Page;
+use App\Models\Slider;
 
 class HomeController extends Controller
 {
@@ -20,10 +21,10 @@ class HomeController extends Controller
         $news_stories = Blog::whereIn('category_id', [CAT_NEWS, CAT_STORIES])->get();
         $reports = Blog::where('category_id', CAT_REPORT)->get();
         $focuses = Blog::where('category_id', CAT_FOCUS)->get();
-        $images = Blog::where('img', '!=', NULL)->take(4)->get();
+        $sliders = Slider::where('is_active', true)->take(5)->get();
         $speech = Speech::all();
         $upcoming_events = Blog::where('category_id', CAT_UPCOMING)->get();
-        return view('front.home', compact('news_stories', 'reports', 'focuses', 'images', 'speech', 'upcoming_events'));
+        return view('front.home', compact('news_stories', 'reports', 'focuses', 'sliders', 'speech', 'upcoming_events'));
     }
 
     public function single_blog($id) {

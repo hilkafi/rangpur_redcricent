@@ -33,7 +33,7 @@ class BlogController extends Controller
     public function create()
     {
         //
-        $cat = Category::all();
+        $cat = Category::where('type', 'blog')->get();
         return view('admin.blog.create',compact('cat'));
     }
 
@@ -93,7 +93,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         $blog = Blog::find($id);
-        $cat = Category::all();
+        $cat = Category::where('type', 'blog')->get();
         $data = new Blog();
         return view('admin.blog.edit', compact('blog','cat','data'));
     }

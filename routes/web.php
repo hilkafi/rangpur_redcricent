@@ -99,6 +99,13 @@ Route::post('/controll_panel/social_media/search', [App\Http\Controllers\Admin\S
 //Messages
 Route::get('controll_panel/messages', [App\Http\Controllers\Admin\SocialMediaController::class, 'messages']);
 
+//Slider Routes
+
+Route::resource('/controll_panel/slider', App\Http\Controllers\Admin\SliderController::class);
+Route::post('/controll_panel/slider/delete', [App\Http\Controllers\Admin\SliderController::class, 'delete']);
+Route::post('/controll_panel/slider/search', [App\Http\Controllers\Admin\SliderController::class, 'search']);
+
+
 //Front Routes
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 Route::get('/single-blog/{id}', [App\Http\Controllers\Front\HomeController::class, 'single_blog']);
