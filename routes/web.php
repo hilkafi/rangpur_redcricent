@@ -113,7 +113,9 @@ Route::get('/video-gallery', [App\Http\Controllers\Front\HomeController::class, 
 Route::get('/category/{id}', [App\Http\Controllers\Front\HomeController::class, 'show_category']);
 Route::get('/career', [App\Http\Controllers\Front\HomeController::class, 'career']);
 Route::get('/page/{id}', [App\Http\Controllers\Front\HomeController::class, 'page']);
-
+Route::get('/organizational-structure', [App\Http\Controllers\Front\HomeController::class, 'organizational_structure']);
+Route::get('/partners', [App\Http\Controllers\Front\HomeController::class, 'partners']);
+Route::get('/unit-braches', [App\Http\Controllers\Front\HomeController::class, 'unit_branches']);
 // become volunteer route
 
 Route::resource('/volunteer-form', App\Http\Controllers\BeAVolunteerController::class);

@@ -14,6 +14,17 @@ define('CAT_FOCUS', 7);
 define('CAT_PUBLICATION', 8);
 define('CAT_NOTICE', 9);
 define('CAT_UPCOMING', 10);
+define('CAT_MISSION', 5);
+define('CAT_HISTORY', 3);
+define('CAT_MOV_PRICEPLE', 7);
+define('CAT_DISASTER_RISK_MANAGEMENT', 11);
+define('CAT_DISASTER_RESPONSE', 12);
+define('CAT_TRAINING', 13);
+define('CAT_COMMUNITY_DEVELOPMENT', 14);
+define('CAT_PLANNING_DEVELOPMENT', 15);
+define('CAT_HEALTH', 16);
+define('CAT_YOUTH_VOLUNTEERS', 17);
+define('CAT_CROSS_CUTTING_ISSUES', 18);
 
 
 /*****************

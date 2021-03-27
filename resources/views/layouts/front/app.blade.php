@@ -1,7 +1,16 @@
 <?php 
 use App\Models\Category;
+use App\Models\Blog;
 
-$media_publication = Category::where('type', 'blog')->get();
+$media_publication = Category::whereIn('id', [CAT_REPORT, CAT_NEWS, CAT_STORIES, CAT_FOCUS, CAT_PUBLICATION])->get();
+$disaster_risks = Blog::where('category_id', CAT_DISASTER_RISK_MANAGEMENT)->limit('6')->get();
+$disaster_responses = Blog::where('category_id', CAT_DISASTER_RESPONSE)->limit('6')->get();
+$trainings = Blog::where('category_id', CAT_TRAINING)->limit('6')->get();
+$c_developments = Blog::where('category_id', CAT_COMMUNITY_DEVELOPMENT)->limit('6')->get();
+$pl_developments = Blog::where('category_id', CAT_PLANNING_DEVELOPMENT)->limit('6')->get();
+$healths = Blog::where('category_id', CAT_HEALTH)->limit('6')->get();
+$youth_volunteers = Blog::where('category_id', CAT_YOUTH_VOLUNTEERS)->limit('6')->get();
+$cc_issues = Blog::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->get();
 ?>
 
 <!DOCTYPE html>
@@ -68,19 +77,19 @@ $media_publication = Category::where('type', 'blog')->get();
                                         <span class="text-uppercase text-white">About BDRCS</span>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('page/3') }}">History of BDRCS</a>
+                                            <a class="nav-link" href="{{ url('page/'.CAT_HISTORY) }}">History of BDRCS</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Organizational Structure</a>
+                                            <a class="nav-link" href="{{ url('/organizational-structure') }}">Organizational Structure</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Mission & Vission</a>
+                                            <a class="nav-link" href="{{ url('/page/'.CAT_MISSION) }}">Mission & Vission</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Partners</a>
+                                            <a class="nav-link" href="{{ url('/partners') }}">Partners</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Unit/Branches</a>
+                                            <a class="nav-link" href="{{ url('/unit-braches') }}">Unit/Branches</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -101,7 +110,7 @@ $media_publication = Category::where('type', 'blog')->get();
                                         <span class="text-uppercase text-white">Movement</span>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Movement Principle</a>
+                                            <a class="nav-link" href="{{ url('page/'.CAT_MOV_PRICEPLE) }}">Movement Principle</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -131,115 +140,84 @@ $media_publication = Category::where('type', 'blog')->get();
                                     <div class="col-md-3">
                                         <span class="text-uppercase text-white">Disaster Risk Management</span>
                                         <ul class="nav flex-column">
+                                            @foreach($disaster_risks as $dr)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 1</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$dr->id) }}">{{ $dr->title }}</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 3</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                         
                                         <span class="text-uppercase text-white">Planing And Development</span>
                                         <ul class="nav flex-column">
+                                            @foreach($pl_developments as $pl)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 1</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$pl->id) }}">{{ $pl->title }}</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 3</a>
-                                            </li>
+                                            @endforeach
+                                            
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
                                         <span class="text-uppercase text-white">Disaster Response</span>
                                         <ul class="nav flex-column">
+                                            @foreach($disaster_responses as $dres)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 1</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$dres->id) }}">{{ $dres->title }}</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 3</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
 
                                         
                                         <span class="text-uppercase text-white">Health</span>
                                         <ul class="nav flex-column">
+                                            @foreach($healths as $health)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 1</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$health->id) }}">{{ $health->title }}</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 3</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
                                         <span class="text-uppercase text-white">Training</span>
                                         <ul class="nav flex-column">
+                                            @foreach($trainings as $training)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 1</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$training->id) }}">{{ $training->title }}</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 3</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
 
                                         
                                         <span class="text-uppercase text-white">Youth And Volunteers</span>
                                         <ul class="nav flex-column">
+                                            @foreach($youth_volunteers as $yv)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 1</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$yv->id) }}">{{ $yv->title }}</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 3</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
                                         <span class="text-uppercase text-white">Community Development</span>
                                         <ul class="nav flex-column">
+                                            @foreach($c_developments as $cd)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 1</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$cd->id) }}">{{ $cd->title }}</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 3</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
 
                                         
                                         <span class="text-uppercase text-white">Cross Cutting Issues</span>
                                         <ul class="nav flex-column">
+                                            @foreach($cc_issues as $cc)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 1</a>
+                                            <a class="nav-link" href="{{ url('single-blog/'.$cc->id) }}">{{ $cc->title }}</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 2</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="#">Item 3</a>
-                                            </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     </div>

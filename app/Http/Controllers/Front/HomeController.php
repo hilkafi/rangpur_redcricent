@@ -102,7 +102,20 @@ class HomeController extends Controller
 
     public function page($id) {
         $data = Page::find($id);
-        return view('front.page', compact('data'));
+        return view('front.pages.page', compact('data'));
+    }
+
+    public function organizational_structure() {
+        return view('front.pages.organizational_structure');
+    }
+
+    public function partners() {
+        return view('front.pages.partners');
+    }
+
+    public function unit_branches() {
+        $dataset = DonateGetBlood::all();
+        return view('front.pages.unit_branches', compact('dataset'));
     }
 
 }

@@ -8,8 +8,10 @@
                     <h2>{{ $data->title }}</h2>
                     <p>{{ $data->category->name }}</p>
                 </div>
-                <div class="single_image_area">
-                    <img src="{{ url('images/'.$data->img) }}" width="100%" />
+                <div class="single_image_area" style="">
+                    <div class="col-md-8">
+                        <img src="{{ url('images/'.$data->img) }}" width="100%" />
+                    </div>
                 </div>
                 <div class="single_content_area">
                     <p>{!! $data->description !!}</p>
