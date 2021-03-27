@@ -123,6 +123,9 @@ Route::get('/page/{id}', [App\Http\Controllers\Front\HomeController::class, 'pag
 Route::get('/organizational-structure', [App\Http\Controllers\Front\HomeController::class, 'organizational_structure']);
 Route::get('/partners', [App\Http\Controllers\Front\HomeController::class, 'partners']);
 Route::get('/unit-braches', [App\Http\Controllers\Front\HomeController::class, 'unit_branches']);
+Route::get('/managing-board', [App\Http\Controllers\Front\HomeController::class, 'managing_board']);
+Route::get('/senior-management', [App\Http\Controllers\Front\HomeController::class, 'senior_management']);
+
 // become volunteer route
 
 Route::resource('/volunteer-form', App\Http\Controllers\BeAVolunteerController::class);

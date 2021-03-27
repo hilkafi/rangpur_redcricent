@@ -55,7 +55,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                     <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        BDRCS RANGPUR
+                        BDRCS RANGPUR UNIT
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -98,10 +98,10 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                         <span class="text-uppercase text-white">Our Management</span>
                                         <ul class="nav flex-column">
                                         <li class="nav-item">
-                                        <a class="nav-link" href="#">Managing Board</a>
+                                        <a class="nav-link" href="{{ url('/managing-board') }}">Managing Board</a>
                                         </li>
                                         <li class="nav-item">
-                                        <a class="nav-link" href="#">Senior Management</a>
+                                        <a class="nav-link" href="{{ url('/senior-management') }}">Senior Management</a>
                                         </li>
                                     </ul>
                                     </div>
@@ -343,9 +343,6 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                 <a class="donate btn btn-danger" href="{{ url('donate-us') }}" style="padding-top: 0px; padding-bottom: 0px;">Donate Us</a>
                             </li>
                         </ul>
-                        <form class="form-inline my-2 my-lg-0" style="float: right">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        </form>
                     </div>
                     </div>
                 </nav>

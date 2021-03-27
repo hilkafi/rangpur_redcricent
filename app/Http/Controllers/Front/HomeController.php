@@ -119,4 +119,12 @@ class HomeController extends Controller
         return view('front.pages.unit_branches', compact('dataset'));
     }
 
+    public function managing_board() {
+        return view('front.pages.managing_board');
+    }
+
+    public function senior_management() {
+        return view('front.pages.senior_management');
+    }
+
 }

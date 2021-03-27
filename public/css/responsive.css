@@ -167,4 +167,12 @@
     .donors .donors_input {
         background: none;
     }
+
+    a.navbar-brand{
+        font-size: 14px;
+    }
+
+    #slider {
+        display: none;
+    }
 }

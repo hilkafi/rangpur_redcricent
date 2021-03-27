@@ -1,6 +1,6 @@
 @extends('layouts.front.app')
 @section('content')
-<section class="carosal-area">
+<section class="carosal-area" id="slider">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

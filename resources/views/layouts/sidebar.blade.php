@@ -1,5 +1,5 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <a href="{{ url('controll_panel') }}" class="brand-link">
+    <a href="{{ url('controll_panel') }}" class="brand-link" style="font-size: 18px;">
         <img src="{{url('img/bdrcs-logo.png')}}"
              alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3">
