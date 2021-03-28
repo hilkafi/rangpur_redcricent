@@ -13,6 +13,7 @@ use App\Models\ContactUs;
 use App\Models\Category;
 use App\Models\Page;
 use App\Models\Slider;
+use App\Models\Project;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,11 @@ class HomeController extends Controller
     public function single_blog($id) {
         $data = Blog::find($id);
         return view('front.single_blog', compact('data'));
+    }
+
+    public function single_project($id) {
+        $data = Project::find($id);
+        return view('front.single_project', compact('data'));
     }
 
     public function donate_us() {
@@ -95,6 +101,12 @@ class HomeController extends Controller
         $dataset = Blog::where('category_id', $id)->get();
         $category = Category::find($id)->name;
         return view('front.single_category', compact('dataset', 'category'));
+    }
+
+    public function show_project_category($id) {
+        $dataset = Project::where('category_id', $id)->get();
+        $category = Category::find($id)->name;
+        return view('front.project_single_category', compact('dataset', 'category'));
     }
 
     public function career() {

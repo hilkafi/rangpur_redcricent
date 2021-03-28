@@ -5,7 +5,7 @@
  
  .navbar .dropdown-menu {
    border:none;
-   background-color:#337ab7!important;
+   background-color:#fff!important;
  }
  
  /* breakpoint and up - mega dropdown styles */
@@ -57,9 +57,20 @@
    }
  
  }
+
+
+ @media only screen and (max-width: 767px) {
+  .navbar-nav {
+    margin: 7.5px -50px;
+  }
+ }
  
  .navbar a {
-     color: #fff !important;
+     color: #606163 !important;
+ }
+
+ .navbar a:hover {
+   font-weight: 600 !important;
  }
  
  .navbar-nav {
@@ -80,3 +91,34 @@
     padding-top: 0px !important;
     padding-bottom: 0px !important;
 }
+
+.nav > li > a {
+  margin: -10px 15px !important;
+}
+
+.dropdown > a {
+  font-weight: bold;
+}
+
+a.navbar-brand {
+  font-weight: bold;
+}
+
+.nav-bold {
+  font-weight: bold !important;
+}
+
+span.span-color {
+  color: 606163 !important;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: rgb(255,102,203);
+  margin-top: 12px;
+  margin-right: 5px;
+  float: right;
+} 

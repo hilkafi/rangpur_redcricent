@@ -117,6 +117,7 @@ Route::get('/contact-us', [App\Http\Controllers\Front\HomeController::class, 'co
 Route::post('/contact-us/save', [App\Http\Controllers\Front\HomeController::class, 'contact_us_save']);
 Route::get('/photo-gallery', [App\Http\Controllers\Front\HomeController::class, 'photo_gallery']);
 Route::get('/video-gallery', [App\Http\Controllers\Front\HomeController::class, 'video_gallery']);
+Route::get('/project/category/{id}', [App\Http\Controllers\Front\HomeController::class, 'show_project_category']);
 Route::get('/category/{id}', [App\Http\Controllers\Front\HomeController::class, 'show_category']);
 Route::get('/career', [App\Http\Controllers\Front\HomeController::class, 'career']);
 Route::get('/page/{id}', [App\Http\Controllers\Front\HomeController::class, 'page']);
@@ -125,6 +126,7 @@ Route::get('/partners', [App\Http\Controllers\Front\HomeController::class, 'part
 Route::get('/unit-braches', [App\Http\Controllers\Front\HomeController::class, 'unit_branches']);
 Route::get('/managing-board', [App\Http\Controllers\Front\HomeController::class, 'managing_board']);
 Route::get('/senior-management', [App\Http\Controllers\Front\HomeController::class, 'senior_management']);
+Route::get('/single-project/{id}', [App\Http\Controllers\Front\HomeController::class, 'single_project']);
 
 // become volunteer route
 

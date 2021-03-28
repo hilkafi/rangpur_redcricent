@@ -3,14 +3,14 @@ use App\Models\Category;
 use App\Models\Project;
 
 $media_publication = Category::whereIn('id', [CAT_REPORT, CAT_NEWS, CAT_STORIES, CAT_FOCUS, CAT_PUBLICATION])->get();
-$disaster_risks = Project::where('category_id', CAT_DISASTER_RISK_MANAGEMENT)->limit('6')->get();
-$disaster_responses = Project::where('category_id', CAT_DISASTER_RESPONSE)->limit('6')->get();
-$trainings = Project::where('category_id', CAT_TRAINING)->limit('6')->get();
-$c_developments = Project::where('category_id', CAT_COMMUNITY_DEVELOPMENT)->limit('6')->get();
-$pl_developments = Project::where('category_id', CAT_PLANNING_DEVELOPMENT)->limit('6')->get();
-$healths = Project::where('category_id', CAT_HEALTH)->limit('6')->get();
-$youth_volunteers = Project::where('category_id', CAT_YOUTH_VOLUNTEERS)->limit('6')->get();
-$cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')->get();
+$disaster_risks = Project::where('category_id', CAT_DISASTER_RISK_MANAGEMENT)->latest()->limit('6')->get();
+$disaster_responses = Project::where('category_id', CAT_DISASTER_RESPONSE)->latest()->limit('6')->get();
+$trainings = Project::where('category_id', CAT_TRAINING)->latest()->limit('6')->get();
+$c_developments = Project::where('category_id', CAT_COMMUNITY_DEVELOPMENT)->latest()->limit('6')->get();
+$pl_developments = Project::where('category_id', CAT_PLANNING_DEVELOPMENT)->latest()->limit('6')->get();
+$healths = Project::where('category_id', CAT_HEALTH)->latest()->limit('6')->get();
+$youth_volunteers = Project::where('category_id', CAT_YOUTH_VOLUNTEERS)->latest()->limit('6')->get();
+$cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->limit('6')->get();
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +28,8 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
     <link rel="stylesheet" href="{{ url('css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ url('css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ url('css/megamenu.css') }}">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
+    <link rel="stylesheet" href="{{ url('css/megamenu.css') }}">
     <link rel="stylesheet" href="{{ url('css/responsive.css') }}">
     @yield('extra_style')
 </head>
@@ -37,34 +37,34 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
 <body>
     <div class="wrapper">
         <header class="header">
-            <section class="header-top">
+            <section class="header-top"">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2">
                             <img src="/img/bdrcs-logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
                         </div>   
                         <div class="col-md-10 col-sm-10">
-                            <div class="contact">
-                                <p style="text-align: right"><span class="phone"><a href="#">Phone: +1023546789</a></span><span class="email"><a href="#">Email: testdomain@gmail.com</a></span><span class="email"><a href="#" class="join-us">JOIN US NOW</a></span></p>
+                            <div class="contact" id="display-hidden">
+                                <p style="text-align: right"><span class="phone"><a href="#">Phone: 0521-55693</a></span><span class="email"><a href="#">Email: rangpur@bdrcs.org</a></span><span class="email"><a href="{{ url('/member/create') }}" class="join-us">JOIN US NOW</a></span></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="header-bottom">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <section class="header-bottom" style="background: #F0F0F0">
+                <nav class="navbar navbar-expand-lg navbar-dark">
                     <div class="container">
                     <a class="navbar-brand" href="{{ url('/') }}">
                         BDRCS RANGPUR UNIT
                     </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon bg-primary"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}">Home</a>
+                                <a class="nav-link nav-bold" href="{{ url('/') }}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,7 +74,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                 <div class="container">
                                     <div class="row">
                                     <div class="col-md-3">
-                                        <span class="text-uppercase text-white">About BDRCS</span>
+                                    <a href="#" class="nav-bold"><span class="text-uppercase text-white">About BDRCS</span></a>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('page/'.CAT_HISTORY) }}">History of BDRCS</a>
@@ -95,7 +95,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                        <span class="text-uppercase text-white">Our Management</span>
+                                    <a href="#" class="nav-bold"><span class="text-uppercase text-white">Our Management</span></a>
                                         <ul class="nav flex-column">
                                         <li class="nav-item">
                                         <a class="nav-link" href="{{ url('/managing-board') }}">Managing Board</a>
@@ -107,7 +107,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                        <span class="text-uppercase text-white">Movement</span>
+                                    <a href="#" class="nav-bold"><span class="text-uppercase text-white">Movement</span></a>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('page/'.CAT_MOV_PRICEPLE) }}">Movement Principle</a>
@@ -138,20 +138,20 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                 <div class="container">
                                     <div class="row">
                                     <div class="col-md-3">
-                                        <span class="text-uppercase text-white">Disaster Risk Management</span>
+                                        <a href="{{ url('project/category/'.CAT_DISASTER_RISK_MANAGEMENT) }}" class="nav-bold"><span class="text-uppercase text-white">Disaster Risk Management</span></a>
                                         <ul class="nav flex-column">
                                             @foreach($disaster_risks as $dr)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$dr->id) }}">{{ $dr->name }}</a>
+                                            <a class="nav-link" href="{{ url('single-project/'.$dr->id) }}">{{ $dr->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
                                         
-                                        <span class="text-uppercase text-white">Planing And Development</span>
+                                        <a href="{{ url('project/category/'.CAT_PLANNING_DEVELOPMENT) }}" class="nav-bold"><span class="text-uppercase text-white">Planing And Development</span></a>
                                         <ul class="nav flex-column">
                                             @foreach($pl_developments as $pl)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$pl->id) }}">{{ $pl->name }}</a>
+                                            <a class="nav-link" href="{{ url('single-project/'.$pl->id) }}">{{ $pl->name }}</a>
                                             </li>
                                             @endforeach
                                             
@@ -159,63 +159,63 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                        <span class="text-uppercase text-white">Disaster Response</span>
+                                    <a href="{{ url('project/category/'.CAT_DISASTER_RESPONSE) }}" class="nav-bold"><span class="text-uppercase text-white">Disaster Response</span></a>
                                         <ul class="nav flex-column">
                                             @foreach($disaster_responses as $dres)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$dres->id) }}">{{ $dres->name }}</a>
+                                            <a class="nav-link" href="{{ url('single-project/'.$dres->id) }}">{{ $dres->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
 
                                         
-                                        <span class="text-uppercase text-white">Health</span>
+                                        <a href="{{ url('project/category/'.CAT_HEALTH) }}" class="nav-bold"><span class="text-uppercase text-white">Health</span></a>
                                         <ul class="nav flex-column">
                                             @foreach($healths as $health)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$health->id) }}">{{ $health->name }}</a>
+                                            <a class="nav-link" href="{{ url('single-project/'.$health->id) }}">{{ $health->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                        <span class="text-uppercase text-white">Training</span>
+                                    <a href="{{ url('project/category/'.CAT_TRAINING) }}" class="nav-bold"><span class="text-uppercase text-white">Training</span></a>
                                         <ul class="nav flex-column">
                                             @foreach($trainings as $training)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$training->id) }}">{{ $training->name }}</a>
+                                            <a class="nav-link" href="{{ url('single-project/'.$training->id) }}">{{ $training->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
 
                                         
-                                        <span class="text-uppercase text-white">Youth And Volunteers</span>
+                                        <a href="{{ url('project/category/'.CAT_YOUTH_VOLUNTEERS) }}" class="nav-bold"><span class="text-uppercase text-white">Youth And Volunteers</span></a>
                                         <ul class="nav flex-column">
                                             @foreach($youth_volunteers as $yv)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$yv->id) }}">{{ $yv->name }}</a>
+                                            <a class="nav-link" href="{{ url('single-project/'.$yv->id) }}">{{ $yv->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                        <span class="text-uppercase text-white">Community Development</span>
+                                    <a href="{{ url('project/category/'.CAT_COMMUNITY_DEVELOPMENT) }}" class="nav-bold"><span class="text-uppercase text-white">Community Development</span></a>
                                         <ul class="nav flex-column">
                                             @foreach($c_developments as $cd)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$cd->id) }}">{{ $cd->name }}</a>
+                                            <a class="nav-link" href="{{ url('single-project/'.$cd->id) }}">{{ $cd->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
 
                                         
-                                        <span class="text-uppercase text-white">Cross Cutting Issues</span>
+                                        <a href="{{ url('project/category/'.CAT_CROSS_CUTTING_ISSUES) }}" class="nav-bold"><span class="text-uppercase text-white">Cross Cutting Issues</span></a>
                                         <ul class="nav flex-column">
                                             @foreach($cc_issues as $cc)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('single-blog/'.$cc->id) }}">{{ $cc->name }}</a>
+                                            <a class="nav-link" href="{{ url('single-project/'.$cc->id) }}">{{ $cc->name }}</a>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -235,7 +235,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                 <div class="container">
                                     <div class="row">
                                     <div class="col-md-4">
-                                        <span class="text-uppercase text-white">Get Involved</span>
+                                    <a href="#" class="nav-bold"><span class="text-uppercase text-white">Get Involved</span></a>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/donate-us') }}">Donate Us</a>
@@ -294,7 +294,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                 <div class="container">
                                     <div class="row">
                                     <div class="col-md-4">
-                                        <span class="text-uppercase text-white">Media & Publication</span>
+                                        <a href="#" class="nav-bold"><span class="text-uppercase text-white">Media & Publication</span></a>
                                         <ul class="nav flex-column">
                                         @foreach($media_publication as $mp)
                                         <li class="nav-item">
@@ -337,10 +337,10 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->limit('6')
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
+                                <a class="nav-link nav-bold" href="{{ url('/contact-us') }}">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="donate btn btn-danger" href="{{ url('donate-us') }}" style="padding-top: 0px; padding-bottom: 0px;">Donate Us</a>
+                                <a class="donate btn btn-danger nav-bold" href="{{ url('donate-us') }}" style="padding-top: 0px; padding-bottom: 0px; color: #fff !important">Donate Us</a>
                             </li>
                         </ul>
                     </div>
