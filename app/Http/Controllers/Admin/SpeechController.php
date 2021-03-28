@@ -53,7 +53,7 @@ class SpeechController extends Controller
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
 
 
@@ -118,7 +118,7 @@ class SpeechController extends Controller
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
 
 
@@ -130,7 +130,7 @@ class SpeechController extends Controller
         $data->video = $request->video;
         if(!empty($request->img)) {
             if(!empty($data->img)){
-                $path = public_path()."/images/".$data->img;
+                $path = "images/".$data->img;
                 unlink($path);
             }
             $data->img = $imageName;
@@ -166,7 +166,7 @@ class SpeechController extends Controller
     {
         $data = Speech::find($request->id);
         if(!empty($data->img)){
-            $path = public_path()."/images/".$data->img;
+            $path = "images/".$data->img;
             unlink($path);
         }
         if($data->delete()) {

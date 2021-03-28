@@ -59,7 +59,7 @@ class BlogController extends Controller
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
 
 
@@ -130,7 +130,7 @@ class BlogController extends Controller
 
         if(!empty($request->img)){
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
 
         $post = Blog::find($id);
@@ -142,7 +142,7 @@ class BlogController extends Controller
         $post->video_link = $request->video_link;
         if(!empty($request->img)){
             if(!empty($post->img)){
-                $path = public_path()."/images/".$post->img;
+                $path = "images/".$post->img;
                 unlink($path);
             }
             $post->img = $imageName;
@@ -192,7 +192,7 @@ class BlogController extends Controller
     {
         $post = Blog::find($request->id);
         if(!empty($post->img)){
-            $path = public_path()."/images/".$post->img;
+            $path = "images/".$post->img;
             unlink($path);
         }
         if($post->delete()) {

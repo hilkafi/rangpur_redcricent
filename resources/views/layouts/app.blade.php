@@ -9,7 +9,7 @@
           integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
           crossorigin="anonymous"/>
 
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ url(mix('css/app.css')) }}" rel="stylesheet">
 
     @yield('third_party_stylesheets')
 
@@ -77,7 +77,7 @@
     </footer>
 </div>
 
-<script src="{{ mix('js/app.js') }}" defer></script>
+<script src="{{ url(mix('js/app.js')) }}" defer></script>
 <!---------<script src="https://cdn.tiny.cloud/1/30w0vzksdd2z32lomjhu5rickb2ybi1r2t56x0e3tlwuckoc/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script> -->
 <script src="{{ url('vendor/tinymce/js/tinymce/tinymce.min.js') }}" defer></script>
 @include('sweetalert::alert')

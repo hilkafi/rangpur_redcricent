@@ -59,7 +59,7 @@ class OfficeStaffController extends Controller
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
 
 
@@ -125,7 +125,7 @@ class OfficeStaffController extends Controller
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
         
 
@@ -138,7 +138,7 @@ class OfficeStaffController extends Controller
         $staff->address = $request->address;
         if(!empty($request->img)) {
             if(!empty($staff->img)){
-                $path = public_path()."/images/".$staff->img;
+                $path = "images/".$staff->img;
                 unlink($path);
             }
             $staff->img = $imageName;
@@ -179,7 +179,7 @@ class OfficeStaffController extends Controller
         $staff = OfficeStaff::find($request->id);
 
         if(!empty($staff->img)){
-            $path = public_path()."/images/".$staff->img;
+            $path = "images/".$staff->img;
             unlink($path);
         }
 

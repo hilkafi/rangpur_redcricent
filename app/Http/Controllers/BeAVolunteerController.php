@@ -56,7 +56,7 @@ class BeAVolunteerController extends Controller
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
 
 

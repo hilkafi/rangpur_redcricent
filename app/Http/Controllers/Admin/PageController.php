@@ -48,7 +48,7 @@ class PageController extends Controller
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
 
 
@@ -104,7 +104,7 @@ class PageController extends Controller
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
-            $request->img->move(public_path('images'), $imageName);
+            $request->img->move('images', $imageName);
         }
 
 
@@ -114,7 +114,7 @@ class PageController extends Controller
         $data->description = $request->description;
         if(!empty($request->img)) {
             if(!empty($data->img)){
-                $path = public_path()."/images/".$data->img;
+                $path = "images/".$data->img;
                 unlink($path);
             }
             $data->img = $imageName;
@@ -149,7 +149,7 @@ class PageController extends Controller
         $data = Page::find($request->id);
 
         if(!empty($data->img)){
-            $path = public_path()."/images/".$data->img;
+            $path = "images/".$data->img;
             unlink($path);
         }
 

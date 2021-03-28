@@ -41,7 +41,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                 <div class="container">
                     <div class="row">
                         <div class="col-md-2">
-                            <img src="/img/bdrcs-logo.png" width="50" height="50" class="d-inline-block align-top" alt="">
+                            <img src="{{ url('/img/bdrcs-logo.png') }}" width="50" height="50" class="d-inline-block align-top" alt="">
                         </div>   
                         <div class="col-md-10 col-sm-10">
                             <div class="contact" id="display-hidden">
@@ -413,7 +413,6 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
         </footer>
     </div>
     
-    <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="{{ url('js/jquery-3.1.1.min.js') }}" defer="defer"></script>
     <script src="{{ url('js/animationCounter.js') }}" defer="defer"></script>
     <script src="{{ url('js/bootstrap.min.js') }}" defer="defer"></script>
