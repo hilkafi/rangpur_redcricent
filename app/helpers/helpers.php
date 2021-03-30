@@ -26,6 +26,11 @@ define('CAT_HEALTH', 16);
 define('CAT_YOUTH_VOLUNTEERS', 17);
 define('CAT_CROSS_CUTTING_ISSUES', 18);
 
+//Unit Type
+define('RCY', 'rcy');
+define('UPAZILA', 'upazila');
+
+
 
 /*****************
  * 
@@ -46,4 +51,18 @@ function myTruncate($string, $limit, $break=".", $pad="...")
   }
 
   return $string;
+}
+
+function upazilas() {
+  return [
+    'kaunia' => 'Kaunia',
+    'gangachara' => 'Gangachara',
+    'taraganj' => 'Taraganj',
+    'pirganj' => 'Pirganj',
+    'pirgachha' => 'Pirgachha',
+    'badarganj' => 'Badarganj',
+    'mitha_pukur' => 'Mitha Pukur',
+    'rangpur_sadar' => 'Rangpur Sadar',
+    'rangpur_city_corporation' => 'Rangpur City Corp.',
+  ];
 }

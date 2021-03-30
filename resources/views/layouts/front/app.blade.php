@@ -19,7 +19,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Front page</title>
+    <title>BDRCS RANGPUR UNIT</title>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
@@ -88,30 +88,52 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/partners') }}">Partners</a>
                                             </li>
+                                        </ul>
+
+                                        <a href="#" class="nav-bold"><span class="text-uppercase text-white">Movement</span></a>
+                                        <ul class="nav flex-column">
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('/unit-braches') }}">Unit/Branches</a>
+                                            <a class="nav-link" href="{{ url('page/'.CAT_MOV_PRICEPLE) }}">Movement Principle</a>
                                             </li>
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                    <a href="#" class="nav-bold"><span class="text-uppercase text-white">Our Management</span></a>
+                                        <a href="#" class="nav-bold"><span class="text-uppercase text-white">Our Management</span></a>
                                         <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/managing-board') }}">Managing Board</a>
-                                        </li>
-                                        <li class="nav-item">
-                                        <a class="nav-link" href="{{ url('/senior-management') }}">Senior Management</a>
-                                        </li>
-                                    </ul>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/managing-board') }}">Managing Board</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/senior-management') }}">Senior Management</a>
+                                            </li>
+                                        </ul>
+
+                                        <a href="#" class="nav-bold"><span class="text-uppercase text-white">Members</span></a>
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/executive-committee') }}">Executive Committee</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/life-member') }}">Life Member</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/youth-executive') }}">Youth Executive Committee</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/rcy-volunteer') }}">RCY Volunteer</a>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                    <a href="#" class="nav-bold"><span class="text-uppercase text-white">Movement</span></a>
+                                        <a href="#" class="nav-bold"><span class="text-uppercase text-white">Unit/Branches</span></a>
                                         <ul class="nav flex-column">
+                                            @foreach(upazilas() as $key => $value)
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('page/'.CAT_MOV_PRICEPLE) }}">Movement Principle</a>
+                                            <a class="nav-link" href="{{ url('/upazila_volunteer/'.$key) }}">{{$value}}</a>
                                             </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
@@ -244,7 +266,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                             <a class="nav-link" href="{{ url('/member/create') }}">Become A Member</a>
                                             </li>
                                             <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('/souvenir-item') }}">Buy Souvenir Item</a>
+                                            <a class="nav-link" href="{{ url('/buy-souvenir-product') }}">Buy Souvenir Item</a>
                                             </li>
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/request-for-training') }}">Request For Training</a>

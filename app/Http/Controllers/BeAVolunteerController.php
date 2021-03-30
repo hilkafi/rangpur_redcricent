@@ -44,10 +44,6 @@ class BeAVolunteerController extends Controller
         //
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:1024',
-            'role' => 'required',
-            'unit' => 'required',
-            'unit_name'=>'required',
         ]);
 
         if($validator->fails()){
@@ -62,24 +58,39 @@ class BeAVolunteerController extends Controller
 
         $data = new Volunteer();
         $data->name = $request->name;
-        $data->img = $imageName;
-        $data->unit_type = $request->unit;
-        $data->role = $request->role;
-        $data->occupation = $request->occupation;
-        $data->phone = $request->contact;
-        $data->address = $request->address;
-        $data->unit_name = $request->unit_name;
-        $data->institute = $request->institution;
+        $data->registration_number = $request->registration_no;
+        $data->name_bangla = $request->name_bangla;
+        $data->joining_date = date('Y-m-d', strtotime($request->joining_date));
+        $data->type_of_volunteer = $request->type_of_volunteer;
+        $data->contract_number = $request->contract_number;
+        $data->father_name = $request->father_name;
+        $data->mother_name = $request->mother_name;
+        $data->father_occupation = $request->father_occupation;
+        $data->mother_occupation = $request->mother_occupation;
+        $data->parent_contract_number = $request->parent_contract_number;
+        $data->nid_or_birth_no = $request->nid_or_birth_no;
+        $data->email = $request->email;
+        $data->date_of_birth = date('Y-m-d', strtotime($request->date_of_birth));
+        $data->interest_in_blood_donation = $request->interest_in_blood_donation;
         $data->blood_group = $request->blood_group;
-        $data->blood_donation = $request->blood_date;
+        $data->gender = $request->gender;
+        $data->marital_status = $request->marital_status;
+        $data->institute_name = $request->institute_name;
+        $data->educational_status = $request->educational_status;
+        $data->district_name = $request->district_name;
+        $data->upazila_name = $request->upazila_name;
+        $data->house_village_word_name = $request->house_village_word_name;
+        $data->img = $imageName;
+        $data->any_time_service = $request->any_time_service;
+        $data->reason_for_joining = $request->reason_for_joining;
+        $data->unit_type = $request->unit_type;
         $data->is_approved = '0';
-       
         $data->created_at = time();
         
         if($data->save()){
-            return redirect('/')->with('success', 'Requested Created Successfully.');
+            return redirect('/')->with('success', 'Volunteer Request Sent.');
         }else {
-            return redirect('/')->with('error', 'Error Creating Request.');
+            return redirect('/')->with('error', 'Error While Requesting For Volunteer.');
         }
     }
 

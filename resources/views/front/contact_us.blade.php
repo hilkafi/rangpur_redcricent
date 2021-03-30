@@ -50,6 +50,10 @@
                         <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your E-mail">
                     </div>
                     <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter Your Number">
+                    </div>
+                    <div class="form-group">
                         <label for="message">Message</label>
                         <textarea class="form-control" name="message" id="message"></textarea>
                     </div>

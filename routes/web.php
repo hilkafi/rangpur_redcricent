@@ -42,14 +42,28 @@ Route::resource('/controll_panel/office-staff', App\Http\Controllers\Admin\Offic
 Route::post('/controll_panel/office-staff/delete', [App\Http\Controllers\Admin\OfficeStaffController::class, 'delete_staff']);
 Route::post('/controll_panel/office-staff/search', [App\Http\Controllers\Admin\OfficeStaffController::class, 'search_staff']);
 
+//executive committees
+Route::resource('/controll_panel/executive-committee/', App\Http\Controllers\Admin\ExecutiveCommitteeController::class);
+Route::post('/controll_panel/executive-committee/delete', [App\Http\Controllers\Admin\ExecutiveCommitteeController::class, 'delete']);
+Route::post('/controll_panel/executive-committee/search', [App\Http\Controllers\Admin\ExecutiveCommitteeController::class, 'search']);
+
+
 
 //volunteers route
 Route::resource('/controll_panel/volunteer', App\Http\Controllers\Admin\VolunteerController::class);
 Route::post('/controll_panel/volunteer/delete', [App\Http\Controllers\Admin\VolunteerController::class, 'delete_volunteer']);
 Route::post('/controll_panel/volunteer/search', [App\Http\Controllers\Admin\VolunteerController::class, 'search_volunteer']);
 Route::post('/controll_panel/volunteer/approve-request', [App\Http\Controllers\Admin\VolunteerController::class, 'approve_volunteer']);
+Route::get('/controll_panel/upazila_volunteers/{id}', [App\Http\Controllers\Admin\VolunteerController::class, 'upazila_volunteers']);
 Route::get('/volunteer/pending-request', [App\Http\Controllers\Admin\VolunteerController::class, 'pending_show']);
 Route::get('/volunteer/executive', [App\Http\Controllers\Admin\VolunteerController::class, 'executive_show']);
+
+Route::get('/controll_panel/rcy_volunteers', [App\Http\Controllers\Admin\VolunteerController::class, 'rcy_volunteers']);
+
+//Youth Executive Committee
+Route::resource('/controll_panel/youth-executive', App\Http\Controllers\Admin\YouthExecutiveController::class);
+Route::post('/controll_panel/youth-executive/delete', [App\Http\Controllers\Admin\YouthExecutiveController::class, 'delete_volunteer']);
+Route::post('/controll_panel/youth-executive/search', [App\Http\Controllers\Admin\YouthExecutiveController::class, 'search_volunteer']);
 
 //life member routes
 
@@ -127,11 +141,19 @@ Route::get('/unit-braches', [App\Http\Controllers\Front\HomeController::class, '
 Route::get('/managing-board', [App\Http\Controllers\Front\HomeController::class, 'managing_board']);
 Route::get('/senior-management', [App\Http\Controllers\Front\HomeController::class, 'senior_management']);
 Route::get('/single-project/{id}', [App\Http\Controllers\Front\HomeController::class, 'single_project']);
+Route::get('/buy-souvenir-product', [App\Http\Controllers\Front\HomeController::class, 'buy_souvenir_product']);
+
+//members
+Route::get('/executive-committee', [App\Http\Controllers\Front\HomeController::class, 'executive_committee']);
+Route::get('/life-member', [App\Http\Controllers\Front\HomeController::class, 'life_member']);
+Route::get('/youth-executive', [App\Http\Controllers\Front\HomeController::class, 'youth_executive']);
+Route::get('/rcy-volunteer', [App\Http\Controllers\Front\HomeController::class, 'rcy_volunteer']);
 
 // become volunteer route
 
 Route::resource('/volunteer-form', App\Http\Controllers\BeAVolunteerController::class);
 Route::resource('/member', App\Http\Controllers\BeAMemberController::class);
+Route::get('/upazila_volunteer/{upazila}', [App\Http\Controllers\Front\HomeController::class, 'upazila_volunteer']);
 
 //Not Found Route
 Route::get('{path}', [App\Http\Controllers\Front\HomeController::class, 'not_found'])->where('path', '([A-z\d\-\/_.]+)');

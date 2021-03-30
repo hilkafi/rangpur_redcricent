@@ -4,10 +4,10 @@
             <th>SL.</th>
             <th>Name</th>
             <th>Unit</th>
-            <th>Role</th>
-            <th>Occupation</th>
-            <th>Contact</th>
+            <th>Contract</th>
+            <th>Institution</th>
             <th>Address</th>
+            <th>Blood Group</th>
             <th>Image</th>
             <th>Action</th>
         </tr>
@@ -20,20 +20,16 @@
             <td class="dtr-control">{{ $counter }}</td>
             <td>{{ $data->name }}</td>
             <td>{{ $data->unit_type }}</td>
-            <td>{{ $data->role }}</td>
-            <td>{{ $data->occupation }}</td>
-            <td>{{ $data->phone}}</td>
-            <td>{{ $data->address}}</td>
+            <td>{{ $data->contract_number }}</td>
+            <td>{{ $data->institute_name }}</td>
+            
+            <td>{{ $data->house_village_word_name.', '.$data->upazila_name.', '.$data->district_name}}</td>
+            <td>{{ $data->blood_group}}</td>
             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
             <td class="">
-                <a href="{{ url('/controll_panel/volunteer/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
                 <button class="deleteButton btn btn-danger" id="deletevolunteer_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
             </td>
         </tr>
         @endforeach
-    
-
-
-
     </tbody>
 </table>

@@ -7,8 +7,7 @@
             <div class="row">
                 <h3 class="col-md-10 card-title">Life Member</h3>
                 <a href="{{ url('controll_panel/life-member/create') }}" class="col-md-2 btn btn-success">Add LifeMember</a>
-                <a href="{{ url('controll_panel/life-member/approve/list') }}" class="col-md-2 btn btn-success">see requests</a> &nbsp;&nbsp;
-                <a href="{{ url('executive-list') }}" class="col-md-2 btn btn-success">Executive Committe</a>
+                <a href="{{ url('controll_panel/life-member/approve/list') }}" class="col-md-2 btn btn-success">see requests</a>
             </div>
         </div>
             <!-- /.card-header -->
@@ -30,41 +29,30 @@
                         <tr role="row">
                             <th>SL.</th>
                             <th>Name</th>
-                           
-                            <th>Role</th>
-                            <th>Occupation</th>
-                            <th>Contact</th>
-                            <th>Blood Group</th>
+                            <th>Contract</th>
                             <th>Address</th>
+                            <th>Blood Group</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                    <?php $counter = 0 ?>
-                    @foreach($dataset as $data)
+                    <?php $counter = 0; ?>
+                        @foreach($dataset as $data)
                         <?php $counter++ ?>
                         <tr role="row" class="odd">
                             <td class="dtr-control">{{ $counter }}</td>
                             <td>{{ $data->name }}</td>
-                            
-                            <td>{{ $data->role }}</td>
-                            <td>{{ $data->occupation }}</td>
-                            <td>{{ $data->phone}}</td>
+                            <td>{{ $data->contract_number }}</td>
+                         
+                            <td>{{ $data->house_village_word_name.', '.$data->upazila_name.', '.$data->district_name}}</td>
                             <td>{{ $data->blood_group}}</td>
-                            <td>{{ $data->address}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">
-                                <a href="{{ url('/controll_panel/life-member/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
-                                <button class="deleteButton btn btn-danger" id="deletemember_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
+                                <button class="deleteButton btn btn-danger" id="deletevolunteer_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                         @endforeach
-
-                    
-
- 
-
                     </tbody>
                 </table>
             </div>

@@ -46,11 +46,8 @@ class OfficeStaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:1024',
-            'role' => 'required'
         ]);
 
         if($validator->fails()){
@@ -65,17 +62,30 @@ class OfficeStaffController extends Controller
 
         $data = new OfficeStaff();
         $data->name = $request->name;
-        $data->img = $imageName;
-        $data->role = $request->role;
-        $data->phone = $request->contact;
+        $data->registration_number = $request->registration_no;
+        $data->name_bangla = $request->name_bangla;
+        $data->designation = $request->designation;
+        $data->joining_date = date('Y-m-d', strtotime($request->joining_date));
+        $data->contract_number = $request->contract_number;
+        $data->father_name = $request->father_name;
+        $data->mother_name = $request->mother_name;
+        $data->nid_or_birth_no = $request->nid_or_birth_no;
+        $data->email = $request->email;
+        $data->date_of_birth = date('Y-m-d', strtotime($request->date_of_birth));
         $data->blood_group = $request->blood_group;
-        $data->address = $request->address;
+        $data->gender = $request->gender;
+        $data->marital_status = $request->marital_status;
+        $data->educational_status = $request->educational_status;
+        $data->district_name = $request->district_name;
+        $data->upazila_name = $request->upazila_name;
+        $data->house_village_word_name = $request->house_village_word_name;
+        $data->img = $imageName;
         $data->created_at = time();
         
         if($data->save()){
-            return redirect('/controll_panel/office-staff')->with('success', 'Post Created Successfully.');
+            return redirect('/controll_panel/office-staff')->with('success', 'Staff Created Successfully.');
         }else {
-            return redirect('/controll_panel/office-staff')->with('error', 'Error Creating Post.');
+            return redirect('/controll_panel/office-staff')->with('error', 'Error Creating Staff.');
         }
     }
 
@@ -186,7 +196,7 @@ class OfficeStaffController extends Controller
         if($staff->delete()) {
             return response()->json(['success' => 'Staff Deleted Successfully.']);
         }else {
-            return response()->json(['error' => 'Staff While Deleting Category.']);
+            return response()->json(['error' => 'Staff While Deleting Staff.']);
         }       
     }
 }

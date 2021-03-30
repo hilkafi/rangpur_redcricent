@@ -18,6 +18,7 @@
                             <th>SL.</th>
                             <th>Name</th>
                             <th>E-Mail</th>
+                            <th>Mobile</th>
                             <th>Message</th>
                         </tr>
                     </thead>
@@ -29,6 +30,7 @@
                             <td>{{ $counter }}</td>
                             <td>{{ $data->name }}</td>
                             <td>{{ $data->email }}</td>
+                            <td>{{ $data->mobile }}</td>
                             <td>{{ Str::limit($data->message, 50) }}</td>
                         </tr>
                         @endforeach

@@ -32,18 +32,19 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                 <i class="fas fa-user-shield" style="font-size: 20px"></i>
                     <span class="d-none d-md-inline"></span>
+                    {{Auth::user()->name}}
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-primary">
                     <i class="fas fa-user-shield" style="font-size: 50px"></i>
                         <p>
-                           
+
+                        <h2 class="text-center">{{Auth::user()->name}}</h2>
                         </p>
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">Profile</a>
                         <a href="#" class="btn btn-default btn-flat float-right"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Sign out

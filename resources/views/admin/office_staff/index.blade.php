@@ -5,7 +5,7 @@
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <h3 class="col-md-10 card-title">Office Staffs</h3>
+                <h3 class="col-md-10 card-title">Office Staff</h3>
                 <a href="{{ url('controll_panel/office-staff/create') }}" class="col-md-2 btn btn-success">Add Staff</a>
             </div>
         </div>
@@ -23,15 +23,15 @@
             </div>
             <div class="row" id="ajax_content">
                     
-                <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
+            <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
                     <thead>
                         <tr role="row">
                             <th>SL.</th>
                             <th>Name</th>
-                            <th>Role</th>
-                            <th>Contact</th>
-                            <th>Blood Group</th>
+                            <th>Designation</th>
+                            <th>Contract</th>
                             <th>Address</th>
+                            <th>Blood Group</th>
                             <th>Image</th>
                             <th>Action</th>
                         </tr>
@@ -43,21 +43,17 @@
                         <tr role="row" class="odd">
                             <td class="dtr-control">{{ $counter }}</td>
                             <td>{{ $data->name }}</td>
-                            <td>{{ $data->role }}</td>
-                            <td>{{ $data->phone}}</td>
+                            <td>{{ $data->designation }}</td>
+                            <td>{{ $data->contract_number }}</td>
+                         
+                            <td>{{ $data->house_village_word_name.', '.$data->upazila_name.', '.$data->district_name}}</td>
                             <td>{{ $data->blood_group}}</td>
-                            <td>{{ $data->address}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
-                            
                             <td class="">
-                                <a href="{{ url('/controll_panel/office-staff/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
-                                <button class="deleteButton btn btn-danger" id="deletestaff_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
+                                <button class="deleteButton btn btn-danger" id="deletevolunteer_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
                         @endforeach
-
- 
-
                     </tbody>
                 </table>
             </div>
@@ -112,8 +108,8 @@ window.onload = function(){
                         "_token": "{{ csrf_token() }}",
                     },
                     success: function (data){
+                        $('#search-btn').trigger('click');
                         if(data.success){
-                            $('#search-btn').trigger('click');
                             Swal.fire(
                                 'Deleted!',
                                 'Your file has been deleted.',

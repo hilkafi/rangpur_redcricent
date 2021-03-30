@@ -27,6 +27,18 @@ class VolunteerController extends Controller
         return view('admin.volunteer.index',compact('dataset'));
     }
 
+    public function upazila_volunteers($id) {
+        $dataset = Volunteer::where([['unit_type', UPAZILA], ['upazila_name', $id]])->get();
+        $upazilas = upazilas();
+        $upazila_name = $upazilas[$upazila];
+        return view('admin.volunteer.upazila_volunteer', compact('dataset', 'upazila_name'));
+    }
+
+    public function rcy_volunteers() {
+        $dataset = Volunteer::where('unit_type', RCY)->get();
+        return view('admin.volunteer.rcy_volunteer', compact('dataset'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -50,9 +62,6 @@ class VolunteerController extends Controller
         //
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'img' => 'required|image|mimes:jpeg,png,jpg|max:1024',
-            'role' => 'required',
-            'unit' => 'required'
         ]);
 
         if($validator->fails()){
@@ -67,24 +76,39 @@ class VolunteerController extends Controller
 
         $data = new Volunteer();
         $data->name = $request->name;
-        $data->img = $imageName;
-        $data->unit_type = $request->unit;
-        $data->role = $request->role;
-        $data->occupation = $request->occupation;
-        $data->phone = $request->contact;
-        $data->address = $request->address;
-        $data->is_approved = '1';
-        $data->institute = $request->institution;
+        $data->registration_number = $request->registration_no;
+        $data->name_bangla = $request->name_bangla;
+        $data->joining_date = date('Y-m-d', strtotime($request->joining_date));
+        $data->type_of_volunteer = $request->type_of_volunteer;
+        $data->contract_number = $request->contract_number;
+        $data->father_name = $request->father_name;
+        $data->mother_name = $request->mother_name;
+        $data->father_occupation = $request->father_occupation;
+        $data->mother_occupation = $request->mother_occupation;
+        $data->parent_contract_number = $request->parent_contract_number;
+        $data->nid_or_birth_no = $request->nid_or_birth_no;
+        $data->email = $request->email;
+        $data->date_of_birth = date('Y-m-d', strtotime($request->date_of_birth));
+        $data->interest_in_blood_donation = $request->interest_in_blood_donation;
         $data->blood_group = $request->blood_group;
-        $data->blood_donation = $request->blood_date;
-        $data->unit_name = $request->unit_name;
-        $data->is_executive = $request->is_executive;
+        $data->gender = $request->gender;
+        $data->marital_status = $request->marital_status;
+        $data->institute_name = $request->institute_name;
+        $data->educational_status = $request->educational_status;
+        $data->district_name = $request->district_name;
+        $data->upazila_name = $request->upazila_name;
+        $data->house_village_word_name = $request->house_village_word_name;
+        $data->img = $imageName;
+        $data->any_time_service = $request->any_time_service;
+        $data->reason_for_joining = $request->reason_for_joining;
+        $data->unit_type = $request->unit_type;
+        $data->is_approved = '1';
         $data->created_at = time();
         
         if($data->save()){
-            return redirect('/controll_panel/volunteer')->with('success', 'Post Created Successfully.');
+            return redirect('/controll_panel/volunteer')->with('success', 'Volunteer Created Successfully.');
         }else {
-            return redirect('/controll_panel/volunteer')->with('error', 'Error Creating Post.');
+            return redirect('/controll_panel/volunteer')->with('error', 'Error While Creating Volunteer.');
         }
     }
 
@@ -183,7 +207,7 @@ class VolunteerController extends Controller
     public function search_volunteer(Request $request) {
         $query =Volunteer::query();
         if(!empty($request->name)){
-            $query->where('unit_name', 'like', '%' . $request->name . '%');
+            $query->where('name', 'like', '%' . $request->name . '%');
         }
 
         $dataset = $query->orderBy('id', 'DESC')->get();
@@ -198,9 +222,9 @@ class VolunteerController extends Controller
             unlink($path);
         }
         if($data->delete()) {
-            return response()->json(['success' => 'Post Deleted Successfully.']);
+            return response()->json(['success' => 'Volunteer Deleted Successfully.']);
         }else {
-            return response()->json(['error' => 'Post While Deleting Category.']);
+            return response()->json(['error' => 'Error While Deleting Volunteer.']);
         }       
     }
     public function approve_volunteer(Request $request)
@@ -209,9 +233,9 @@ class VolunteerController extends Controller
 
         $data->is_approved = '1';
         if($data->save()) {
-            return response()->json(['success' => 'Life-Member approved Successfully.']);
+            return response()->json(['success' => 'Volunteer Approved Successfully.']);
         }else {
-            return response()->json(['error' => 'Error While approving Life-Member.']);
+            return response()->json(['error' => 'Error While approving Volunteer.']);
         }       
     }
 

@@ -14,6 +14,10 @@ use App\Models\Category;
 use App\Models\Page;
 use App\Models\Slider;
 use App\Models\Project;
+use App\Models\Volunteer;
+use App\Models\LifeMember;
+use App\Models\YouthExecutive;
+use App\Models\ExecutiveCommittee;
 
 class HomeController extends Controller
 {
@@ -63,7 +67,7 @@ class HomeController extends Controller
     public function contact_us_save(Request $request) {
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'email' => 'required',
+            'mobile' => 'required',
             'message' => 'required'
         ]);
 
@@ -74,6 +78,7 @@ class HomeController extends Controller
         $data = new ContactUs();
         $data->name = $request->name;
         $data->email = $request->email;
+        $data->mobile = $request->mobile;
         $data->message = $request->message;
         if($data->save()){
             return redirect('/contact-us')->with('success', 'Message Sent Successfully.');
@@ -126,9 +131,11 @@ class HomeController extends Controller
         return view('front.pages.partners');
     }
 
-    public function unit_branches() {
-        $dataset = DonateGetBlood::all();
-        return view('front.pages.unit_branches', compact('dataset'));
+    public function upazila_volunteer($upazila) {
+        $dataset = Volunteer::where([['unit_type', UPAZILA], ['upazila_name', $upazila]])->get();
+        $upazilas = upazilas();
+        $upazila_name = $upazilas[$upazila];
+        return view('front.pages.upazila_volunteer', compact('dataset', 'upazila_name'));
     }
 
     public function managing_board() {
@@ -138,5 +145,30 @@ class HomeController extends Controller
     public function senior_management() {
         return view('front.pages.senior_management');
     }
+
+    public function buy_souvenir_product() {
+        return view('front.pages.buy_souvenir_product');
+    }
+
+    public function executive_committee() {
+        $dataset = ExecutiveCommittee::all();
+        return view('front.members.executive_committee', compact('dataset'));
+    }
+
+    public function life_member() {
+        $dataset = LifeMember::all();
+        return view('front.members.life_member', compact('dataset'));
+    }
+
+    public function youth_executive() {
+        $dataset = YouthExecutive::all();
+        return view('front.members.youth_executive', compact('dataset'));
+    }
+
+    public function rcy_volunteer() {
+        $dataset = Volunteer::where('unit_type', RCY)->get();
+        return view('front.members.rcy_volunteer', compact('dataset'));
+    }
+
 
 }
