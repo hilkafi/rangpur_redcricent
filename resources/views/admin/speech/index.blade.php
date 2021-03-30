@@ -6,7 +6,7 @@
         <div class="card-header">
             <div class="row">
                 <h3 class="col-md-10 card-title">Speech List</h3>
-                <a href="{{ url('controll_panel/speech/create') }}" class="col-md-2 btn btn-success">Add Volunteer</a>
+                <a href="{{ url('controll_panel/speech/create') }}" class="col-md-2 btn btn-success">Add Speech</a>
             </div>
         </div>
             <!-- /.card-header -->
