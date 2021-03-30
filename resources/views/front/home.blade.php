@@ -1,6 +1,6 @@
 @extends('layouts.front.app')
 @section('content')
-<section class="carosal-area" id="slider">
+<section class="carosal-area">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -104,7 +104,7 @@
             <div class="col-md-12">
                 <div class="donors_image">
                     <h2>Messages</h2>
-                    <div class="donors_featured owl-carousel owl-theme">
+                    <div class="donors_featured owl-carousel owl-theme" style="background-color:#fdba00;">
                         @foreach($speech as $sp)
                         <?php $image_url = !empty($sp->img) ? url('images/'.$sp->img) : url('img/no_image.jpg');  ?>
                         <div class="item">

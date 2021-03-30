@@ -66,6 +66,7 @@
 }
 
 @media only screen and (max-width: 767px) {
+
     #display-hidden{
         display: none;
     }
@@ -173,9 +174,5 @@
 
     a.navbar-brand{
         font-size: 14px;
-    }
-
-    #slider {
-        display: none;
     }
 }

@@ -139,10 +139,8 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
                                         <a href="">
-                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
+                                        <img src="{{url('img/Who-we-are.jpg')}}" alt="" class="img-fluid" width="100%">
                                         </a>
-                                        <p class="text-white">Short image call to action</p>
-
                                     </div>
                                     <!-- /.col-md-4  -->
                                     </div>
@@ -292,11 +290,18 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-4">
-                                        <a href="">
-                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                                        </a>
-                                        <p class="text-white">Short image call to action</p>
-
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <a href="">
+                                            <img src="{{url('img/get_involved_1.jpg')}}" alt="" class="img-fluid" width="100%">
+                                            </a>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <a href="">
+                                            <img src="{{url('img/get_involved_2.jpg')}}" alt="" class="img-fluid" width="100%">
+                                            </a>
+                                            </div>
+                                        </div>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     </div>
@@ -344,10 +349,18 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-4">
-                                        <a href="">
-                                        <img src="https://dummyimage.com/200x100/ccc/000&text=image+link" alt="" class="img-fluid">
-                                        </a>
-                                        <p class="text-white">Short image call to action</p>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                            <a href="">
+                                            <img src="{{url('img/media_publication_1.jpg')}}" alt="" class="img-fluid" width="100%">
+                                            </a>
+                                            </div>
+                                            <div class="col-md-6">
+                                            <a href="">
+                                            <img src="{{url('img/media_publication_2.jpg')}}" alt="" class="img-fluid" width="100%">
+                                            </a>
+                                            </div>
+                                        </div>
 
                                     </div>
                                     <!-- /.col-md-4  -->
