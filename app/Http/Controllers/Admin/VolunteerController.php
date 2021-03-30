@@ -30,7 +30,7 @@ class VolunteerController extends Controller
     public function upazila_volunteers($id) {
         $dataset = Volunteer::where([['unit_type', UPAZILA], ['upazila_name', $id]])->get();
         $upazilas = upazilas();
-        $upazila_name = $upazilas[$upazila];
+        $upazila_name = $upazilas[$id];
         return view('admin.volunteer.upazila_volunteer', compact('dataset', 'upazila_name'));
     }
 
