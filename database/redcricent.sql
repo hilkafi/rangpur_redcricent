@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2021 at 01:43 PM
+-- Generation Time: Mar 30, 2021 at 09:39 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -114,11 +114,19 @@ CREATE TABLE `contact_us` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` char(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subject` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `contact_us`
+--
+
+INSERT INTO `contact_us` (`id`, `name`, `email`, `mobile`, `subject`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'Kafi', 'anytimeuseforsobuj@gmail.com', '01310147227', NULL, 'This is demo message.', '2021-03-28 21:57:06', '2021-03-28 21:57:06');
 
 -- --------------------------------------------------------
 
@@ -172,6 +180,46 @@ INSERT INTO `donate_us` (`id`, `intro`, `mobile_banking_info`, `bank_details`, `
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `executive_committees`
+--
+
+CREATE TABLE `executive_committees` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` char(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `registration_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_bangla` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `joining_date` date DEFAULT NULL,
+  `type_of_volunteer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contract_number` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_contract_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nid_or_birth_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `interest_in_blood_donation` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blood_group` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` enum('Male','Female','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `marital_status` enum('Single','Married','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `institute_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `educational_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `district_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `upazila_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `house_village_word_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `any_time_service` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reason_for_joining` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit_type` enum('rcy','upazila') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_approved` enum('1','0') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `failed_jobs`
 --
 
@@ -194,13 +242,32 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `life_members` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` char(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `occupation` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `is_executive` tinyint(1) DEFAULT NULL,
-  `role` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `img` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `blood_group` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `registration_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_bangla` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `joining_date` date DEFAULT NULL,
+  `type_of_volunteer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contract_number` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_contract_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nid_or_birth_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `interest_in_blood_donation` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blood_group` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` enum('Male','Female','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `marital_status` enum('Single','Married','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `institute_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `educational_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `district_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `upazila_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `house_village_word_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `any_time_service` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reason_for_joining` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit_type` enum('rcy','upazila') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `is_approved` enum('1','0') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -210,10 +277,9 @@ CREATE TABLE `life_members` (
 -- Dumping data for table `life_members`
 --
 
-INSERT INTO `life_members` (`id`, `name`, `occupation`, `is_executive`, `role`, `img`, `phone`, `address`, `blood_group`, `is_approved`, `created_at`, `updated_at`) VALUES
-(2, 'Abdullahil Kafi', 'Egineer', 1, 'Manager', '1616116324.jpg', '01115', 'Panchagarh', NULL, '1', '2021-03-18 19:12:04', '2021-03-18 19:12:04'),
-(3, 'Adam C', 'Student', NULL, 'Member', '1616406319.jpg', '01751465611', 'manchester, london', 'o positive', '1', '2021-03-22 03:45:19', '2021-03-22 04:26:53'),
-(4, 'Adam CO', 'Student', NULL, 'Member', '1616408801.jpg', '01751465611', 'manchester, london', 'o positive', '0', '2021-03-22 04:26:41', '2021-03-22 04:26:41');
+INSERT INTO `life_members` (`id`, `name`, `registration_number`, `name_bangla`, `joining_date`, `type_of_volunteer`, `contract_number`, `father_name`, `mother_name`, `father_occupation`, `mother_occupation`, `parent_contract_number`, `nid_or_birth_no`, `email`, `date_of_birth`, `interest_in_blood_donation`, `blood_group`, `gender`, `marital_status`, `institute_name`, `educational_status`, `district_name`, `upazila_name`, `house_village_word_name`, `img`, `any_time_service`, `reason_for_joining`, `unit_type`, `is_approved`, `created_at`, `updated_at`) VALUES
+(1, 'yhjghjkg', '74578678', 'dhgfh', '2021-03-21', NULL, '456345', 'dghdhsz', 'fgfhgd', NULL, NULL, NULL, '546464', 'rice@gmail.com', '2021-03-11', NULL, 'A+', 'Male', 'Single', NULL, 'cfghfghg', NULL, 'badarganj', 'fghfgjh', '1617021757.png', NULL, NULL, NULL, '1', '2021-03-29 06:42:37', '2021-03-29 06:42:37'),
+(2, 'rthfghfdxh', NULL, NULL, '1970-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL, '1', '2021-03-29 22:52:54', '2021-03-29 22:53:06');
 
 -- --------------------------------------------------------
 
@@ -260,14 +326,39 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `office_staff` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` char(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `img` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `blood_group` varchar(25) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `registration_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_bangla` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `designation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `joining_date` date DEFAULT NULL,
+  `contract_number` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_contract_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nid_or_birth_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `interest_in_blood_donation` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blood_group` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` enum('Male','Female','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `marital_status` enum('Single','Married','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `institute_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `educational_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `district_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `upazila_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `house_village_word_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `office_staff`
+--
+
+INSERT INTO `office_staff` (`id`, `name`, `registration_number`, `name_bangla`, `designation`, `joining_date`, `contract_number`, `father_name`, `mother_name`, `father_occupation`, `mother_occupation`, `parent_contract_number`, `nid_or_birth_no`, `email`, `date_of_birth`, `interest_in_blood_donation`, `blood_group`, `gender`, `marital_status`, `institute_name`, `educational_status`, `district_name`, `upazila_name`, `house_village_word_name`, `img`, `created_at`, `updated_at`) VALUES
+(2, 'gvjhrgfh', '6546541', 'yjhdyh', 'hjyj', '2021-03-18', '41654165165', 'gfyhfd', 'ghdjh', NULL, NULL, NULL, '146546541', 'sweet@gmail.com', '2021-03-25', NULL, 'O+', 'Female', 'Single', NULL, 'dfgdgd', NULL, 'tfhfghf', 'fghdf', '1617076796.webp', '2021-03-29 21:59:56', '2021-03-29 21:59:56');
 
 -- --------------------------------------------------------
 
@@ -368,7 +459,9 @@ CREATE TABLE `sliders` (
 INSERT INTO `sliders` (`id`, `img`, `caption`, `is_active`, `created_at`, `updated_at`) VALUES
 (1, '1616825641.jpg', 'This is capiton', 1, '2021-03-27 00:14:01', '2021-03-27 00:14:01'),
 (3, '1616825785.jpg', 'Anime Girl', 1, '2021-03-27 00:14:49', '2021-03-27 00:16:25'),
-(4, '1616826016.jpg', 'Anime Girl', 1, '2021-03-27 00:20:16', '2021-03-27 00:20:16');
+(4, '1616826016.jpg', 'Anime Girl', 1, '2021-03-27 00:20:16', '2021-03-27 00:20:16'),
+(5, '1616952235.jpg', NULL, 1, '2021-03-28 11:19:51', '2021-03-28 11:23:55'),
+(6, '1616954436.jpg', NULL, 1, '2021-03-28 12:00:36', '2021-03-28 12:00:36');
 
 -- --------------------------------------------------------
 
@@ -473,19 +566,33 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 CREATE TABLE `volunteers` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` char(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `occupation` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `unit_type` enum('zila','upzila','city_corporation') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `unit_name` varchar(25) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `volunteer_type` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `role` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `img` char(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` char(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `institute` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `is_approved` enum('1','0') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
-  `is_executive` enum('yes','no') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'no',
-  `blood_donation` date DEFAULT NULL,
-  `blood_group` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `registration_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_bangla` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `joining_date` date DEFAULT NULL,
+  `type_of_volunteer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contract_number` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_contract_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nid_or_birth_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `blood_group` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `interest_in_blood_donation` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` enum('Male','Female','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `marital_status` enum('Single','Married','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `institute_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `educational_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `any_time_service` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `district_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `upazila_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `house_village_word_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reason_for_joining` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit_type` enum('rcy','upazila') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_approved` tinyint(1) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -494,9 +601,52 @@ CREATE TABLE `volunteers` (
 -- Dumping data for table `volunteers`
 --
 
-INSERT INTO `volunteers` (`id`, `name`, `occupation`, `unit_type`, `unit_name`, `volunteer_type`, `role`, `img`, `phone`, `address`, `institute`, `is_approved`, `is_executive`, `blood_donation`, `blood_group`, `created_at`, `updated_at`) VALUES
-(1, 'Kafi', 'Egineer', 'zila', '', NULL, 'Manager', '1616114867.jpg', '01115', 'Panchagarh', '', '1', 'no', NULL, '', '2021-03-18 18:47:47', '2021-03-18 18:47:47'),
-(3, 'Rashikul Islam', 'Student', 'city_corporation', 'Rangpur', NULL, 'Member', '1616403372.jpg', '01751465611', 'manchester, london', NULL, '1', 'yes', NULL, 'o positive', '2021-03-22 02:56:12', '2021-03-22 03:21:58');
+INSERT INTO `volunteers` (`id`, `name`, `registration_number`, `name_bangla`, `joining_date`, `type_of_volunteer`, `contract_number`, `father_name`, `mother_name`, `father_occupation`, `mother_occupation`, `parent_contract_number`, `nid_or_birth_no`, `email`, `date_of_birth`, `blood_group`, `interest_in_blood_donation`, `gender`, `marital_status`, `institute_name`, `educational_status`, `any_time_service`, `district_name`, `upazila_name`, `house_village_word_name`, `img`, `reason_for_joining`, `unit_type`, `is_approved`, `created_at`, `updated_at`) VALUES
+(1, 'Kafi', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-03-18 18:47:47', '2021-03-18 18:47:47'),
+(4, 'kafi', '4654654165', 'dsfsf', '2021-03-24', 'new_member', '5465416', 'sdgerghr', 'rhegrd', 'rgdghed', 'dghedh', '654654', '41654646', 'sweet@gmail.com', '2021-03-16', 'A+', NULL, 'Male', 'Married', 'sgsdgsdge', 'lkdfmsdkjg', NULL, NULL, 'taraganj', 'ddfhg', '1617016276.jpg', NULL, 'rcy', NULL, '2021-03-29 05:11:16', '2021-03-29 05:11:16'),
+(5, 'ghhgdf', '56346', 'ghfhjg', '2021-03-29', 'new_member', '65467', 'ghfhsz', 'dfgdfg', NULL, NULL, NULL, '456534', 'admin@gmail.com', '2021-03-12', 'fgdgdg', NULL, 'Male', 'Single', 'dfgdg', 'gfdfg', 'Yes', NULL, 'kaunia', 'gfdfgdfg', '1617078803.png', 'ghdfgh', 'rcy', 1, '2021-03-29 22:33:23', '2021-03-29 22:33:40'),
+(6, 'dfhhfhg', NULL, NULL, '1970-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 1, '2021-03-29 22:36:56', '2021-03-29 22:37:05'),
+(7, 'xcvgbdfgd', NULL, NULL, '1970-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '1970-01-01', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 1, '2021-03-29 22:41:23', '2021-03-29 22:41:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `youth_executives`
+--
+
+CREATE TABLE `youth_executives` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` char(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `registration_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name_bangla` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `joining_date` date DEFAULT NULL,
+  `type_of_volunteer` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contract_number` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `father_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mother_occupation` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `parent_contract_number` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nid_or_birth_no` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `date_of_birth` date DEFAULT NULL,
+  `interest_in_blood_donation` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `blood_group` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` enum('Male','Female','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `marital_status` enum('Single','Married','Other') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `institute_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `educational_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `district_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `upazila_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `house_village_word_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `any_time_service` enum('Yes','No') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reason_for_joining` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit_type` enum('rcy','upazila') COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_approved` enum('1','0') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '1',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -530,6 +680,12 @@ ALTER TABLE `donate_get_bloods`
 -- Indexes for table `donate_us`
 --
 ALTER TABLE `donate_us`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `executive_committees`
+--
+ALTER TABLE `executive_committees`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -613,6 +769,12 @@ ALTER TABLE `volunteers`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `youth_executives`
+--
+ALTER TABLE `youth_executives`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -632,7 +794,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `contact_us`
 --
 ALTER TABLE `contact_us`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `donate_get_bloods`
@@ -647,6 +809,12 @@ ALTER TABLE `donate_us`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `executive_committees`
+--
+ALTER TABLE `executive_committees`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -656,7 +824,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `life_members`
 --
 ALTER TABLE `life_members`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -668,7 +836,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `office_staff`
 --
 ALTER TABLE `office_staff`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `pages`
@@ -686,7 +854,7 @@ ALTER TABLE `projects`
 -- AUTO_INCREMENT for table `sliders`
 --
 ALTER TABLE `sliders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `social_media`
@@ -716,7 +884,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `volunteers`
 --
 ALTER TABLE `volunteers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `youth_executives`
+--
+ALTER TABLE `youth_executives`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
