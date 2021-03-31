@@ -85,9 +85,6 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/page/'.CAT_MISSION) }}">Mission & Vission</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('/partners') }}">Partners</a>
-                                            </li>
                                         </ul>
 
                                         <a href="#" class="nav-bold"><span class="text-uppercase text-white">Movement</span></a>
@@ -99,15 +96,6 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                        <a href="#" class="nav-bold"><span class="text-uppercase text-white">Our Management</span></a>
-                                        <ul class="nav flex-column">
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('/managing-board') }}">Managing Board</a>
-                                            </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('/senior-management') }}">Senior Management</a>
-                                            </li>
-                                        </ul>
 
                                         <a href="#" class="nav-bold"><span class="text-uppercase text-white">Members</span></a>
                                         <ul class="nav flex-column">
@@ -138,9 +126,9 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                        <a href="">
-                                        <img src="{{url('img/Who-we-are.jpg')}}" alt="" class="img-fluid" width="100%">
-                                        </a>
+                                       <!-- <a href="">  --->
+                                        <!-- <img src="" alt="" class="img-fluid" width="100%">  --->
+                                       <!-- </a> -->
                                     </div>
                                     <!-- /.col-md-4  -->
                                     </div>
@@ -290,18 +278,6 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-4">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                            <a href="">
-                                            <img src="{{url('img/get_involved_1.jpg')}}" alt="" class="img-fluid" width="100%">
-                                            </a>
-                                            </div>
-                                            <div class="col-md-6">
-                                            <a href="">
-                                            <img src="{{url('img/get_involved_2.jpg')}}" alt="" class="img-fluid" width="100%">
-                                            </a>
-                                            </div>
-                                        </div>
                                     </div>
                                     <!-- /.col-md-4  -->
                                     </div>
@@ -349,19 +325,6 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-4">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                            <a href="">
-                                            <img src="{{url('img/media_publication_1.jpg')}}" alt="" class="img-fluid" width="100%">
-                                            </a>
-                                            </div>
-                                            <div class="col-md-6">
-                                            <a href="">
-                                            <img src="{{url('img/media_publication_2.jpg')}}" alt="" class="img-fluid" width="100%">
-                                            </a>
-                                            </div>
-                                        </div>
-
                                     </div>
                                     <!-- /.col-md-4  -->
                                     </div>
