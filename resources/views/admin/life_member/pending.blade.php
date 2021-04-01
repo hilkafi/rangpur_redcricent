@@ -43,8 +43,7 @@
                             <td class="dtr-control">{{ $counter }}</td>
                             <td>{{ $data->name }}</td>
                             <td>{{ $data->contract_number }}</td>
-                         
-                            <td>{{ $data->house_village_word_name.', '.$data->upazila_name.', '.$data->district_name}}</td>
+                            <td>{{ $data->house_village_word_name}}</td>
                             <td>{{ $data->blood_group}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">

@@ -4,11 +4,11 @@
 <div class="container-fluid">
     <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Update Life Member Info</h3>
+            <h3 class="card-title">Update Youth Executive Member Info</h3>
         </div>
             <!-- /.card-header -->
             <!-- form start -->
-        {{ Form::open(['class' => 'form-horizontal', 'method' => 'put', 'enctype'=>'multipart/form-data' ,'url' => 'controll_panel/life-member/'.$data->id]) }}
+        {{ Form::open(['class' => 'form-horizontal', 'method' => 'put', 'enctype'=>'multipart/form-data' ,'url' => 'controll_panel/youth-executive/'.$data->id]) }}
             
             <div class="card-body">
                 <div class="form-group row">
@@ -36,6 +36,18 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="type_of_volunteer" class="col-sm-2 col-form-label">Type Of Volunteer</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="type_of_volunteer" id="type_of_volunteer">
+                            <option value="">Select Volunteer Type</option>
+                            <option value="new_member" @if($data->type_of_volunteer == 'new_member'){{ 'selected' }}@endif>New Member</option>
+                            <option value="active_running_member" @if($data->type_of_volunteer == 'active_running_member'){{ 'selected' }}@endif>Active/Running Member</option>
+                            <option value="older_member" @if($data->type_of_volunteer == 'older_member'){{ 'selected' }}@endif>Older Member</option>
+                            <option value="other" @if($data->type_of_volunteer == 'other'){{ 'selected' }}@endif>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="contract_number" class="col-sm-2 col-form-label">Contract Number</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" name="contract_number" id="contract_number" value="{{ $data->contract_number }}">
@@ -51,6 +63,24 @@
                     <label for="mother_name" class="col-sm-2 col-form-label">Mother Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="mother_name" id="mother_name" value="{{ $data->mother_name }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="father_occupation" class="col-sm-2 col-form-label">Father Occupation</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="father_occupation" id="father_occupation" value="{{ $data->father_occupation }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="mother_occupation" class="col-sm-2 col-form-label">Mother Occupation</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="mother_occupation" id="mother_occupation" value="{{ $data->mother_occupation }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="parent_contract_number" class="col-sm-2 col-form-label">Parent Contract Number</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="parent_contract_number" id="parent_contract_number" value="{{ $data->parent_contract_number }}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -100,6 +130,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="institute_name" class="col-sm-2 col-form-label">Name of Institution</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="institute_name" id="institute_name" value="{{ $data->institute_name }}">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="educational_status" class="col-sm-2 col-form-label">Educational Status</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="educational_status" id="educational_status" value="{{ $data->educational_status }}">
@@ -134,6 +170,7 @@
                         <input type="file" class="form-control" name="img" id="img" >
                     </div>
                 </div>
+
                 <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
                         <button type="submit" class="btn btn-default">Update</button>

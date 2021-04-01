@@ -31,8 +31,7 @@
                             <td>{{ $data->name }}</td>
                             <td>{{ ($data->gender == 'Female') ? 'N/A' : $data->contract_number }}</td>
                             <td>{{ $data->institute_name }}</td>
-                            
-                            <td>{{ $data->house_village_word_name.', '.$data->upazila_name.', '.$data->district_name}}</td>
+                            <td>{{ $data->house_village_word_name}}</td>
                             <td>{{ $data->blood_group}}</td>
                             <td><img src="{{ $image_url }}" width="80px" height="80px" /></td>
                         </tr>

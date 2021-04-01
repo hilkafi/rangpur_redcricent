@@ -44,6 +44,8 @@ Route::post('/controll_panel/office-staff/search', [App\Http\Controllers\Admin\O
 
 //executive committees
 Route::resource('/controll_panel/executive-committee/', App\Http\Controllers\Admin\ExecutiveCommitteeController::class);
+Route::get('/controll_panel/executive-committee/{id}/edit', [App\Http\Controllers\Admin\ExecutiveCommitteeController::class, 'edit']);
+Route::put('/controll_panel/executive-committee/{id}', [App\Http\Controllers\Admin\ExecutiveCommitteeController::class, 'update']);
 Route::post('/controll_panel/executive-committee/delete', [App\Http\Controllers\Admin\ExecutiveCommitteeController::class, 'delete']);
 Route::post('/controll_panel/executive-committee/search', [App\Http\Controllers\Admin\ExecutiveCommitteeController::class, 'search']);
 

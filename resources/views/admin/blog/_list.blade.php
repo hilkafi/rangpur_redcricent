@@ -4,8 +4,6 @@
             <th>SL.</th>
             <th>Title</th>
             <th>Category</th>
-            <th>Subcategory</th>
-            <th>Description</th>
             <th>Image</th>
             <th>Action</th>
         </tr>
@@ -19,8 +17,6 @@
             <td class="dtr-control">{{ $counter }}</td>
             <td>{{ $data->title }}</td>
             <td>{{ $data->category_name($data->category_id) }}</td>
-            <td>{{ $data->subcategory_name($data->sub_category_id) }}</td>
-            <td class="sorting_1">{!! myTruncate($data->description, 50) !!}</td>
             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
             <td class="">
                 <a href="{{ url('/controll_panel/blog/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>

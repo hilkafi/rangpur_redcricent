@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="card card-default">
         <div class="card-header">
-            <h3 class="card-title">Update Volunteer Info.</h3>
+            <h3 class="card-title">Update Volunteer Info</h3>
         </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -14,7 +14,164 @@
                 <div class="form-group row">
                     <label for="name" class="col-sm-2 col-form-label">Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" value="{{$data->name}}" name="name" id="name" placeholder="Volunteer Name">
+                        <input type="text" class="form-control" name="name" id="name" value="{{ $data->name }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="registration_no" class="col-sm-2 col-form-label">Registration No.</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="registration_no" id="registration_no" value="{{ $data->registration_no }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="name_bangla" class="col-sm-2 col-form-label">Name (Bangla)</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="name_bangla" id="name_bangla" value="{{ $data->name_bangla }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="joining_date" class="col-sm-2 col-form-label">Joining Date</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" name="joining_date" id="joining_date" value="{{ $data->joining_date }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="type_of_volunteer" class="col-sm-2 col-form-label">Type Of Volunteer</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="type_of_volunteer" id="type_of_volunteer">
+                            <option value="">Select Volunteer Type</option>
+                            <option value="new_member" @if($data->type_of_volunteer == 'new_member'){{ 'selected' }}@endif>New Member</option>
+                            <option value="active_running_member" @if($data->type_of_volunteer == 'active_running_member'){{ 'selected' }}@endif>Active/Running Member</option>
+                            <option value="older_member" @if($data->type_of_volunteer == 'older_member'){{ 'selected' }}@endif>Older Member</option>
+                            <option value="other" @if($data->type_of_volunteer == 'other'){{ 'selected' }}@endif>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="contract_number" class="col-sm-2 col-form-label">Contract Number</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" name="contract_number" id="contract_number" value="{{ $data->contract_number }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="father_name" class="col-sm-2 col-form-label">Father Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="father_name" id="father_name" value="{{ $data->father_name }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="mother_name" class="col-sm-2 col-form-label">Mother Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="mother_name" id="mother_name" value="{{ $data->mother_name }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="father_occupation" class="col-sm-2 col-form-label">Father Occupation</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="father_occupation" id="father_occupation" value="{{ $data->father_occupation }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="mother_occupation" class="col-sm-2 col-form-label">Mother Occupation</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="mother_occupation" id="mother_occupation" value="{{ $data->mother_occupation }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="parent_contract_number" class="col-sm-2 col-form-label">Parent Contract Number</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="parent_contract_number" id="parent_contract_number" value="{{ $data->parent_contract_number }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nid_or_birth_no" class="col-sm-2 col-form-label">NID or Birth Cetifies No.</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" name="nid_or_birth_no" id="nid_or_birth_no" value="{{ $data->nid_or_birth_no }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">E-mail</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" name="email" id="email" value="{{ $data->email }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="date_of_birth" class="col-sm-2 col-form-label">Date of Birth</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" name="date_of_birth" id="date_of_birth" value="{{ $data->date_of_birth }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="interested_in_blood_donation" class="col-sm-2 col-form-label">Are You Interested In Blood Donation</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="interested_in_blood_donation">
+                            <option value="">Select</option>
+                            <option value="Yes"  @if($data->interested_in_blood_donation == 'Yes'){{ 'selected' }}@endif>Yes</option>
+                            <option value="No" @if($data->interested_in_blood_donation == 'No'){{ 'selected' }}@endif>No</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="blood_group" class="col-sm-2 col-form-label">Blood Group</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="blood_group" id="blood_group" value="{{ $data->blood_group }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="gender">
+                            <option value="">Select Gender</option>
+                            <option value="Male" @if($data->gender == 'Male'){{ 'selected' }}@endif>Male</option>
+                            <option value="Female" @if($data->gender == 'Female'){{ 'selected' }}@endif>Female</option>
+                            <option value="Other" @if($data->gender == 'other'){{ 'selected' }}@endif>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="marital_status" class="col-sm-2 col-form-label">Marital Status</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="marital_status">
+                            <option value="">Select Marital Status</option>
+                            <option value="Single" @if($data->marital_status == 'Single'){{ 'selected' }}@endif>Single</option>
+                            <option value="Married" @if($data->marital_status == 'Married'){{ 'selected' }}@endif>Married</option>
+                            <option value="Other" @if($data->marital_status == 'Other'){{ 'selected' }}@endif>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="institute_name" class="col-sm-2 col-form-label">Name of Institution</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="institute_name" id="institute_name" value="{{ $data->institute_name }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="educational_status" class="col-sm-2 col-form-label">Educational Status</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="educational_status" id="educational_status" value="{{ $data->educational_status }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="disrict_name" class="col-sm-2 col-form-label">District Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="disrict_name" id="disrict_name" value="{{ $data->disrict_name }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="upazila_name" class="col-sm-2 col-form-label">Upazila Name</label>
+                    <div class="col-sm-10">
+                        <select class="form-control" name="upazila_name">
+                            <option value="">Select Upazila</option>
+                            @foreach(upazilas() as $key => $value)
+                            <option value="{{$key}}" @if($data->upazila_name == $key){{ 'selected' }}@endif>{{$value}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="house_village_word_name" class="col-sm-2 col-form-label">House/Village/Word Name</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="house_village_word_name" id="house_village_word_name" value="{{ $data->house_village_word_name }}">
                     </div>
                 </div>
                 <div class="form-group row">
@@ -24,86 +181,31 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="Unit" class="col-sm-2 col-form-label">Unit</label>
+                    <label for="any_time_service" class="col-sm-2 col-form-label">Voluteer Service at Any Time</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="unit" id="unit">
-                            <option value="{{$data->unit_type}}"}}>{{$data->unit_type}}</option>
-                            <option value="zila">Zila</option>
-                            <option value="upzila">Upazila</option>
-                            <option value="city_corporation">City Corporation</option>
+                        <select class="form-control" name="any_time_service" id="any_time_service">
+                            <option value="">Select</option>
+                            <option value="Yes" @if($data->any_time_service == 'Yes'){{'selected'}}@endif>Yes</option>
+                            <option value="No" @if($data->any_time_service == 'No'){{'selected'}}@endif>No</option>
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group row">
-                    <label for="role" class="col-sm-2 col-form-label">Unit Name</label>
+                    <label for="reason_for_joining" class="col-sm-2 col-form-label">Reason For Joining</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" value="{{$data->unit_name}}" name="unit_name" id="unit_name" placeholder="">
+                        <input type="text" class="form-control" name="reason_for_joining" id="reason_for_joining" value="{{ $data->reason_for_joining }}">
                     </div>
                 </div>
-
                 <div class="form-group row">
-                    <label for="Unit" class="col-sm-2 col-form-label">Is Executive?</label>
+                    <label for="unit_type" class="col-sm-2 col-form-label">Unit Type</label>
                     <div class="col-sm-10">
-                        <select class="form-control" name="is_executive" id="is_executive">
-                            <option value="{{$data->is_executive}}">{{$data->is_executive}} </option>
-                            <option value="yes">Yes</option>
-                            <option value="no">No</option>
-                          
+                        <select class="form-control" name="unit_type" id="unit_type">
+                            <option value="">Select</option>
+                            <option value="{{ RCY }}" @if($data->unit_type==RCY){{ 'selected' }}@endif>RCY</option>
+                            <option value="{{ UPAZILA }}" @if($data->unit_type==UPAZILA){{ 'selected' }}@endif>Upazila</option>
                         </select>
                     </div>
                 </div>
-
-                <div class="form-group row">
-                    <label for="role" class="col-sm-2 col-form-label">Role</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" value="{{$data->role}}" name="role" id="role" placeholder="Volunteer Role">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="Occupation" class="col-sm-2 col-form-label">Occupation</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" value="{{$data->occupation}}" name="occupation" id="occupation" placeholder="Volunteer's Profession">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="role" class="col-sm-2 col-form-label">Institution</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" value="{{$data->instituiton}}" name="institution" id="institution" placeholder="">
-                    </div>
-                </div>
-
-
-                <div class="form-group row">
-                    <label for="phone" class="col-sm-2 col-form-label">Contact</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" value="{{$data->phone}}" name="contact" id="contact" placeholder="Employee Contact">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="role" class="col-sm-2 col-form-label">Blood Group</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" value="{{$data->blood_group}}" name="blood_group" id="blood_group" placeholder="">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="phone" class="col-sm-2 col-form-label">Last Date of Blood Donation </label>
-                    <div class="col-sm-10">
-                        <input type="date" class="form-control" value="{{$data->blood_donation}}" name="blood_date" id="blood_date" placeholder="">
-                    </div>
-                </div>
-
-                <div class="form-group row">
-                    <label for="address" class="col-sm-2 col-form-label">Address</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" value="{{$data->address}}" name="address" id="address" placeholder="Employee Address">
-                    </div>
-                </div>
-
-
 
 
                 <div class="form-group row">
@@ -119,20 +221,6 @@
 <script>
 window.onload = function(){
 
- $('#category_id').on('change',function(){
-    var category_id = $(this).val();
-    var _url = "{{URL::to('/controll_panel/blog/list_subcategory')}}";
-    $.ajax({
-        url: _url,
-        method:"POST",
-        data:{ category : category_id, _token : "{{ csrf_token() }}" },
-        success: function(result)
-        {
-        $('#subcategory').html(result);
-        }
-
-    });
-    });
 }
 </script>
 @endsection

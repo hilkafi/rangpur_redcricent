@@ -146,16 +146,14 @@ class VolunteerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = Validator::make($request->all(), [
+         //
+         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'role' => 'required',
-            'unit' => 'required'
         ]);
 
         if($validator->fails()){
             return back()->with('error', $validator->messages()->all());
         }
-
         $imageName = "";
         if(!empty($request->img)) {
             $imageName = time().'.'.$request->img->extension();
@@ -163,20 +161,34 @@ class VolunteerController extends Controller
         }
 
 
-
         $data = Volunteer::find($id);
         $data->name = $request->name;
-        $data->unit_type = $request->unit;
-        $data->role = $request->role;
-        $data->occupation = $request->occupation;
-        $data->phone = $request->contact;
-        $data->address = $request->address;
-        $data->is_approved = '1';
-        $data->institute = $request->institution;
+        $data->registration_number = $request->registration_no;
+        $data->name_bangla = $request->name_bangla;
+        $data->joining_date = date('Y-m-d', strtotime($request->joining_date));
+        $data->type_of_volunteer = $request->type_of_volunteer;
+        $data->contract_number = $request->contract_number;
+        $data->father_name = $request->father_name;
+        $data->mother_name = $request->mother_name;
+        $data->father_occupation = $request->father_occupation;
+        $data->mother_occupation = $request->mother_occupation;
+        $data->parent_contract_number = $request->parent_contract_number;
+        $data->nid_or_birth_no = $request->nid_or_birth_no;
+        $data->email = $request->email;
+        $data->date_of_birth = date('Y-m-d', strtotime($request->date_of_birth));
+        $data->interest_in_blood_donation = $request->interest_in_blood_donation;
         $data->blood_group = $request->blood_group;
-        $data->blood_donation = $request->blood_date;
-        $data->unit_name = $request->unit_name;
-        $data->is_executive = $request->is_executive;
+        $data->gender = $request->gender;
+        $data->marital_status = $request->marital_status;
+        $data->institute_name = $request->institute_name;
+        $data->educational_status = $request->educational_status;
+        $data->district_name = $request->district_name;
+        $data->upazila_name = $request->upazila_name;
+        $data->house_village_word_name = $request->house_village_word_name;
+        $data->any_time_service = $request->any_time_service;
+        $data->reason_for_joining = $request->reason_for_joining;
+        $data->unit_type = $request->unit_type;
+        $data->is_approved = '1';
         if(!empty($request->img)) {
             if(!empty($data->img)){
                 $path = "images/".$data->img;
@@ -187,9 +199,9 @@ class VolunteerController extends Controller
         $data->updated_at = time();
         
         if($data->save()){
-            return redirect('/controll_panel/volunteer')->with('success', 'Post Created Successfully.');
+            return redirect('/controll_panel/volunteer')->with('success', 'Volunteer Updated Successfully.');
         }else {
-            return redirect('/controll_panel/volunteer')->with('error', 'Error Creating Post.');
+            return redirect('/controll_panel/volunteer')->with('error', 'Error While Updating Volunteer.');
         }
     }
 
