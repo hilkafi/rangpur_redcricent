@@ -17,42 +17,49 @@
                         <input type="text" class="form-control" name="name" id="name">
                     </div>
                 </div>
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                     <label for="registration_no" class="col-sm-2 col-form-label">Registration No.</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="registration_no" id="registration_no" placeholder="">
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group row">
                     <label for="name_bangla" class="col-sm-2 col-form-label">Name (Bangla)</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="name_bangla" id="name_bangla">
                     </div>
                 </div>
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                     <label for="joining_date" class="col-sm-2 col-form-label">Joining Date</label>
                     <div class="col-sm-10">
                         <input type="date" class="form-control" name="joining_date" id="joining_date">
                     </div>
+                </div> -->
+                <div class="form-group row">
+                    <label for="designation" class="col-sm-2 col-form-label">Designation</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="designation" id="designation">
+                    </div>
                 </div>
                 <div class="form-group row">
-                    <label for="contract_number" class="col-sm-2 col-form-label">Contract Number</label>
+                    <label for="contract_number" class="col-sm-2 col-form-label">Contact Number</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" name="contract_number" id="contract_number">
                     </div>
                 </div>
-                <div class="form-group row">
+
+                <!-- <div class="form-group row">
                     <label for="father_name" class="col-sm-2 col-form-label">Father Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="father_name" id="father_name">
                     </div>
-                </div>
-                <div class="form-group row">
+                </div> -->
+                <!-- <div class="form-group row">
                     <label for="mother_name" class="col-sm-2 col-form-label">Mother Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="mother_name" id="mother_name">
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group row">
                     <label for="nid_or_birth_no" class="col-sm-2 col-form-label">NID or Birth Cetifies No.</label>
                     <div class="col-sm-10">
@@ -88,7 +95,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group row">
+                <!-- <div class="form-group row">
                     <label for="marital_status" class="col-sm-2 col-form-label">Marital Status</label>
                     <div class="col-sm-10">
                         <select class="form-control" name="marital_status">
@@ -98,20 +105,20 @@
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                </div>
-                <div class="form-group row">
+                </div> -->
+                <!-- <div class="form-group row">
                     <label for="educational_status" class="col-sm-2 col-form-label">Educational Status</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="educational_status" id="educational_status">
                     </div>
-                </div>
-                <div class="form-group row">
+                </div> -->
+                <!-- <div class="form-group row">
                     <label for="disrict_name" class="col-sm-2 col-form-label">District Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="disrict_name" id="disrict_name">
                     </div>
-                </div>
-                <div class="form-group row">
+                </div> -->
+                <!-- <div class="form-group row">
                     <label for="upazila_name" class="col-sm-2 col-form-label">Upazila Name</label>
                     <div class="col-sm-10">
                         <select class="form-control" name="upazila_name">
@@ -121,7 +128,7 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group row">
                     <label for="house_village_word_name" class="col-sm-2 col-form-label">House/Village/Word Name</label>
                     <div class="col-sm-10">

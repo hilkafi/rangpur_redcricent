@@ -29,7 +29,8 @@
                         <tr role="row">
                             <th>SL.</th>
                             <th>Name</th>
-                            <th>Contract</th>
+                            <th>Designation</th>
+                            <th>Contact</th>
                             <th>Address</th>
                             <th>Blood Group</th>
                             <th>Image</th>
@@ -43,6 +44,7 @@
                         <tr role="row" class="odd">
                             <td class="dtr-control">{{ $counter }}</td>
                             <td>{{ $data->name }}</td>
+                            <td>{{ $data->designation }}</td>
                             <td>{{ $data->contract_number }}</td>
                             <td>{{ $data->house_village_word_name}}</td>
                             <td>{{ $data->blood_group}}</td>

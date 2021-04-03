@@ -62,7 +62,7 @@ function upazilas() {
     'pirgachha' => 'Pirgachha',
     'badarganj' => 'Badarganj',
     'mitha_pukur' => 'Mitha Pukur',
-    'rangpur_sadar' => 'Rangpur Sadar',
+    'rangpur_sadar' => 'Rangpur Unit',
     'rangpur_city_corporation' => 'Rangpur City Corp.',
   ];
 }

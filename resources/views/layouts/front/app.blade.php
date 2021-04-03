@@ -115,7 +115,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     </div>
                                     <!-- /.col-md-4  -->
                                     <div class="col-md-3">
-                                        <a href="#" class="nav-bold"><span class="text-uppercase text-white">Unit/Branches</span></a>
+                                        <a href="#" class="nav-bold"><span class="text-uppercase text-white">Unit/Upazila Team</span></a>
                                         <ul class="nav flex-column">
                                             @foreach(upazilas() as $key => $value)
                                             <li class="nav-item">

@@ -59,6 +59,7 @@ class BeAMemberController extends Controller
 
         $data = new LifeMember();
         $data->name = $request->name;
+        $data->designation = $request->designation;
         $data->registration_number = $request->registration_no;
         $data->name_bangla = $request->name_bangla;
         $data->joining_date = date('Y-m-d', strtotime($request->joining_date));
