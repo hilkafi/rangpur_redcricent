@@ -51,7 +51,7 @@
     </div>
 </div>
 
-<section class="our_cuauses" id='news'>
+<section class="our_cuauses" id ='news'>
     <h2>News And Stories</h2>
     <div class="container">
         <div class="row">
@@ -63,8 +63,7 @@
                         <img src="{{ $img_url }}" alt="">
                         <div class="for_padding">
                             <h2>{{$ns->title}}</h2>
-                            <p>{!! Str::limit($ns->description, 50) !!}</p>
-
+                            <p>{!! Str::limit($ns->description, 100) !!}</p>
                             <h2 class="borderes"><a href="{{ url('single-blog/'.$ns->id) }}">READ MORE</a></h2>
                         </div>
                     </div>

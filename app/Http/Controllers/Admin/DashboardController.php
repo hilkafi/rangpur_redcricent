@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class DashboardController extends HomeController
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     public function index()
     {

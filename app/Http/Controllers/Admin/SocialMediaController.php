@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\SocialMedia;
 use App\Models\ContactUs;
 
-class SocialMediaController extends Controller
+class SocialMediaController extends HomeController
 {
     /**
      * Display a listing of the resource.

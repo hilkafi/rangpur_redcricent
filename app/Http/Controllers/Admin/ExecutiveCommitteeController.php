@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use App\Models\ExecutiveCommittee;
 
 use Illuminate\Support\Facades\Validator;
 
-class ExecutiveCommitteeController extends Controller
+class ExecutiveCommitteeController extends HomeController
 {
     /**
      * Display a listing of the resource.

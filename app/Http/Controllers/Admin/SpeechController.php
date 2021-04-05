@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use App\Models\Speech;
 
 use Illuminate\Support\Facades\Validator;
 
-class SpeechController extends Controller
+class SpeechController extends HomeController
 {
     /**
      * Display a listing of the resource.

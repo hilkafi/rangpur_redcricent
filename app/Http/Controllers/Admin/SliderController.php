@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\Slider;
 
-class SliderController extends Controller
+class SliderController extends HomeController
 {
     /**
      * Display a listing of the resource.

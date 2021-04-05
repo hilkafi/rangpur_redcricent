@@ -2,19 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Category;
 use App\Models\SubCategory;
 
-class SubCategoryController extends Controller
+class SubCategoryController extends HomeController
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     
     /**
      * Display a listing of the resource.

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\Category;
@@ -12,7 +12,7 @@ use App\Models\YouthExecutive;
 
 use Illuminate\Support\Facades\Validator;
 
-class YouthExecutiveController extends Controller
+class YouthExecutiveController extends HomeController
 {
     /**
      * Display a listing of the resource.

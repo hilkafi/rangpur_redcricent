@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Category;
 use Illuminate\Support\Facades\Validator;
 
-class ProjectController extends Controller
+class ProjectController extends HomeController
 {
     /**
      * Display a listing of the resource.
