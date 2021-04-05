@@ -114,6 +114,7 @@ Route::post('/controll_panel/social_media/search', [App\Http\Controllers\Admin\S
 
 //Messages
 Route::get('controll_panel/messages', [App\Http\Controllers\Admin\SocialMediaController::class, 'messages']);
+Route::get('controll_panel/show_messages/{id}', [App\Http\Controllers\Admin\SocialMediaController::class, 'show_messages']);
 
 //Slider Routes
 
@@ -150,6 +151,7 @@ Route::get('/executive-committee', [App\Http\Controllers\Front\HomeController::c
 Route::get('/life-member', [App\Http\Controllers\Front\HomeController::class, 'life_member']);
 Route::get('/youth-executive', [App\Http\Controllers\Front\HomeController::class, 'youth_executive']);
 Route::get('/rcy-volunteer', [App\Http\Controllers\Front\HomeController::class, 'rcy_volunteer']);
+Route::get('/office-staff', [App\Http\Controllers\Front\HomeController::class, 'office_staff']);
 
 // become volunteer route
 

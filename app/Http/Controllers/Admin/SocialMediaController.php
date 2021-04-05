@@ -133,4 +133,9 @@ class SocialMediaController extends Controller
         $dataset = ContactUs::latest()->get();
         return view('admin.social_media.messages', compact('dataset'));
     }
+
+    public function show_messages($id) {
+        $data = ContactUs::find($id);
+        return view('admin.social_media.show_messages', compact('data'));
+    }
 }

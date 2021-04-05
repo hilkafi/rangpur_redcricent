@@ -45,7 +45,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                         </div>   
                         <div class="col-md-10 col-sm-10">
                             <div class="contact" id="display-hidden">
-                                <p style="text-align: right"><span class="phone"><a href="#">Phone: 0521-55693</a></span><span class="email"><a href="#">Email: rangpur@bdrcs.org</a></span><span class="email"><a href="{{ url('/member/create') }}" class="join-us">JOIN US NOW</a></span></p>
+                                <p style="text-align: right"><span class="phone"><a href="#">Phone: 01725-366539</a></span><span class="email"><a href="mailto:rangpur@bdrcs.org">Email: rangpur@bdrcs.org</a></span><span class="email"><a href="{{ url('/member/create') }}" class="join-us">JOIN US NOW</a></span></p>
                             </div>
                         </div>
                     </div>
@@ -110,6 +110,9 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                             </li>
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/rcy-volunteer') }}">RCY Volunteer</a>
+                                            </li>
+                                            <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/office-staff') }}">Office Staff</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -237,13 +240,13 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Get Involved <i class="fa fa-caret-down"></i>
+                                Join With Us <i class="fa fa-caret-down"></i>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <div class="container">
                                     <div class="row">
                                     <div class="col-md-4">
-                                    <a href="#" class="nav-bold"><span class="text-uppercase text-white">Get Involved</span></a>
+                                    <a href="#" class="nav-bold"><span class="text-uppercase text-white">Join With Us</span></a>
                                         <ul class="nav flex-column">
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/donate-us') }}">Donate Us</a>

@@ -16,7 +16,7 @@
     </div>
 </section>
 
-<div class="block-wrapper">
+<div class="block-wrapper" style="margin-top: 0px;">
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-6 for-border">
@@ -203,7 +203,7 @@
     <h2>Social Media</h2>
     <div class="container">
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2 col-md-offset-3">
                 <div class="single_news">
                 <a href="{{ url('https://www.facebook.com/') }}" target="_blank"><img src="{{ url('img/facebook.jpg') }}" alt=""></a>
                     <div class="texts">
@@ -211,7 +211,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="single_news">
                     <a href="{{ url('http://twitter.com/') }}" target="_blank"><img src="{{ url('img/twitter.png') }}" alt=""></a>
                     <div class="texts">
@@ -219,7 +219,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="single_news">
                 <a href="{{ url('https://www.youtube.com/') }}" target="_blank"><img src="{{ url('img/youtube.jpg') }}" alt=""></a>
                     <div class="texts">
@@ -265,7 +265,7 @@
 </section>
 
 <section class="our_cuauses" id ='focus'>
-    <h2>Upcomint Events</h2>
+    <h2>Upcoming Events</h2>
     <div class="container">
         <div class="row">
             <div class="col-md-12">

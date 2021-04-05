@@ -30,7 +30,7 @@
                             <th>Name</th>
                             <th>Designation</th>
                             <th>Contact</th>
-                            <th>Address</th>
+                            <th>Email</th>
                             <th>Blood Group</th>
                             <th>Image</th>
                             <th>Action</th>
@@ -45,7 +45,7 @@
                             <td>{{ $data->name }}</td>
                             <td>{{ $data->designation }}</td>
                             <td>{{ $data->contract_number }}</td>
-                            <td>{{ $data->house_village_word_name}}</td>
+                            <td>{{ $data->email}}</td>
                             <td>{{ $data->blood_group}}</td>
                             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                             <td class="">

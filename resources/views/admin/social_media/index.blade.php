@@ -12,32 +12,33 @@
             <!-- /.card-header -->
         <div class="card-body">
             <div class="row" id="ajax_content">
-                    
-                <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
-                    <thead>
-                        <tr role="row">
-                            <th>SL.</th>
-                            <th>Name</th>
-                            <th>Link</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $counter = 0; ?>
-                        @foreach($dataset as $data)
-                        <?php $counter++ ?>
-                        <tr role="row" class="odd">
-                            <td>{{ $counter }}</td>
-                            <td>{{ $data->name }}</td>
-                            <td>{{ $data->link }}</td>
-                            <td class="">
-                                <a href="{{ url('/controll_panel/social_media/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
-                                <button class="deleteButton btn btn-danger" id="deleteInfo_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
+                        <thead>
+                            <tr role="row">
+                                <th>SL.</th>
+                                <th>Name</th>
+                                <th>Link</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $counter = 0; ?>
+                            @foreach($dataset as $data)
+                            <?php $counter++ ?>
+                            <tr role="row" class="odd">
+                                <td>{{ $counter }}</td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->link }}</td>
+                                <td class="">
+                                    <a href="{{ url('/controll_panel/social_media/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>
+                                    <button class="deleteButton btn btn-danger" id="deleteInfo_{{ $data->id }}" data-rel="{{ $data->id }}" ><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

@@ -1,3 +1,4 @@
+<div class="table-responsive">
 <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
     <thead>
         <tr role="row">
@@ -5,7 +6,7 @@
             <th>Name</th>
             <th>Designation</th>
             <th>Contract</th>
-            <th>Address</th>
+            <th>Email</th>
             <th>Blood Group</th>
             <th>Image</th>
             <th>Action</th>
@@ -20,7 +21,7 @@
             <td>{{ $data->name }}</td>
             <td>{{ $data->designation }}</td>
             <td>{{ $data->contract_number }}</td>
-            <td>{{ $data->house_village_word_name}}</td>
+            <td>{{ $data->email}}</td>
             <td>{{ $data->blood_group}}</td>
             <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
             <td class="">
@@ -32,3 +33,4 @@
         @endforeach
     </tbody>
 </table>
+</div>

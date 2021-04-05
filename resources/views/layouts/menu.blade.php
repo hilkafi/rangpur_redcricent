@@ -52,6 +52,12 @@
                 <p>RCY Volunteer</p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="{{ url('controll_panel/office-staff') }}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>OfficeStaffs</p>
+            </a>
+        </li>
     </ul>
 </li>
 <li class="nav-item">
@@ -76,12 +82,6 @@
     <a href="{{ url('controll_panel/project') }}" class="nav-link">
         <i class="nav-icon fas fa-project-diagram"></i>
         <p>Project</p>
-    </a>
-</li>
-<li class="nav-item">
-    <a href="{{ url('controll_panel/office-staff') }}" class="nav-link">
-        <i class="nav-icon fas fa-address-book"></i>
-        <p>OfficeStaffs</p>
     </a>
 </li>
 <li class="nav-item">

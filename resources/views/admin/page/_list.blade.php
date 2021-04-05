@@ -1,3 +1,4 @@
+<div class="table-responsive">
 <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
     <thead>
         <tr role="row">
@@ -26,3 +27,4 @@
         @endforeach
     </tbody>
 </table>
+</div>

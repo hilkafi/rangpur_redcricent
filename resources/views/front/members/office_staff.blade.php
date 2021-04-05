@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="category_title">
-                    <h2>Executive Committee</h2>
+                    <h2>Office Staff</h2>
                 </div>
                 <div class="single_content_area">
                 <div class="table-responsive ">

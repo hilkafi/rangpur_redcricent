@@ -18,6 +18,7 @@ use App\Models\Volunteer;
 use App\Models\LifeMember;
 use App\Models\YouthExecutive;
 use App\Models\ExecutiveCommittee;
+use App\Models\OfficeStaff;
 
 class HomeController extends Controller
 {
@@ -168,6 +169,11 @@ class HomeController extends Controller
     public function rcy_volunteer() {
         $dataset = Volunteer::where('unit_type', RCY)->get();
         return view('front.members.rcy_volunteer', compact('dataset'));
+    }
+
+    public function office_staff() {
+        $dataset = OfficeStaff::all();
+        return view('front.members.office_staff', compact('dataset'));
     }
 
 

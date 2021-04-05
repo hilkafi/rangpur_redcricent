@@ -11,31 +11,34 @@
             <!-- /.card-header -->
         <div class="card-body">
             <div class="row" id="ajax_content">
-                    
-                <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
-                    <thead>
-                        <tr role="row">
-                            <th>SL.</th>
-                            <th>Name</th>
-                            <th>E-Mail</th>
-                            <th>Mobile</th>
-                            <th>Message</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php $counter = 0; ?>
-                        @foreach($dataset as $data)
-                        <?php $counter++ ?>
-                        <tr role="row" class="odd">
-                            <td>{{ $counter }}</td>
-                            <td>{{ $data->name }}</td>
-                            <td>{{ $data->email }}</td>
-                            <td>{{ $data->mobile }}</td>
-                            <td>{{ Str::limit($data->message, 50) }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                <div class="table-responsive"> 
+                    <table id="example2" class="table table-bordered table-hover dataTable dtr-inline" role="grid" aria-describedby="example2_info">
+                        <thead>
+                            <tr role="row">
+                                <th>SL.</th>
+                                <th>Name</th>
+                                <th>E-Mail</th>
+                                <th>Mobile</th>
+                                <th>Message</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php $counter = 0; ?>
+                            @foreach($dataset as $data)
+                            <?php $counter++ ?>
+                            <tr role="row" class="odd">
+                                <td>{{ $counter }}</td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->email }}</td>
+                                <td>{{ $data->mobile }}</td>
+                                <td>{{ Str::limit($data->message, 50) }}</td>
+                                <td><a href="{{ url('/controll_panel/show_messages/'.$data->id) }}" class="btn btn-primary"><i class="fas fa-eye"></i></a></td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
