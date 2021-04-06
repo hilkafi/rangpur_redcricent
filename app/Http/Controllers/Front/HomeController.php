@@ -29,8 +29,12 @@ class HomeController extends Controller
         $focuses = Blog::where('category_id', CAT_FOCUS)->get();
         $sliders = Slider::where('is_active', true)->take(5)->get();
         $speech = Speech::all();
+        $ec = ExecutiveCommittee::count();
+        $vc = Volunteer::count();
+        $yc = OfficeStaff::count();
+        $lf = LifeMember::count();
         $upcoming_events = Blog::where('category_id', CAT_UPCOMING)->get();
-        return view('front.home', compact('news_stories', 'reports', 'focuses', 'sliders', 'speech', 'upcoming_events'));
+        return view('front.home', compact('news_stories', 'reports', 'focuses', 'sliders', 'speech', 'upcoming_events','ec','vc','yc','lf'));
     }
 
     public function single_blog($id) {
