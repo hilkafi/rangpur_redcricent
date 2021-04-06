@@ -21,30 +21,30 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-6 for-border">
                 <div class="block">
-                    <p><i class="material-icons">favorite</i></p>
+                    <p><i class="material-icons">people</i></p>
                     <p class="counter-wrapper"><span class="fb"></span></p>
-                    <p class="text-block">CAUSES</p>
+                    <p class="text-block">Executive Committee</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6 for-border">
                 <div class="block">
-                    <p><i class="material-icons">language</i></p>
+                    <p><i class="material-icons">people</i></p>
                     <p class="counter-wrapper"><span class="code"></span></p>
-                    <p class="text-block">PLACES</p>
+                    <p class="text-block">Staff</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6 for-border">
                 <div class="block">
-                    <p><i class="material-icons">person_add</i></p>
+                    <p><i class="material-icons">people</i></p>
                     <p class="counter-wrapper"><span class="bike"></span></p>
-                    <p class="text-block">VOLUNTEERS</p>
+                    <p class="text-block">Life Members</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-6 for-border">
                 <div class="block">
                     <p><i class="material-icons">people</i></p>
                     <p class="counter-wrapper"><span class="coffee"></span></p>
-                    <p class="text-block">SAVED</p>
+                    <p class="text-block">Volunteers</p>
                 </div>
             </div>
         </div>

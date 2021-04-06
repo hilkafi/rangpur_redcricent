@@ -103,6 +103,9 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                             <a class="nav-link" href="{{ url('/executive-committee') }}">Executive Committee</a>
                                             </li>
                                             <li class="nav-item">
+                                            <a class="nav-link" href="{{ url('/office-staff') }}">Office Staff</a>
+                                            </li>
+                                            <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/life-member') }}">Life Member</a>
                                             </li>
                                             <li class="nav-item">
@@ -111,9 +114,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                             <li class="nav-item">
                                             <a class="nav-link" href="{{ url('/rcy-volunteer') }}">RCY Volunteer</a>
                                             </li>
-                                            <li class="nav-item">
-                                            <a class="nav-link" href="{{ url('/office-staff') }}">Office Staff</a>
-                                            </li>
+
                                         </ul>
                                     </div>
                                     <!-- /.col-md-4  -->
