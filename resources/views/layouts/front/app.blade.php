@@ -37,15 +37,26 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
 <body>
     <div class="wrapper">
         <header class="header">
-            <section class="header-top"">
+            <section class="header-top">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img src="{{ url('/img/bdrcs-logo.png') }}" width="50" height="50" class="d-inline-block align-top" alt="">
-                        </div>   
+                    <div class="row" >
+                        <a href="{{ url('/') }}">
+                            <div class="col-md-2">
+                                <img src="{{ url('/img/bdrcs-logo.png') }}" width="50" height="50" class="d-inline-block align-middle" alt="BDRCS LOGO"><span>
+                                <img src="{{ url('/img/donor-logo.png') }}" width="100" style="border-radius:2px" class="d-inline-block align-middle" alt="DONOR LOGO"></span>
+                            </div>
+                        </a>   
                         <div class="col-md-10 col-sm-10">
                             <div class="contact" id="display-hidden">
-                                <p style="text-align: right"><span class="phone"><a href="#">Phone: 01725-366539</a></span><span class="email"><a href="mailto:rangpur@bdrcs.org">Email: rangpur@bdrcs.org</a></span><span class="email"><a href="{{ url('/member/create') }}" class="join-us">JOIN US NOW</a></span></p>
+                                <p style="text-align: right" class="align-middle">
+                                    <span class="phone">
+                                        <a href="#">Phone: 01725-366539</a>
+                                    </span><span class="email">
+                                    <a href="mailto:rangpur@bdrcs.org">Email: rangpur@bdrcs.org</a>
+                                        </span><span class="email">
+                                            <a href="{{ url('/member/create') }}" class="join-us align-middle">JOIN US NOW</a>
+                                        </span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -401,7 +412,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                                     <ul>
                                         <li><a href="#"><i class="material-icons">location_on</i>Rangpur Red Crescent Unit, Kachari Bazar, Rangpur</a></li>
                                         <li><a href="#"><i class="material-icons">email</i>rangpur@bdrcs.org</a></li>
-                                        <li><a href="#"><i class="material-icons">call</i> 0521-55693</a></li>
+                                        <li><a href="#"><i class="material-icons">call</i> 01725-366539</a></li>
                                     </ul>
                                 </div>
                             </div>
