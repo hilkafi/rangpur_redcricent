@@ -45,7 +45,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="contract_number" class="col-sm-2 col-form-label">Contract Number</label>
+                    <label for="contract_number" class="col-sm-2 col-form-label">Contact Number</label>
                     <div class="col-sm-10">
                         <input type="number" class="form-control" name="contract_number" id="contract_number">
                     </div>
@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="parent_contract_number" class="col-sm-2 col-form-label">Parent Contract Number</label>
+                    <label for="parent_contract_number" class="col-sm-2 col-form-label">Parent Contact Number</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="parent_contract_number" id="parent_contract_number">
                     </div>

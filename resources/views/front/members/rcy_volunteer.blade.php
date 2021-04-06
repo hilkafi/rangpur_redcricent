@@ -14,7 +14,7 @@
                             <tr role="row">
                                 <th>SL.</th>
                                 <th>Name</th>
-                                <th>Contract</th>
+                                <th>Contact</th>
                                 <th>Email</th>
                                 <th>Blood Group</th>
                                 <th>Image</th>

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="category_title">
-                    <h2>Executive Committee</h2>
+                    <h2>Life Member</h2>
                 </div>
                 <div class="single_content_area">
                 <div class="table-responsive ">
@@ -34,7 +34,7 @@
                                 <td>{{ ($data->gender == 'Female') ? 'N/A' : $data->contract_number }}</td>
                                 <td>{{ $data->email}}</td>
                                 <td>{{ $data->blood_group}}</td>
-                                <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
+                                <td><img src="{{ $image_url }}" width="80px" height="80px"/></td>
                             </tr>
                             @endforeach
                         </tbody>
