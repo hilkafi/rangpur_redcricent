@@ -9,7 +9,7 @@
                 </div>
                 <div class="single_image_area" style="item-align: center">
                     @if(!empty($data->img))
-                    <img src="{{ url('images/'.$data->img) }}" width="80" />
+                    <img src="{{ url('images/'.$data->img) }}" width="400" />
                     @endif
                 </div>
                 <div class="single_content_area">
