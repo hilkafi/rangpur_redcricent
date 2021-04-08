@@ -66,7 +66,8 @@ class HomeController extends Controller
     }
 
     public function contact_us() {
-        return view('front.contact_us');
+        $data = Page::find(PAGE_CONTACT);
+        return view('front.contact_us', compact('data'));
     }
 
     public function contact_us_save(Request $request) {

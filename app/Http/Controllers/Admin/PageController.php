@@ -134,7 +134,7 @@ class PageController extends HomeController
             $query->where('title', 'like', '%' . $request->name . '%');
         }
 
-        $dataset = $query->orderBy('id', 'DESC')->get();
+        $dataset = $query->get();
         return view('admin.page._list', compact('dataset'));
     }
 

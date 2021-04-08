@@ -28,7 +28,6 @@
                             <tr role="row">
                                 <th>SL.</th>
                                 <th>Title</th>
-                                <th>Description</th>
                                 <th>Image</th>
                                 <th>Action</th>
                             </tr>
@@ -41,7 +40,6 @@
                             <tr role="row" class="odd">
                                 <td class="dtr-control">{{ $counter }}</td>
                                 <td>{{ $data->title }}</td>
-                                <td>{!! myTruncate($data->description, 100) !!}</td>
                                 <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                                 <td class="">
                                     <a href="{{ url('/controll_panel/page/'.$data->id.'/edit') }}" ><i class="fas fa-edit"></i></a>

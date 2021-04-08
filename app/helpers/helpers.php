@@ -30,6 +30,9 @@ define('CAT_CROSS_CUTTING_ISSUES', 18);
 define('RCY', 'rcy');
 define('UPAZILA', 'upazila');
 
+//Page Constant
+define('PAGE_CONTACT', 9);
+
 
 
 /*****************
@@ -55,8 +58,6 @@ function myTruncate($string, $limit, $break=".", $pad="...")
 
 function upazilas() {
   return [
-    'rangpur_sadar' => 'Rangpur Unit',
-    'rangpur_city_corporation' => 'Rangpur City Corp.',
     'kaunia' => 'Kaunia',
     'gangachara' => 'Gangachara',
     'taraganj' => 'Taraganj',
@@ -64,6 +65,7 @@ function upazilas() {
     'pirgachha' => 'Pirgachha',
     'badarganj' => 'Badarganj',
     'mitha_pukur' => 'Mitha Pukur',
-    
+    'rangpur_sadar' => 'Rangpur Unit',
+    'rangpur_city_corporation' => 'Rangpur City Corp.',
   ];
 }
