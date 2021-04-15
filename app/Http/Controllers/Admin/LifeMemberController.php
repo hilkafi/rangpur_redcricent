@@ -65,15 +65,19 @@ class LifeMemberController extends HomeController
     
             $data = new LifeMember();
             $data->name = $request->name;
-            $data->designation = $request->designation;
             $data->name_bangla = $request->name_bangla;
+            $data->father_name = $request->father_name;
+            $data->mother_name = $request->mother_name;
+            $data->gender = $request->gender;
+            $data->designation = $request->designation;
+            $data->district_name = $request->district_name;
+            $data->upazila_name = $request->upazila_name;
+            $data->house_village_word_name = $request->house_village_word_name;
             $data->contract_number = $request->contract_number;
-            $data->nid_or_birth_no = $request->nid_or_birth_no;
             $data->email = $request->email;
+            $data->joining_date = $request->joining_date;
             $data->date_of_birth = date('Y-m-d', strtotime($request->date_of_birth));
             $data->blood_group = $request->blood_group;
-            $data->gender = $request->gender;
-            $data->house_village_word_name = $request->house_village_word_name;
             $data->img = $imageName;
             $data->is_approved = '1';
             $data->created_at = time();
@@ -135,15 +139,19 @@ class LifeMemberController extends HomeController
 
         $data = LifeMember::find($id);
         $data->name = $request->name;
-        $data->designation = $request->designation;
         $data->name_bangla = $request->name_bangla;
+        $data->father_name = $request->father_name;
+        $data->mother_name = $request->mother_name;
+        $data->gender = $request->gender;
+        $data->designation = $request->designation;
+        $data->district_name = $request->district_name;
+        $data->upazila_name = $request->upazila_name;
+        $data->house_village_word_name = $request->house_village_word_name;
         $data->contract_number = $request->contract_number;
-        $data->nid_or_birth_no = $request->nid_or_birth_no;
         $data->email = $request->email;
+        $data->joining_date = $request->joining_date;
         $data->date_of_birth = date('Y-m-d', strtotime($request->date_of_birth));
         $data->blood_group = $request->blood_group;
-        $data->gender = $request->gender;
-        $data->house_village_word_name = $request->house_village_word_name;
         $data->is_approved = '1';
         if(!empty($request->img)) {
             if(!empty($data->img)){

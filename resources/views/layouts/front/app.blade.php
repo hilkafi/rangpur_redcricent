@@ -42,8 +42,8 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
                     <div class="row" >
                         <a href="{{ url('/') }}">
                             <div class="col-md-2">
-                                <img src="{{ url('/img/bdrcs-logo.png') }}" width="50" height="50" class="d-inline-block align-middle" alt="BDRCS LOGO"><span>
-                                <img src="{{ url('/img/donor-logo.png') }}" width="100" style="border-radius:2px" class="d-inline-block align-middle" alt="DONOR LOGO"></span>
+                                <img src="{{ url('/img/bdrcs-logo.png') }}" width="50" height="50" class="d-inline-block align-middle" alt="BDRCS LOGO"><span>&nbsp;&nbsp;
+                                <img src="{{ url('/img/donor-logo-white.png') }}" width="50" style="border-radius:2px" class="d-inline-block align-middle" alt="DONOR LOGO"></span>
                             </div>
                         </a>   
                         <div class="col-md-10 col-sm-10">
