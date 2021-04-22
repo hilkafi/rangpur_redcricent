@@ -32,6 +32,7 @@ $cc_issues = Project::where('category_id', CAT_CROSS_CUTTING_ISSUES)->latest()->
     <link rel="stylesheet" href="{{ url('css/megamenu.css') }}">
     <link rel="stylesheet" href="{{ url('css/responsive.css') }}">
     @yield('extra_style')
+    @yield('facebook')
 </head>
 
 <body>

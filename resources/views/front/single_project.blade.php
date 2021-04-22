@@ -1,4 +1,8 @@
 @extends('layouts.front.app')
+@section('facebook')
+<meta property="og:title" content="{{ $data->name }}"/>
+<meta property="og:image" content="{{ url('images/'.$data->img) }}"/>
+@endsection
 @section('content')
 <section class="our_activity">
     <div class="container">
