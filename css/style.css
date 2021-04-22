@@ -616,7 +616,7 @@
 }
 
 .donors .donors_input h2,
-.donors .donors_image h2 {
+.donors .donors h2 {
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 22px;
@@ -625,7 +625,7 @@
     text-align: center;
 }
 
-.donors .donors_image h2 {
+.donors .donors h2 {
     color: #000;
 }
 

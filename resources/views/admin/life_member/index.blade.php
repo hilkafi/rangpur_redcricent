@@ -29,9 +29,13 @@
                             <tr role="row">
                                 <th>SL.</th>
                                 <th>Name</th>
-                                <th>Designation</th>
+                                <th>Father/Husband</th>
+                                <!-- <th>Designation</th> -->
+                                <th>Address</th>
                                 <th>Contact</th>
                                 <th>Email</th>
+                                <th>Joining Date</th>
+                                <th>DOB</th>
                                 <th>Blood Group</th>
                                 <th>Image</th>
                                 <th>Action</th>
@@ -44,9 +48,13 @@
                             <tr role="row" class="odd">
                                 <td class="dtr-control">{{ $counter }}</td>
                                 <td>{{ $data->name }}</td>
-                                <td>{{ $data->designation }}</td>
+                                <td>{{ $data->father_name }}</td>
+                                <!-- <td>{{ $data->designation }}</td> -->
+                                <td>{{ $data->house_village_word_name }}</td>
                                 <td>{{ $data->contract_number }}</td>
                                 <td>{{ $data->email}}</td>
+                                <td>{{ $data->joining_date}}</td>
+                                <td>{{ $data->date_of_birth}}</td>
                                 <td>{{ $data->blood_group}}</td>
                                 <td><img src="{{url('/images/'.$data->img)}}" width="80" height="80"></td>
                                 <td class="">

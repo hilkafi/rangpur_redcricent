@@ -98,20 +98,21 @@
 </section>
 
 <section class="donors">
+    <h2 style="margin-bottom:25px;">Messages</h2 >
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" style="overflow:auto;">
                 <div class="donors_image">
-                    <h2>Messages</h2>
+                    
                     <div class="donors_featured owl-carousel owl-theme" style="background-color:#fdba00;">
                         @foreach($speech as $sp)
                         <?php $image_url = !empty($sp->img) ? url('images/'.$sp->img) : url('img/no_image.jpg');  ?>
                         <div class="item">
                             <div class="col-md-6">
                                 @if(!empty($sp->video))
-                                <iframe width="560" height="315" src="{{$sp->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="300"  src="{{$sp->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 @else
-                                <img src="{{ $image_url }}"  width="500" height="400" />
+                                <img src="{{ $image_url }}"  width="300" />
                                 @endif
                             </div>
                             <div class="col-md-6">

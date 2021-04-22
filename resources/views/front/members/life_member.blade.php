@@ -14,9 +14,12 @@
                             <tr role="row">
                                 <th>SL.</th>
                                 <th>Name</th>
+                                <th>Father/Husband Name</th>
                                 <th>Designation</th>
+                                <th>Address</th>
                                 <th>Contact</th>
                                 <th>Email</th>
+                                <th>Joining Date</th>
                                 <th>Blood Group</th>
                                 <th>Image</th>
                             </tr>
@@ -30,9 +33,12 @@
                             <tr role="row" class="odd">
                                 <td class="dtr-control">{{ $counter }}</td>
                                 <td>{{ $data->name }}</td>
+                                <td>{{ $data->father_name }}</td>
                                 <td>{{ $data->designation }}</td>
+                                <td>{{ $data->house_village_word_name }}</td>
                                 <td>{{ ($data->gender == 'Female') ? 'N/A' : $data->contract_number }}</td>
                                 <td>{{ $data->email}}</td>
+                                <td>{{ $data->joining_date}}</td>
                                 <td>{{ $data->blood_group}}</td>
                                 <td><img src="{{ $image_url }}" width="80px" height="80px"/></td>
                             </tr>
